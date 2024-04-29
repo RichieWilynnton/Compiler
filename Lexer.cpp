@@ -7,7 +7,7 @@ using namespace std;
 
 Lexer:: Lexer(std::string code) {
     codeString = code + '\n';
-    curChar = ' ';
+    curChar = '\n';
     curPos = -1;
     nextChar();
 };
@@ -42,6 +42,35 @@ int Lexer::getToken() {
         case '/':
             token = TokenType::SLASH;
             break;
+        case '=':
+            if (peek() == '=') {
+                nextChar();
+                token = TokenType::EQEQ;
+            }
+            else token = TokenType::EQ;
+            break;
+        case '!':
+            if (peek() == '=') {
+                nextChar();
+                token = TokenType::NOTEQ;
+            }
+            else terminate("! is not a valid expression");
+            break;
+        case '>':
+            if (peek() == '=') {
+                nextChar();
+                token = TokenType::GTEQ;
+            }
+            else token = TokenType::GT;
+            break;
+        case '<':
+            if (peek() == '=') {
+                nextChar();
+                token = TokenType::LTEQ;
+            }
+            else token = TokenType::LT;
+            break;
+
         case '\n':
             token = TokenType::NEWLINE;
             break;
@@ -49,7 +78,7 @@ int Lexer::getToken() {
             token = TokenType::_EOF;
             break;
         default:
-            throw std::invalid_argument("Invalid character encountered");
+            terminate("Invalid character encountered");
     }
 
     nextChar();
@@ -57,14 +86,8 @@ int Lexer::getToken() {
     return token;
 }
 
+void Lexer::terminate(std::string msg) {
+    std::cerr << "Error during lexical analysis: " + msg << std::endl;
+    exit(EXIT_FAILURE);
+}
 
-
-
-// Lexer:: 
-
-// char nextChar();
-//     char peek();
-//     void exit();
-//     void skipWhitespace();
-//     void skipComment();
-//     void getToken();

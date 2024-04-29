@@ -16,10 +16,9 @@ class Lexer {
         void nextChar();
         char peek();
         int getToken();
-        // void exit();
+        void terminate(std::string msg);
         // void skipWhitespace();
         // void skipComment();
-        // void getToken();
 };
 
 #endif
