@@ -4,10 +4,11 @@
 #include <stdexcept>
 using namespace std;
 #include <iostream>
+#define db cout << "debug" << endl;
 
 Lexer:: Lexer(std::string code) {
     codeString = code + '\n';
-    curChar = '\n';
+    curChar = ' '; // Placeholder
     curPos = -1;
     nextChar();
 };
@@ -28,6 +29,9 @@ char Lexer:: peek() {
 }
 
 int Lexer::getToken() {
+    skipWhitespace();
+    skipComment();
+
     int token = INT_MAX;
     switch (curChar) {
         case '+':
@@ -84,6 +88,16 @@ int Lexer::getToken() {
     nextChar();
 
     return token;
+}
+
+void Lexer::skipWhitespace() {
+    while (curChar == ' ' && curChar == '\t' && curChar == '\r') nextChar();
+}
+
+void Lexer::skipComment() {
+    if (curChar == '#') {
+        while (curChar != '\n') nextChar();
+    }
 }
 
 void Lexer::terminate(std::string msg) {
