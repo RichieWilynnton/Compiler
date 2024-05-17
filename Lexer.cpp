@@ -7,7 +7,7 @@ using namespace std;
 #define db cout << "debug" << endl;
 
 Lexer:: Lexer(std::string code) {
-    codeString = code + '\n';
+    codeString = code + '\n'; // \n to deal with whitespaces & comments at end of program
     curChar = ' '; // Placeholder
     curPos = -1;
     nextChar();
@@ -82,7 +82,8 @@ int Lexer::getToken() {
             token = TokenType::_EOF;
             break;
         default:
-            terminate("Invalid character encountered");
+            string msg = "Invalid character encountered " + curChar;
+            terminate(msg);
     }
 
     nextChar();
@@ -96,7 +97,7 @@ void Lexer::skipWhitespace() {
 
 void Lexer::skipComment() {
     if (curChar == '#') {
-        while (curChar != '\n') nextChar();
+        while (curChar != '\n') nextChar(); 
     }
 }
 

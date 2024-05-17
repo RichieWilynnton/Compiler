@@ -14,7 +14,7 @@ int main() {
     ifstream infile { "code.txt" };
     string file_contents { istreambuf_iterator<char>(infile), istreambuf_iterator<char>() };
 
-    file_contents = ">=>>";
+    file_contents = ">=>>#########";
 
     Lexer lexer = Lexer(file_contents);
     int token = lexer.getToken();
