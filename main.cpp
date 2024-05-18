@@ -15,7 +15,7 @@ int main() {
     ifstream infile { "code.txt" };
     string file_contents { istreambuf_iterator<char>(infile), istreambuf_iterator<char>() };
 
-    file_contents = ">=>>#########";
+    cout << file_contents << endl;
 
     Lexer lexer = Lexer(file_contents);
     Token token = lexer.getToken();

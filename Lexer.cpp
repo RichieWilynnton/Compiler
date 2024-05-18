@@ -90,13 +90,39 @@ Token Lexer::getToken() {
     if (token == defaultToken) {
         // strings
         if (curChar == '"') {
-            
+            nextChar();
+            int charCount = 0, startPos = curPos;
+
+            while (curChar != '"') {
+                // illegal characters
+                if (curChar == '\0' || curChar == '\n') {
+                    terminate("Illegal Characters in string.");
+                }
+                charCount++;
+                nextChar();
+            }
+
+            token = Token(codeString.substr(startPos, charCount), TokenType::STRING);
         }
 
         // numbers
         else if (isdigit(curChar)) {
-            
+            int charCount = 0, startPos = curPos;
+            while (isdigit(peek())) {
+                charCount++;
+                nextChar();
+            };
+            if (peek() == '.') {
+                charCount++;
+                nextChar();
 
+                if (!isdigit(peek())) terminate("Invalid Number");
+                while (isdigit(peek())) {
+                    charCount++;
+                    nextChar();
+                }
+            }
+            token = Token(codeString.substr(startPos, charCount), TokenType::NUMBER);
         }
 
         // error
@@ -111,7 +137,7 @@ Token Lexer::getToken() {
 }
 
 void Lexer::skipWhitespace() {
-    while (curChar == ' ' && curChar == '\t' && curChar == '\r') nextChar();
+    while (curChar == ' ' || curChar == '\t' || curChar == '\r') nextChar();
 }
 
 void Lexer::skipComment() {
