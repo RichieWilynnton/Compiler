@@ -12,19 +12,19 @@ OBJS = main.o Lexer.o
 
 # Default target
 all: $(EXEC)
-	.\$(EXEC)
+	./$(EXEC)
 
 # Linking the final executable
 $(EXEC): $(OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 # Compiling main.o
-main.o: main.cpp lexer.h tokentype.h
+main.o: main.cpp Lexer.h Token.h Tokentype.h
 	$(CXX) $(CXXFLAGS) -c main.cpp -o $@
 
 # Compiling Lexer.o
-Lexer.o: lexer.cpp lexer.h tokentype.h
-	$(CXX) $(CXXFLAGS) -c lexer.cpp -o $@
+Lexer.o: Lexer.cpp Lexer.h Token.h Tokentype.h
+	$(CXX) $(CXXFLAGS) -c Lexer.cpp -o $@
 
 # Running the executable
 run: $(EXEC)

@@ -4,6 +4,7 @@
 
 #include "Tokentype.h"
 #include "Lexer.h"
+#include "Token.h"
 
 #define debug cout << "I am here" << endl
 
@@ -17,9 +18,9 @@ int main() {
     file_contents = ">=>>#########";
 
     Lexer lexer = Lexer(file_contents);
-    int token = lexer.getToken();
-    while (token != TokenType::_EOF) {
-        cout << token << endl;
+    Token token = lexer.getToken();
+    while (token.tokenType != TokenType::_EOF) {
+        cout << token.tokenType << endl;
         token = lexer.getToken();
     }
 

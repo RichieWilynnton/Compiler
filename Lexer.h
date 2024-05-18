@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Tokentype.h"
+#include "Token.h"
 
 class Lexer {
     public:
@@ -15,7 +16,7 @@ class Lexer {
 
         void nextChar();
         char peek();
-        int getToken();
+        Token getToken();
         void terminate(std::string msg);
         void skipWhitespace();
         void skipComment();

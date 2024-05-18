@@ -1,5 +1,6 @@
 #include "Lexer.h"
 #include "Tokentype.h"
+#include "Token.h"
 #include <string>
 #include <stdexcept>
 using namespace std;
@@ -28,62 +29,80 @@ char Lexer:: peek() {
     return codeString[curPos+1];
 }
 
-int Lexer::getToken() {
+Token Lexer::getToken() {
     skipWhitespace();
     skipComment();
 
-    int token = INT_MAX;
+    Token token, defaultToken;
+
     switch (curChar) {
         case '+':
-            token = TokenType::PLUS;
+            token = Token("+", TokenType::PLUS);
             break;
         case '-':
-            token = TokenType::MINUS;
+            token = Token("-", TokenType::MINUS);
             break;
         case '*':
-            token = TokenType::ASTERISK;
+            token = Token("*", TokenType::ASTERISK);
             break;
         case '/':
-            token = TokenType::SLASH;
+            token = Token("/" ,TokenType::SLASH);
             break;
         case '=':
             if (peek() == '=') {
                 nextChar();
-                token = TokenType::EQEQ;
+                token = Token("==" ,TokenType::EQEQ);
             }
-            else token = TokenType::EQ;
+            else token = Token("=" ,TokenType::EQ);
             break;
         case '!':
             if (peek() == '=') {
                 nextChar();
-                token = TokenType::NOTEQ;
+                token = Token("!=" ,TokenType::NOTEQ);
             }
             else terminate("! is not a valid expression");
             break;
         case '>':
             if (peek() == '=') {
                 nextChar();
-                token = TokenType::GTEQ;
+                token = Token(">=" ,TokenType::GTEQ);
             }
-            else token = TokenType::GT;
+            else token = Token(">" ,TokenType::GT);
             break;
         case '<':
             if (peek() == '=') {
                 nextChar();
-                token = TokenType::LTEQ;
+                token = Token("<=" ,TokenType::LTEQ);
             }
-            else token = TokenType::LT;
+            else token = Token("<" ,TokenType::LT);
             break;
 
         case '\n':
-            token = TokenType::NEWLINE;
+            token = Token("\n" ,TokenType::NEWLINE);
             break;
         case '\0':
-            token = TokenType::_EOF;
+            token = Token("\0" ,TokenType::_EOF);
             break;
         default:
-            string msg = "Invalid character encountered " + curChar;
-            terminate(msg);
+            break;
+    }
+
+    if (token == defaultToken) {
+        // strings
+        if (curChar == '"') {
+            
+        }
+
+        // numbers
+        else if (isdigit(curChar)) {
+            
+
+        }
+
+        // error
+        else {
+            terminate("Invalid character encountered " + curChar);
+        }
     }
 
     nextChar();
