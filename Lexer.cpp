@@ -1,6 +1,7 @@
 #include "Lexer.h"
 #include "Tokentype.h"
 #include "Token.h"
+#include "Keywords.h"
 #include <string>
 #include <stdexcept>
 using namespace std;
@@ -125,6 +126,20 @@ Token Lexer::getToken() {
             token = Token(codeString.substr(startPos, charCount), TokenType::NUMBER);
         }
 
+        // Identifiers
+        else if (isalnum(curChar)) {
+            int charCount = 0, startPos = curPos;
+            while (isalnum(peek())) {
+                charCount++;
+                nextChar();
+            }
+
+            string tokenText = codeString.substr(startPos, charCount);
+            TokenType keyword = checkIfKeyword(tokenText);
+            if (keyword == TokenType::INVALID) token = Token(tokenText, TokenType::IDENTIFIER);
+            else token = Token(tokenText, keyword); 
+        }
+
         // error
         else {
             terminate("Invalid character encountered " + curChar);
@@ -135,6 +150,8 @@ Token Lexer::getToken() {
 
     return token;
 }
+
+
 
 void Lexer::skipWhitespace() {
     while (curChar == ' ' || curChar == '\t' || curChar == '\r') nextChar();

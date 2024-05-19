@@ -2,13 +2,14 @@
 #define TOKENTYPE_H
 
 enum TokenType {
+    INVALID = -2, 
     _EOF = -1,
     NEWLINE = 0,
     NUMBER = 1,
-    IDENT = 2,
+    IDENTIFIER = 2,
     STRING = 3,
     // Keywords.
-    LABEL = 101,
+    LABEL = 101,    
     GOTO = 102,
     PRINT = 103,
     INPUT = 104,
