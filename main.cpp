@@ -1,28 +1,35 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 #include "Tokentype.h"
 #include "Lexer.h"
 #include "Token.h"
+#include "Testing.h"
 
 #define debug cout << "I am here" << endl
 
-using namespace std;
-
 int main() {
-    string codeString;
-    ifstream infile { "code.txt" };
-    string file_contents { istreambuf_iterator<char>(infile), istreambuf_iterator<char>() };
+    std::string codeString;
+    std::ifstream infile { "code.txt" };
+    std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
 
-    cout << file_contents << endl;
+    // std::cout << file_contents << std::endl;
+
 
     Lexer lexer = Lexer(file_contents);
     Token token = lexer.getToken();
+
+    std::vector<Token> tokens;
+    tokens.push_back(token);
+
     while (token.tokenType != TokenType::_EOF) {
-        cout << token.tokenType << endl;
         token = lexer.getToken();
+        tokens.push_back(token);
     }
+
+    for (Token t : tokens) printToken(t);
 
 
 

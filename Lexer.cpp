@@ -38,51 +38,51 @@ Token Lexer::getToken() {
 
     switch (curChar) {
         case '+':
-            token = Token("+", TokenType::PLUS);
+            token = Token("+", PLUS);
             break;
         case '-':
-            token = Token("-", TokenType::MINUS);
+            token = Token("-", MINUS);
             break;
         case '*':
-            token = Token("*", TokenType::ASTERISK);
+            token = Token("*", ASTERISK);
             break;
         case '/':
-            token = Token("/" ,TokenType::SLASH);
+            token = Token("/" ,SLASH);
             break;
         case '=':
             if (peek() == '=') {
                 nextChar();
-                token = Token("==" ,TokenType::EQEQ);
+                token = Token("==" ,EQEQ);
             }
-            else token = Token("=" ,TokenType::EQ);
+            else token = Token("=" ,EQ);
             break;
         case '!':
             if (peek() == '=') {
                 nextChar();
-                token = Token("!=" ,TokenType::NOTEQ);
+                token = Token("!=" ,NOTEQ);
             }
             else terminate("! is not a valid expression");
             break;
         case '>':
             if (peek() == '=') {
                 nextChar();
-                token = Token(">=" ,TokenType::GTEQ);
+                token = Token(">=" ,GTEQ);
             }
-            else token = Token(">" ,TokenType::GT);
+            else token = Token(">" ,GT);
             break;
         case '<':
             if (peek() == '=') {
                 nextChar();
-                token = Token("<=" ,TokenType::LTEQ);
+                token = Token("<=" ,LTEQ);
             }
-            else token = Token("<" ,TokenType::LT);
+            else token = Token("<" ,LT);
             break;
 
         case '\n':
-            token = Token("\n" ,TokenType::NEWLINE);
+            token = Token("\n" ,NEWLINE);
             break;
         case '\0':
-            token = Token("\0" ,TokenType::_EOF);
+            token = Token("\0" ,_EOF);
             break;
         default:
             break;
@@ -95,15 +95,16 @@ Token Lexer::getToken() {
             int charCount = 0, startPos = curPos;
 
             while (curChar != '"') {
+                char next = peek();
                 // illegal characters
-                if (curChar == '\0' || curChar == '\n') {
+                if (next == '\0' || next == '\n') {
                     terminate("Illegal Characters in string.");
                 }
                 charCount++;
                 nextChar();
             }
 
-            token = Token(codeString.substr(startPos, charCount), TokenType::STRING);
+            token = Token(codeString.substr(startPos, charCount), STRING);
         }
 
         // numbers
@@ -123,7 +124,7 @@ Token Lexer::getToken() {
                     nextChar();
                 }
             }
-            token = Token(codeString.substr(startPos, charCount), TokenType::NUMBER);
+            token = Token(codeString.substr(startPos, charCount+1), NUMBER);
         }
 
         // Identifiers
@@ -134,9 +135,10 @@ Token Lexer::getToken() {
                 nextChar();
             }
 
-            string tokenText = codeString.substr(startPos, charCount);
+            string tokenText = codeString.substr(startPos, charCount+1);
+
             TokenType keyword = checkIfKeyword(tokenText);
-            if (keyword == TokenType::INVALID) token = Token(tokenText, TokenType::IDENTIFIER);
+            if (keyword == INVALID) token = Token(tokenText, IDENTIFIER);
             else token = Token(tokenText, keyword); 
         }
 
