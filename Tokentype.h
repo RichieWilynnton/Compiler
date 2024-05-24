@@ -8,6 +8,7 @@ enum TokenType {
     NUMBER = 1,
     IDENTIFIER = 2,
     STRING = 3,
+    SEMICOLON = 4,
     // Keywords.
     LABEL = 101,    
     GOTO = 102,
@@ -31,7 +32,16 @@ enum TokenType {
     LT = 208,
     LTEQ = 209,
     GT = 210,
-    GTEQ = 211
+    GTEQ = 211,
+    // Brackets
+    OPEN_ROUND_BRACKET = 212,
+    CLOSED_ROUND_BRACKET = 213,
+    OPEN_SQUARE_BRACKET = 214,
+    CLOSED_SQUARE_BRACKET = 215,
+    // Other Symbols
+    ARROW = 216,
+    COMMA = 217,
+    
 };
 
 #endif

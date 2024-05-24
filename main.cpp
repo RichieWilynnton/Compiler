@@ -1,12 +1,13 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-
 #include "Tokentype.h"
 #include "Lexer.h"
 #include "Token.h"
 #include "Testing.h"
+// #include "Parser.h"
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
 
 #define debug cout << "I am here" << endl
 
@@ -26,7 +27,7 @@ int main() {
         tokens.push_back(token);
     }
 
-    // for (Token t : tokens) printToken(t);
+    for (Token t : tokens) printToken(t);
     
 
 

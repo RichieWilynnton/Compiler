@@ -41,7 +41,11 @@ Token Lexer::getToken() {
             token = Token("+", PLUS);
             break;
         case '-':
-            token = Token("-", MINUS);
+            if (peek() == '>') {
+                nextChar();
+                token = Token("->", ARROW);
+            }
+            else token = Token("-", MINUS);
             break;
         case '*':
             token = Token("*", ASTERISK);
@@ -77,7 +81,22 @@ Token Lexer::getToken() {
             }
             else token = Token("<" ,LT);
             break;
-
+        case '(':
+            token = Token("(", OPEN_ROUND_BRACKET);
+            break;
+        case ')':
+            token = Token(")", CLOSED_ROUND_BRACKET);
+            break;
+        case '[':
+            token = Token("[", OPEN_SQUARE_BRACKET);
+            break;
+        case ']':
+            token = Token("]", CLOSED_SQUARE_BRACKET);
+            break;
+        case ';':
+            token = Token(";", SEMICOLON);
+        case ',':
+            token = Token(",", COMMA);
         case '\n':
             token = Token("\n" ,NEWLINE);
             break;
