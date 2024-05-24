@@ -15,12 +15,9 @@ int main() {
     std::ifstream infile { "code.txt" };
     std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
 
-    // std::cout << file_contents << std::endl;
+    Lexer lexer = Lexer(file_contents); 
 
-
-    Lexer lexer = Lexer(file_contents);
     Token token = lexer.getToken();
-
     std::vector<Token> tokens;
     tokens.push_back(token);
 
@@ -29,7 +26,8 @@ int main() {
         tokens.push_back(token);
     }
 
-    for (Token t : tokens) printToken(t);
+    // for (Token t : tokens) printToken(t);
+    
 
 
 
