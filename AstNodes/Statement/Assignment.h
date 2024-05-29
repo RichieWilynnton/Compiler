@@ -10,9 +10,9 @@
 class Assignment : public ASTNode {
     public:
         std::string variable;
-        Exp exp;
+        Exp* exp;
 
-        Assignment(std::string variable, Exp exp);
+        Assignment(std::string variable, Exp* exp) : variable(variable), exp(exp) {};
 };
 
 

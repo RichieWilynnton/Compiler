@@ -27,14 +27,15 @@ std::string TokenUtils::stringifyTokenType(TokenType type) {
         case EQ: return "EQ";
         case PLUS: return "PLUS";
         case MINUS: return "MINUS";
-        case ASTERISK: return "ASTERISK";
-        case SLASH: return "SLASH";
+        case MULT: return "ASTERISK";
+        case DIV: return "SLASH";
         case EQEQ: return "EQEQ";
         case NOTEQ: return "NOTEQ";
         case LT: return "LT";
         case LTEQ: return "LTEQ";
         case GT: return "GT";
         case GTEQ: return "GTEQ";
+        case NOT: return "NOT";
         case OPEN_ROUND_BRACKET: return "OPEN ROUND BRACKET";
         case CLOSED_ROUND_BRACKET: return "CLOSED ROUND BRACKET";
         case OPEN_SQUARE_BRACKET: return "OPEN SQUARE BRACKET";

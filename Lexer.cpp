@@ -48,10 +48,10 @@ Token Lexer::getToken() {
             else token = Token("-", MINUS);
             break;
         case '*':
-            token = Token("*", ASTERISK);
+            token = Token("*", MULT);
             break;
         case '/':
-            token = Token("/" ,SLASH);
+            token = Token("/" ,DIV);
             break;
         case '=':
             if (peek() == '=') {
@@ -65,7 +65,7 @@ Token Lexer::getToken() {
                 nextChar();
                 token = Token("!=" ,NOTEQ);
             }
-            else terminate("! is not a valid expression");
+            else token = Token("!", NOT);
             break;
         case '>':
             if (peek() == '=') {

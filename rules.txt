@@ -4,7 +4,29 @@ Assignment := Let Identifier "=" Expression
 FunctionCall := Identifier "(" Expression1 Expression2 ... ")"
 IfStatement := "if" "(" Expression ")" Statement "else" Statement
 # ForStatement, WhileStatement
-UnaryOp := "-" | "!"
-BinaryOp := "+" | "-" | "*" | "/" | "==" | "!=" | "<" | "<=" | ">" | ">=" | "&&" | "||"
+op := "!" | "+" | "-" | "*" | "/" | "==" | "!=" | "<" | "<=" | ">" | ">=" | "&&" | "||"
 Literal := Number | Char | Bool
 Exp := BinaryOp Exp Exp | UnaryOp Exp | Identifier | Number | Call String "(" Exp1 Exp2 ... ")" 
+
+
+
+----------------------------------------------------
+// This is purely the grammar used during parsing
+// Although adding and multiplying have different classifications here, they are both considered binary expressions in the output AST
+
+# Arithmetic Expressions Grammar
+Expression := Term | Term "+" Term "+" ... | Term "-" Term "-" ...
+Term := Factor | Factor "*" Factor "*" ... | Factor "/" Factor "/" ...
+Factor := Number | Identifier | "(" Expression ")"
+
+// It can't be done like below because the pemdas is from left to right. (If we try Term "+" Expression, we'll get infinite recursion)
+# Expression := Term | Expression "+" Term | Expression "-" Term
+# Term := Factor | Term "*" Factor | Term "/" Factor
+
+- As we go from Expression to Factor, we're going from low -> high precedence. Essentially, these classifications are just ways to classify a hierarchy
+
+// Again, all of these are just ways (functions) used to parse the tokens, all of them will be abstracted away into Exp in the AST
+
+Why can't I just do (Expression := Expression "+" Expression | Expression "-" Expression, ... | Literal) ?
+- Ambiguity, precedence will not be clear
+- When we're parsing, we abstract everything related to '*' and '/' (or Factor)

@@ -16,8 +16,11 @@ public:
     std::vector<Token> tokens;
 
     Parser(std::vector<Token> tokenList);
-    Program getParseTree();
-    ASTNode getStatement();
+    Program* getParseTree();
+    ASTNode* getStatement();
+    Exp* parseExpression();
+    Exp* parseTerm();
+    Exp* parseFactor();
     void validateToken(Token token, TokenType type);
     void nextToken();
     Token peek();

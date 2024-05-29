@@ -1,8 +1,8 @@
 #ifndef LIT_H
 #define LIT_H
 
-#include "ASTNode.h"
+#include "Exp.h"
 
-class Lit : public ASTNode {};
+class Lit : public Exp {};
 
 #endif

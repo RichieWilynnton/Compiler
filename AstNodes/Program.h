@@ -6,10 +6,10 @@
 #include <vector>
 
 class Program : public ASTNode {
-    std::vector<ASTNode> statements;
+    std::vector<ASTNode*> statements;
 
     public:
-        void addStatement(ASTNode node);
+        void addStatement(ASTNode* node);
 };
 
 
