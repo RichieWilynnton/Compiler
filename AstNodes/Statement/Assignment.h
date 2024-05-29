@@ -6,13 +6,14 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 
 class Assignment : public ASTNode {
     public:
         std::string variable;
-        Exp* exp;
+        std::unique_ptr<Exp> exp;
 
-        Assignment(std::string variable, Exp* exp) : variable(variable), exp(exp) {};
+        Assignment(std::string variable, std::unique_ptr<Exp> exp) : variable(variable), exp(std::move(exp)) {};
 };
 
 

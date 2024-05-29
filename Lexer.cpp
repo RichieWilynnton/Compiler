@@ -95,8 +95,10 @@ Token Lexer::getToken() {
             break;
         case ';':
             token = Token(";", SEMICOLON);
+            break;
         case ',':
             token = Token(",", COMMA);
+            break;
         case '\n':
             token = Token("\n" ,NEWLINE);
             break;

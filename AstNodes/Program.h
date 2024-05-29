@@ -4,12 +4,13 @@
 #include "ASTNode.h"
 
 #include <vector>
+#include <memory>
 
 class Program : public ASTNode {
-    std::vector<ASTNode*> statements;
+    std::vector<std::unique_ptr<ASTNode>> statements;
 
     public:
-        void addStatement(ASTNode* node);
+        void addStatement(std::unique_ptr<ASTNode>& statement);
 };
 
 

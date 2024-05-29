@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 
 class Parser {
 public:
@@ -16,11 +17,12 @@ public:
     std::vector<Token> tokens;
 
     Parser(std::vector<Token> tokenList);
-    Program* getParseTree();
-    ASTNode* getStatement();
-    Exp* parseExpression();
-    Exp* parseTerm();
-    Exp* parseFactor();
+    std::unique_ptr<Program> getParseTree();
+
+    std::unique_ptr<ASTNode> getStatement();
+    std::unique_ptr<Exp> parseExpression();
+    std::unique_ptr<Exp> parseTerm();
+    std::unique_ptr<Exp> parseFactor();
     void validateToken(Token token, TokenType type);
     void nextToken();
     Token peek();

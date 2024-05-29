@@ -16,6 +16,7 @@
 
     #include <vector>
     #include <iostream>
+    #include <memory>
 
     #define UNARY_OPS unordered_set<TokenType> {MINUS, NOT}
     #define BINARY_OPS unordered_set<TokenType> {ADD, MINUS, MULT, DIV, GT, GTEQ, LT, LTEQ, EQEQ, NOTEQ}
@@ -28,17 +29,19 @@
         nextToken();
     }
 
-    Program* Parser::getParseTree() {
-        Program* program = new Program();
+    std::unique_ptr<Program> Parser::getParseTree() {
+        std::unique_ptr<Program> program = std::make_unique<Program>();
         
         while (curToken.tokenType != EOF) {
-            ASTNode* statement = getStatement();
+            std::unique_ptr<ASTNode> statement = getStatement();
             program->addStatement(statement);
         }
+
+        return program;
     }
 
-    ASTNode* Parser::getStatement() {
-        ASTNode* ret;
+    std::unique_ptr<ASTNode> Parser::getStatement() {
+        std::unique_ptr<ASTNode> ret;
         switch (curToken.tokenType) {
             case LET:
             {
@@ -48,8 +51,8 @@
                 variable = curToken.content;
                 nextToken();
                 validateToken(curToken, EQ);
-                Exp* exp = parseExpression();
-                ret = new Assignment(variable, exp);
+                std::unique_ptr<Exp> exp = parseExpression();
+                ret = std::make_unique<Assignment> (variable, exp);
                 break;
             }
             default:
@@ -60,32 +63,32 @@
     // When do we know when to stop parsing expression?
     // 1. Newline found
     // 2. Comma found (eg. exp1, exp2, ...)
-    Exp* Parser::parseExpression(){
-        Exp* a = parseTerm();
+    std::unique_ptr<Exp> Parser::parseExpression(){
+        std::unique_ptr<Exp> a = parseTerm();
         while (true) {
             if (curToken.tokenType == PLUS) { 
-                Exp* b = parseTerm();
-                a = new PlusExp(a, b);
+                std::unique_ptr<Exp> b = parseTerm();
+                a = std::make_unique<PlusExp> (a,b);
             }
             else if (curToken.tokenType == MINUS) {
-                Exp* b = parseFactor();
-                a = new MinusExp(a, b);
+                std::unique_ptr<Exp> b = parseFactor();
+                a = std::make_unique<MinusExp> (a,b);
             }
             else return a;
         }
         
     }
     // Term := Factor | Factor "*" Factor "*" ... | Factor "/" Factor "/" ...
-    Exp* Parser::parseTerm(){
-        Exp* a = parseFactor();
+    std::unique_ptr<Exp> Parser::parseTerm(){
+        std::unique_ptr<Exp> a = parseFactor();
         while (true) {
             if (curToken.tokenType == MULT) { 
-                Exp* b = parseFactor();
-                a = new MultExp(a, b);
+                std::unique_ptr<Exp> b = parseFactor();
+                a = std::make_unique<MultExp> (a,b);
             }
             else if (curToken.tokenType == DIV) {
-                Exp* b = parseFactor();
-                a = new DivExp(a, b);
+                std::unique_ptr<Exp> b = parseFactor();
+                a = std::make_unique<DivExp> (a,b);
             }
             else return a;
         }
@@ -93,21 +96,19 @@
     }
         
     // Factor := Number | Identifier | "(" Expression ")"
-    Exp* Parser::parseFactor() {
-        Exp* ret;
+    std::unique_ptr<Exp> Parser::parseFactor() {
+        std::unique_ptr<Exp> ret;
         switch (curToken.tokenType) {
             case NUMBER:
-                ret = new NumLit(curToken.content);
+                ret = std::make_unique<NumLit> (curToken.content);
             case IDENTIFIER:
-                ret = new VarLit(curToken.content);
+                ret = std::make_unique<VarLit> (curToken.content);
             case OPEN_ROUND_BRACKET:
                 nextToken();
-                Exp* a = parseExpression();
-                if (a == nullptr) return nullptr;  
-                if (curToken.tokenType == CLOSED_ROUND_BRACKET) {
-                    ret = a;
+                std::unique_ptr<Exp> ret = parseExpression();
+                if (curToken.tokenType != CLOSED_ROUND_BRACKET) {
+                    terminate("Unclosed bracket detected");
                 }
-                else terminate("Unclosed bracket detected");
         }
         nextToken();
         return ret;
