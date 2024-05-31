@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAstNodes.a CMakeFiles/AstNodes.dir/Program.cpp.o
+/usr/bin/ranlib libAstNodes.a

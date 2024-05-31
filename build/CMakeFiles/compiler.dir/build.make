@@ -153,20 +153,6 @@ CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/Utils/TokenUtils.cpp -o CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.s
 
-CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o: CMakeFiles/compiler.dir/flags.make
-CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o: ../src/AstNodes/Program.cpp
-CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o: CMakeFiles/compiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o -MF CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o.d -o CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o -c /home/richie/Compiler/src/AstNodes/Program.cpp
-
-CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/Program.cpp > CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.i
-
-CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/Program.cpp -o CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.s
-
 # Object files for target compiler
 compiler_OBJECTS = \
 "CMakeFiles/compiler.dir/src/main.cpp.o" \
@@ -174,8 +160,7 @@ compiler_OBJECTS = \
 "CMakeFiles/compiler.dir/src/Lexer.cpp.o" \
 "CMakeFiles/compiler.dir/src/Parser.cpp.o" \
 "CMakeFiles/compiler.dir/src/Testing.cpp.o" \
-"CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o" \
-"CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o"
+"CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o"
 
 # External object files for target compiler
 compiler_EXTERNAL_OBJECTS =
@@ -186,10 +171,10 @@ compiler: CMakeFiles/compiler.dir/src/Lexer.cpp.o
 compiler: CMakeFiles/compiler.dir/src/Parser.cpp.o
 compiler: CMakeFiles/compiler.dir/src/Testing.cpp.o
 compiler: CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o
-compiler: CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o
 compiler: CMakeFiles/compiler.dir/build.make
+compiler: src/AstNodes/libAstNodes.a
 compiler: CMakeFiles/compiler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable compiler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable compiler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/compiler.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Running MyCompiler executable"
 	./compiler

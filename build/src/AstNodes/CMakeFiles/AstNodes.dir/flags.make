@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/richie/Compiler/src -I/home/richie/Compiler/src/Utils -I/home/richie/Compiler/src/AstNodes
+CXX_INCLUDES = -I/home/richie/Compiler/src/AstNodes
 
 CXX_FLAGS = -g -std=gnu++17
 

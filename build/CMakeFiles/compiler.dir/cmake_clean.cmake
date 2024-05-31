@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o"
-  "CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Keywords.cpp.o"
   "CMakeFiles/compiler.dir/src/Keywords.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Lexer.cpp.o"

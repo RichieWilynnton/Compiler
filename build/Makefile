@@ -142,29 +142,18 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
-src/AstNodes/Program.o: src/AstNodes/Program.cpp.o
-.PHONY : src/AstNodes/Program.o
+#=============================================================================
+# Target rules for targets named AstNodes
 
-# target to build an object file
-src/AstNodes/Program.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o
-.PHONY : src/AstNodes/Program.cpp.o
+# Build rule for target.
+AstNodes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AstNodes
+.PHONY : AstNodes
 
-src/AstNodes/Program.i: src/AstNodes/Program.cpp.i
-.PHONY : src/AstNodes/Program.i
-
-# target to preprocess a source file
-src/AstNodes/Program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.i
-.PHONY : src/AstNodes/Program.cpp.i
-
-src/AstNodes/Program.s: src/AstNodes/Program.cpp.s
-.PHONY : src/AstNodes/Program.s
-
-# target to generate assembly for a file
-src/AstNodes/Program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.s
-.PHONY : src/AstNodes/Program.cpp.s
+# fast build rule for target.
+AstNodes/fast:
+	$(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/build
+.PHONY : AstNodes/fast
 
 src/Keywords.o: src/Keywords.cpp.o
 .PHONY : src/Keywords.o
@@ -319,10 +308,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... AstNodes"
 	@echo "... compiler"
-	@echo "... src/AstNodes/Program.o"
-	@echo "... src/AstNodes/Program.i"
-	@echo "... src/AstNodes/Program.s"
 	@echo "... src/Keywords.o"
 	@echo "... src/Keywords.i"
 	@echo "... src/Keywords.s"

@@ -2,3 +2,6 @@
 /home/richie/Compiler/build/CMakeFiles/run.dir
 /home/richie/Compiler/build/CMakeFiles/edit_cache.dir
 /home/richie/Compiler/build/CMakeFiles/rebuild_cache.dir
+/home/richie/Compiler/build/src/AstNodes/CMakeFiles/AstNodes.dir
+/home/richie/Compiler/build/src/AstNodes/CMakeFiles/edit_cache.dir
+/home/richie/Compiler/build/src/AstNodes/CMakeFiles/rebuild_cache.dir
