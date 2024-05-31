@@ -16,7 +16,7 @@ public:
     int curPos;
     std::vector<Token> tokens;
 
-    Parser(std::vector<Token> tokenList);
+    Parser(std::vector<Token>& tokenList);
     std::unique_ptr<Program> getParseTree();
 
     std::unique_ptr<ASTNode> getStatement();
@@ -25,9 +25,7 @@ public:
     std::unique_ptr<Exp> parseFactor();
     void validateToken(Token token, TokenType type);
     void nextToken();
-    Token peek();
     void terminate(std::string msg);
 
-    
 };
 #endif

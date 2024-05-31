@@ -2,12 +2,14 @@
 #include "Lexer.h"
 #include "Token.h"
 #include "Testing.h"
-// #include "Parser.h"
+#include "Parser.h"
+#include "./AstNodes/Program.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
+#include <memory>
 
 #define debug cout << "I am here" << endl
 
@@ -27,9 +29,10 @@ int main() {
         tokens.push_back(token);
     }
 
-    for (Token t : tokens) printToken(t);
+    // for (Token t : tokens) printToken(t);
     
-
+    Parser parser = Parser(tokens);
+    std::unique_ptr<Program> ast = parser.getParseTree();
 
 
     return 0;

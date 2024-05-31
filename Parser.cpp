@@ -7,8 +7,8 @@
     #include "./Utils/TokenUtils.h"
     #include "./Statement/Assignment.h"
     #include "../AstNodes/Exp.h"
-    #include "../AstNodes/NumLit.h"
-    #include "../AstNodes/VarLit.h"
+    #include "../AstNodes/Lit/NumLit.h"
+    #include "../AstNodes/Lit/VarLit.h"
     #include "../AstNodes/BinaryExp/PlusExp.h"
     #include "../AstNodes/BinaryExp/MinusExp.h"
     #include "../AstNodes/BinaryExp/MultExp.h"
@@ -21,7 +21,7 @@
     #define UNARY_OPS unordered_set<TokenType> {MINUS, NOT}
     #define BINARY_OPS unordered_set<TokenType> {ADD, MINUS, MULT, DIV, GT, GTEQ, LT, LTEQ, EQEQ, NOTEQ}
 
-    Parser::Parser(std::vector<Token> tokenList) {
+    Parser::Parser(std::vector<Token>& tokenList) {
         tokens = tokenList;
         // curToken has default value
         curPos = -1;
@@ -56,8 +56,10 @@
                 break;
             }
             default:
+                ret = parseExpression();
                 break;
         }
+        return ret;
     }
 
     // When do we know when to stop parsing expression?
