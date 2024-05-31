@@ -1,0 +1,4 @@
+/home/richie/Compiler/build/CMakeFiles/compiler.dir
+/home/richie/Compiler/build/CMakeFiles/run.dir
+/home/richie/Compiler/build/CMakeFiles/edit_cache.dir
+/home/richie/Compiler/build/CMakeFiles/rebuild_cache.dir

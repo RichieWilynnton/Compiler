@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/main.cpp.o -c /home/richie/Compiler/src/main.cpp",
+  "file": "/home/richie/Compiler/src/main.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Keywords.cpp.o -c /home/richie/Compiler/src/Keywords.cpp",
+  "file": "/home/richie/Compiler/src/Keywords.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Lexer.cpp.o -c /home/richie/Compiler/src/Lexer.cpp",
+  "file": "/home/richie/Compiler/src/Lexer.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Parser.cpp.o -c /home/richie/Compiler/src/Parser.cpp",
+  "file": "/home/richie/Compiler/src/Parser.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Testing.cpp.o -c /home/richie/Compiler/src/Testing.cpp",
+  "file": "/home/richie/Compiler/src/Testing.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o -c /home/richie/Compiler/src/Utils/TokenUtils.cpp",
+  "file": "/home/richie/Compiler/src/Utils/TokenUtils.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/AstNodes -I/home/richie/Compiler/src/Utils -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/AstNodes/Program.cpp.o -c /home/richie/Compiler/src/AstNodes/Program.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Program.cpp"
+}
+]
