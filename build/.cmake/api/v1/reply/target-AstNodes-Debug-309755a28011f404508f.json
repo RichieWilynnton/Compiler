@@ -1,8 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "compiler"
+			"path" : "src/AstNodes/libAstNodes.a"
 		}
 	],
 	"backtrace" : 1,
@@ -10,13 +11,12 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"target_link_libraries",
+			"add_library",
 			"target_include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"src/AstNodes/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -26,19 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 14,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 24,
+				"line" : 17,
 				"parent" : 0
 			}
 		]
@@ -57,14 +51,6 @@
 			],
 			"includes" : 
 			[
-				{
-					"backtrace" : 3,
-					"path" : "/home/richie/Compiler/src"
-				},
-				{
-					"backtrace" : 3,
-					"path" : "/home/richie/Compiler/src/Utils"
-				},
 				{
 					"backtrace" : 2,
 					"path" : "/home/richie/Compiler/src/AstNodes"
@@ -86,44 +72,19 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "AstNodes::@3997da4a2e9b9d8f80e3"
-		}
-	],
-	"id" : "compiler::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "src/AstNodes/libAstNodes.a",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "compiler",
-	"nameOnDisk" : "compiler",
+	"id" : "AstNodes::@3997da4a2e9b9d8f80e3",
+	"name" : "AstNodes",
+	"nameOnDisk" : "libAstNodes.a",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "src/AstNodes",
+		"source" : "src/AstNodes"
 	},
 	"sourceGroups" : 
 	[
@@ -136,7 +97,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -145,39 +108,51 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
+			"path" : "src/AstNodes/Program.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Keywords.cpp",
+			"path" : "src/AstNodes/BinaryExp/PlusExp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Lexer.cpp",
+			"path" : "src/AstNodes/BinaryExp/MinusExp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Parser.cpp",
+			"path" : "src/AstNodes/BinaryExp/MultExp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Testing.cpp",
+			"path" : "src/AstNodes/BinaryExp/DivExp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Utils/TokenUtils.cpp",
+			"path" : "src/AstNodes/Lit/NumLit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/AstNodes/Lit/VarLit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/AstNodes/Statement/Assignment.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }

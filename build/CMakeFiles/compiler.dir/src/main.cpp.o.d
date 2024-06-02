@@ -160,7 +160,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/richie/Compiler/src/./AstNodes/ASTNode.h \
- /home/richie/Compiler/src/./AstNodes/Exp.h /usr/include/c++/11/iostream \
+ /home/richie/Compiler/src/./AstNodes/Exp.h \
+ /home/richie/Compiler/src/Generator.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

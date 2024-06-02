@@ -130,6 +130,150 @@ AstNodes/fast:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/build
 .PHONY : AstNodes/fast
 
+BinaryExp/DivExp.o: BinaryExp/DivExp.cpp.o
+.PHONY : BinaryExp/DivExp.o
+
+# target to build an object file
+BinaryExp/DivExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o
+.PHONY : BinaryExp/DivExp.cpp.o
+
+BinaryExp/DivExp.i: BinaryExp/DivExp.cpp.i
+.PHONY : BinaryExp/DivExp.i
+
+# target to preprocess a source file
+BinaryExp/DivExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.i
+.PHONY : BinaryExp/DivExp.cpp.i
+
+BinaryExp/DivExp.s: BinaryExp/DivExp.cpp.s
+.PHONY : BinaryExp/DivExp.s
+
+# target to generate assembly for a file
+BinaryExp/DivExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.s
+.PHONY : BinaryExp/DivExp.cpp.s
+
+BinaryExp/MinusExp.o: BinaryExp/MinusExp.cpp.o
+.PHONY : BinaryExp/MinusExp.o
+
+# target to build an object file
+BinaryExp/MinusExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.o
+.PHONY : BinaryExp/MinusExp.cpp.o
+
+BinaryExp/MinusExp.i: BinaryExp/MinusExp.cpp.i
+.PHONY : BinaryExp/MinusExp.i
+
+# target to preprocess a source file
+BinaryExp/MinusExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.i
+.PHONY : BinaryExp/MinusExp.cpp.i
+
+BinaryExp/MinusExp.s: BinaryExp/MinusExp.cpp.s
+.PHONY : BinaryExp/MinusExp.s
+
+# target to generate assembly for a file
+BinaryExp/MinusExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.s
+.PHONY : BinaryExp/MinusExp.cpp.s
+
+BinaryExp/MultExp.o: BinaryExp/MultExp.cpp.o
+.PHONY : BinaryExp/MultExp.o
+
+# target to build an object file
+BinaryExp/MultExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o
+.PHONY : BinaryExp/MultExp.cpp.o
+
+BinaryExp/MultExp.i: BinaryExp/MultExp.cpp.i
+.PHONY : BinaryExp/MultExp.i
+
+# target to preprocess a source file
+BinaryExp/MultExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.i
+.PHONY : BinaryExp/MultExp.cpp.i
+
+BinaryExp/MultExp.s: BinaryExp/MultExp.cpp.s
+.PHONY : BinaryExp/MultExp.s
+
+# target to generate assembly for a file
+BinaryExp/MultExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.s
+.PHONY : BinaryExp/MultExp.cpp.s
+
+BinaryExp/PlusExp.o: BinaryExp/PlusExp.cpp.o
+.PHONY : BinaryExp/PlusExp.o
+
+# target to build an object file
+BinaryExp/PlusExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o
+.PHONY : BinaryExp/PlusExp.cpp.o
+
+BinaryExp/PlusExp.i: BinaryExp/PlusExp.cpp.i
+.PHONY : BinaryExp/PlusExp.i
+
+# target to preprocess a source file
+BinaryExp/PlusExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.i
+.PHONY : BinaryExp/PlusExp.cpp.i
+
+BinaryExp/PlusExp.s: BinaryExp/PlusExp.cpp.s
+.PHONY : BinaryExp/PlusExp.s
+
+# target to generate assembly for a file
+BinaryExp/PlusExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.s
+.PHONY : BinaryExp/PlusExp.cpp.s
+
+Lit/NumLit.o: Lit/NumLit.cpp.o
+.PHONY : Lit/NumLit.o
+
+# target to build an object file
+Lit/NumLit.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o
+.PHONY : Lit/NumLit.cpp.o
+
+Lit/NumLit.i: Lit/NumLit.cpp.i
+.PHONY : Lit/NumLit.i
+
+# target to preprocess a source file
+Lit/NumLit.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.i
+.PHONY : Lit/NumLit.cpp.i
+
+Lit/NumLit.s: Lit/NumLit.cpp.s
+.PHONY : Lit/NumLit.s
+
+# target to generate assembly for a file
+Lit/NumLit.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.s
+.PHONY : Lit/NumLit.cpp.s
+
+Lit/VarLit.o: Lit/VarLit.cpp.o
+.PHONY : Lit/VarLit.o
+
+# target to build an object file
+Lit/VarLit.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o
+.PHONY : Lit/VarLit.cpp.o
+
+Lit/VarLit.i: Lit/VarLit.cpp.i
+.PHONY : Lit/VarLit.i
+
+# target to preprocess a source file
+Lit/VarLit.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.i
+.PHONY : Lit/VarLit.cpp.i
+
+Lit/VarLit.s: Lit/VarLit.cpp.s
+.PHONY : Lit/VarLit.s
+
+# target to generate assembly for a file
+Lit/VarLit.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.s
+.PHONY : Lit/VarLit.cpp.s
+
 Program.o: Program.cpp.o
 .PHONY : Program.o
 
@@ -154,6 +298,30 @@ Program.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Program.cpp.s
 .PHONY : Program.cpp.s
 
+Statement/Assignment.o: Statement/Assignment.cpp.o
+.PHONY : Statement/Assignment.o
+
+# target to build an object file
+Statement/Assignment.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o
+.PHONY : Statement/Assignment.cpp.o
+
+Statement/Assignment.i: Statement/Assignment.cpp.i
+.PHONY : Statement/Assignment.i
+
+# target to preprocess a source file
+Statement/Assignment.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.i
+.PHONY : Statement/Assignment.cpp.i
+
+Statement/Assignment.s: Statement/Assignment.cpp.s
+.PHONY : Statement/Assignment.s
+
+# target to generate assembly for a file
+Statement/Assignment.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s
+.PHONY : Statement/Assignment.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,9 +331,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AstNodes"
+	@echo "... BinaryExp/DivExp.o"
+	@echo "... BinaryExp/DivExp.i"
+	@echo "... BinaryExp/DivExp.s"
+	@echo "... BinaryExp/MinusExp.o"
+	@echo "... BinaryExp/MinusExp.i"
+	@echo "... BinaryExp/MinusExp.s"
+	@echo "... BinaryExp/MultExp.o"
+	@echo "... BinaryExp/MultExp.i"
+	@echo "... BinaryExp/MultExp.s"
+	@echo "... BinaryExp/PlusExp.o"
+	@echo "... BinaryExp/PlusExp.i"
+	@echo "... BinaryExp/PlusExp.s"
+	@echo "... Lit/NumLit.o"
+	@echo "... Lit/NumLit.i"
+	@echo "... Lit/NumLit.s"
+	@echo "... Lit/VarLit.o"
+	@echo "... Lit/VarLit.i"
+	@echo "... Lit/VarLit.s"
 	@echo "... Program.o"
 	@echo "... Program.i"
 	@echo "... Program.s"
+	@echo "... Statement/Assignment.o"
+	@echo "... Statement/Assignment.i"
+	@echo "... Statement/Assignment.s"
 .PHONY : help
 
 

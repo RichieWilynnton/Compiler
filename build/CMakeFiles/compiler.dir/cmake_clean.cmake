@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/compiler.dir/src/Generator.cpp.o"
+  "CMakeFiles/compiler.dir/src/Generator.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Keywords.cpp.o"
   "CMakeFiles/compiler.dir/src/Keywords.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Lexer.cpp.o"

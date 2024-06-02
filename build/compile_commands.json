@@ -26,6 +26,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/Utils -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Generator.cpp.o -c /home/richie/Compiler/src/Generator.cpp",
+  "file": "/home/richie/Compiler/src/Generator.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/Utils -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o -c /home/richie/Compiler/src/Utils/TokenUtils.cpp",
   "file": "/home/richie/Compiler/src/Utils/TokenUtils.cpp"
 },
@@ -33,5 +38,40 @@
   "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Program.cpp.o -c /home/richie/Compiler/src/AstNodes/Program.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Program.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/PlusExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/PlusExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/MinusExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/MinusExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/MultExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/MultExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/NumLit.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Lit/NumLit.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp"
 }
 ]

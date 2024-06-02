@@ -155,6 +155,30 @@ AstNodes/fast:
 	$(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/build
 .PHONY : AstNodes/fast
 
+src/Generator.o: src/Generator.cpp.o
+.PHONY : src/Generator.o
+
+# target to build an object file
+src/Generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Generator.cpp.o
+.PHONY : src/Generator.cpp.o
+
+src/Generator.i: src/Generator.cpp.i
+.PHONY : src/Generator.i
+
+# target to preprocess a source file
+src/Generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Generator.cpp.i
+.PHONY : src/Generator.cpp.i
+
+src/Generator.s: src/Generator.cpp.s
+.PHONY : src/Generator.s
+
+# target to generate assembly for a file
+src/Generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Generator.cpp.s
+.PHONY : src/Generator.cpp.s
+
 src/Keywords.o: src/Keywords.cpp.o
 .PHONY : src/Keywords.o
 
@@ -310,6 +334,9 @@ help:
 	@echo "... run"
 	@echo "... AstNodes"
 	@echo "... compiler"
+	@echo "... src/Generator.o"
+	@echo "... src/Generator.i"
+	@echo "... src/Generator.s"
 	@echo "... src/Keywords.o"
 	@echo "... src/Keywords.i"
 	@echo "... src/Keywords.s"
