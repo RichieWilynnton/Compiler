@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/Program.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o"
   "CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o"
+  "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o.d"
   "libAstNodes.a"
   "libAstNodes.pdb"
 )

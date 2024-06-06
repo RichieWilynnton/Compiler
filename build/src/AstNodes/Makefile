@@ -322,6 +322,30 @@ Statement/Assignment.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s
 .PHONY : Statement/Assignment.cpp.s
 
+UnaryExp/NegExp.o: UnaryExp/NegExp.cpp.o
+.PHONY : UnaryExp/NegExp.o
+
+# target to build an object file
+UnaryExp/NegExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o
+.PHONY : UnaryExp/NegExp.cpp.o
+
+UnaryExp/NegExp.i: UnaryExp/NegExp.cpp.i
+.PHONY : UnaryExp/NegExp.i
+
+# target to preprocess a source file
+UnaryExp/NegExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.i
+.PHONY : UnaryExp/NegExp.cpp.i
+
+UnaryExp/NegExp.s: UnaryExp/NegExp.cpp.s
+.PHONY : UnaryExp/NegExp.s
+
+# target to generate assembly for a file
+UnaryExp/NegExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s
+.PHONY : UnaryExp/NegExp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -355,6 +379,9 @@ help:
 	@echo "... Statement/Assignment.o"
 	@echo "... Statement/Assignment.i"
 	@echo "... Statement/Assignment.s"
+	@echo "... UnaryExp/NegExp.o"
+	@echo "... UnaryExp/NegExp.i"
+	@echo "... UnaryExp/NegExp.s"
 .PHONY : help
 
 

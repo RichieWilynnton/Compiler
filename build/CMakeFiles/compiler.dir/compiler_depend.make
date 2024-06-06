@@ -794,6 +794,9 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/BinaryExp/MinusExp.h \
   ../src/AstNodes/BinaryExp/MultExp.h \
   ../src/AstNodes/BinaryExp/DivExp.h \
+  ../src/AstNodes/UnaryExp/NegExp.h \
+  ../src/AstNodes/UnaryExp/UnaryExp.h \
+  ../src/AstNodes/Exp.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -1398,6 +1401,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 ../src/main.cpp:
 
+../src/AstNodes/UnaryExp/UnaryExp.h:
+
 ../src/AstNodes/BinaryExp/PlusExp.h:
 
 ../src/AstNodes/Lit/VarLit.h:
@@ -1717,6 +1722,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
 /usr/include/c++/11/ext/type_traits.h:
+
+../src/AstNodes/UnaryExp/NegExp.h:
 
 /usr/include/c++/11/debug/debug.h:
 

@@ -73,5 +73,10 @@
   "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp"
 }
 ]

@@ -798,6 +798,9 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/AstNodes/BinaryExp/MinusExp.h
  /home/richie/Compiler/src/AstNodes/BinaryExp/MultExp.h
  /home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.h
+ /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.h
+ /home/richie/Compiler/src/AstNodes/UnaryExp/UnaryExp.h
+ /home/richie/Compiler/src/AstNodes/Exp.h
  /usr/include/c++/11/iostream
  /usr/include/c++/11/ostream
  /usr/include/c++/11/ios
