@@ -4,6 +4,7 @@
 #include "Testing.h"
 #include "Parser.h"
 #include "./AstNodes/Program.h"
+#include "Generator.h"
 
 #include <iostream>
 #include <fstream>
@@ -33,7 +34,11 @@ int main() {
     
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
-
+    // std::cout << ast->printNode() << '\n'; 
+    
+    Generator generator = Generator(ast);
+    std::string file = generator.generateFile();
+    std::cout << file << '\n';  
 
     return 0;
 }

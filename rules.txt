@@ -17,7 +17,7 @@ Exp := BinaryOp Exp Exp | UnaryOp Exp | Identifier | Number | Call String "(" Ex
 # Arithmetic Expressions Grammar
 Expression := Term | Term "+" Term "+" ... | Term "-" Term "-" ...
 Term := Factor | Factor "*" Factor "*" ... | Factor "/" Factor "/" ...
-Factor := Number | Identifier | "(" Expression ")"
+Factor := Number | Identifier | "(" Expression ")" | NegExp Factor
 
 // It can't be done like below because the pemdas is from left to right. (If we try Term "+" Expression, we'll get infinite recursion)
 # Expression := Term | Expression "+" Term | Expression "-" Term

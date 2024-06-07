@@ -8,8 +8,12 @@
 class VarLit : public Lit {
     public:
         std::string name;
+        
+        VarLit(std::string name);
+        std::string genCode() override;
+        std::string printNode() override;
+        void inferType() override;
 
-        VarLit(std::string name = "") : name(name) {}
 };
 
 #endif

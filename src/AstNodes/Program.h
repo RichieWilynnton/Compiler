@@ -5,12 +5,14 @@
 
 #include <vector>
 #include <memory>
+#include <string>
 
 class Program : public ASTNode {
-    std::vector<std::unique_ptr<ASTNode>> statements;
-
     public:
+        std::vector<std::unique_ptr<ASTNode>> statements;
         void addStatement(std::unique_ptr<ASTNode>& statement);
+        std::string genCode() override;
+        std::string printNode() override;
 };
 
 

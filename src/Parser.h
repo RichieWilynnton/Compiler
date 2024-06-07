@@ -25,7 +25,7 @@ public:
     std::unique_ptr<Exp> parseExpression();
     std::unique_ptr<Exp> parseTerm();
     std::unique_ptr<Exp> parseFactor();
-    void validateToken(Token token, TokenType type);
+    Token validateToken(TokenType type);
     void nextToken();
     void terminate(std::string msg);
 

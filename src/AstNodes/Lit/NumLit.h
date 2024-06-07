@@ -9,7 +9,12 @@ class NumLit : public Lit {
     public:
         std::string content;
 
-        NumLit(std::string content = "") : content(content) {}
+        NumLit(std::string content);
+        std::string genCode() override;
+        std::string printNode() override;
+        void inferType() override;
+
+
 };
 
 #endif

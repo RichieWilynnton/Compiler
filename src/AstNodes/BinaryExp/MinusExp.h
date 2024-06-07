@@ -6,6 +6,10 @@
 class MinusExp : public BinaryExp {
     public:
         using BinaryExp::BinaryExp;
+        std::string genCode() override; 
+        std::string printNode() override;
+        void inferType() override;
+
 };
 
 #endif

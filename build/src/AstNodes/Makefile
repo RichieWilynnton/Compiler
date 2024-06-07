@@ -130,6 +130,30 @@ AstNodes/fast:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/build
 .PHONY : AstNodes/fast
 
+BinaryExp/BinaryExp.o: BinaryExp/BinaryExp.cpp.o
+.PHONY : BinaryExp/BinaryExp.o
+
+# target to build an object file
+BinaryExp/BinaryExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o
+.PHONY : BinaryExp/BinaryExp.cpp.o
+
+BinaryExp/BinaryExp.i: BinaryExp/BinaryExp.cpp.i
+.PHONY : BinaryExp/BinaryExp.i
+
+# target to preprocess a source file
+BinaryExp/BinaryExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.i
+.PHONY : BinaryExp/BinaryExp.cpp.i
+
+BinaryExp/BinaryExp.s: BinaryExp/BinaryExp.cpp.s
+.PHONY : BinaryExp/BinaryExp.s
+
+# target to generate assembly for a file
+BinaryExp/BinaryExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.s
+.PHONY : BinaryExp/BinaryExp.cpp.s
+
 BinaryExp/DivExp.o: BinaryExp/DivExp.cpp.o
 .PHONY : BinaryExp/DivExp.o
 
@@ -225,6 +249,30 @@ BinaryExp/PlusExp.s: BinaryExp/PlusExp.cpp.s
 BinaryExp/PlusExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.s
 .PHONY : BinaryExp/PlusExp.cpp.s
+
+DataType.o: DataType.cpp.o
+.PHONY : DataType.o
+
+# target to build an object file
+DataType.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/DataType.cpp.o
+.PHONY : DataType.cpp.o
+
+DataType.i: DataType.cpp.i
+.PHONY : DataType.i
+
+# target to preprocess a source file
+DataType.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/DataType.cpp.i
+.PHONY : DataType.cpp.i
+
+DataType.s: DataType.cpp.s
+.PHONY : DataType.s
+
+# target to generate assembly for a file
+DataType.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/DataType.cpp.s
+.PHONY : DataType.cpp.s
 
 Lit/NumLit.o: Lit/NumLit.cpp.o
 .PHONY : Lit/NumLit.o
@@ -322,6 +370,30 @@ Statement/Assignment.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s
 .PHONY : Statement/Assignment.cpp.s
 
+TypeError.o: TypeError.cpp.o
+.PHONY : TypeError.o
+
+# target to build an object file
+TypeError.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/TypeError.cpp.o
+.PHONY : TypeError.cpp.o
+
+TypeError.i: TypeError.cpp.i
+.PHONY : TypeError.i
+
+# target to preprocess a source file
+TypeError.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/TypeError.cpp.i
+.PHONY : TypeError.cpp.i
+
+TypeError.s: TypeError.cpp.s
+.PHONY : TypeError.s
+
+# target to generate assembly for a file
+TypeError.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/TypeError.cpp.s
+.PHONY : TypeError.cpp.s
+
 UnaryExp/NegExp.o: UnaryExp/NegExp.cpp.o
 .PHONY : UnaryExp/NegExp.o
 
@@ -346,6 +418,30 @@ UnaryExp/NegExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s
 .PHONY : UnaryExp/NegExp.cpp.s
 
+UnaryExp/UnaryExp.o: UnaryExp/UnaryExp.cpp.o
+.PHONY : UnaryExp/UnaryExp.o
+
+# target to build an object file
+UnaryExp/UnaryExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o
+.PHONY : UnaryExp/UnaryExp.cpp.o
+
+UnaryExp/UnaryExp.i: UnaryExp/UnaryExp.cpp.i
+.PHONY : UnaryExp/UnaryExp.i
+
+# target to preprocess a source file
+UnaryExp/UnaryExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.i
+.PHONY : UnaryExp/UnaryExp.cpp.i
+
+UnaryExp/UnaryExp.s: UnaryExp/UnaryExp.cpp.s
+.PHONY : UnaryExp/UnaryExp.s
+
+# target to generate assembly for a file
+UnaryExp/UnaryExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.s
+.PHONY : UnaryExp/UnaryExp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -355,6 +451,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AstNodes"
+	@echo "... BinaryExp/BinaryExp.o"
+	@echo "... BinaryExp/BinaryExp.i"
+	@echo "... BinaryExp/BinaryExp.s"
 	@echo "... BinaryExp/DivExp.o"
 	@echo "... BinaryExp/DivExp.i"
 	@echo "... BinaryExp/DivExp.s"
@@ -367,6 +466,9 @@ help:
 	@echo "... BinaryExp/PlusExp.o"
 	@echo "... BinaryExp/PlusExp.i"
 	@echo "... BinaryExp/PlusExp.s"
+	@echo "... DataType.o"
+	@echo "... DataType.i"
+	@echo "... DataType.s"
 	@echo "... Lit/NumLit.o"
 	@echo "... Lit/NumLit.i"
 	@echo "... Lit/NumLit.s"
@@ -379,9 +481,15 @@ help:
 	@echo "... Statement/Assignment.o"
 	@echo "... Statement/Assignment.i"
 	@echo "... Statement/Assignment.s"
+	@echo "... TypeError.o"
+	@echo "... TypeError.i"
+	@echo "... TypeError.s"
 	@echo "... UnaryExp/NegExp.o"
 	@echo "... UnaryExp/NegExp.i"
 	@echo "... UnaryExp/NegExp.s"
+	@echo "... UnaryExp/UnaryExp.o"
+	@echo "... UnaryExp/UnaryExp.i"
+	@echo "... UnaryExp/UnaryExp.s"
 .PHONY : help
 
 
