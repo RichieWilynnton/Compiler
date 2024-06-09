@@ -1,7 +1,6 @@
 #include "StringLit.h"
 
 #include <string>
-#include <iostream>
 
 StringLit::StringLit(std::string content = "") : content(content) {
     inferType();
@@ -9,7 +8,7 @@ StringLit::StringLit(std::string content = "") : content(content) {
 
 
 std::string StringLit::genCode() {
-    return content;
+    return "\"" + content + "\"";
 }
 
 std::string StringLit::printNode() {
@@ -17,7 +16,5 @@ std::string StringLit::printNode() {
 }
 
 void StringLit::inferType() {
-
     type = DataType::STRING;
-    std::cout << "here\n";
 }

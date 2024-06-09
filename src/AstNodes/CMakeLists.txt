@@ -11,7 +11,7 @@ add_library(AstNodes
     BinaryExp/MultExp.cpp
     BinaryExp/DivExp.cpp
     UnaryExp/NegExp.cpp
-    FunctionExp/Print.cpp
+    FunctionExp/PrintExp.cpp
     Lit/NumLit.cpp
     Lit/VarLit.cpp
     Lit/StringLit.cpp

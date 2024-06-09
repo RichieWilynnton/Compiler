@@ -250,29 +250,29 @@ DataType.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/DataType.cpp.s
 .PHONY : DataType.cpp.s
 
-FunctionExp/Print.o: FunctionExp/Print.cpp.o
-.PHONY : FunctionExp/Print.o
+FunctionExp/PrintExp.o: FunctionExp/PrintExp.cpp.o
+.PHONY : FunctionExp/PrintExp.o
 
 # target to build an object file
-FunctionExp/Print.cpp.o:
-	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o
-.PHONY : FunctionExp/Print.cpp.o
+FunctionExp/PrintExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o
+.PHONY : FunctionExp/PrintExp.cpp.o
 
-FunctionExp/Print.i: FunctionExp/Print.cpp.i
-.PHONY : FunctionExp/Print.i
+FunctionExp/PrintExp.i: FunctionExp/PrintExp.cpp.i
+.PHONY : FunctionExp/PrintExp.i
 
 # target to preprocess a source file
-FunctionExp/Print.cpp.i:
-	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.i
-.PHONY : FunctionExp/Print.cpp.i
+FunctionExp/PrintExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.i
+.PHONY : FunctionExp/PrintExp.cpp.i
 
-FunctionExp/Print.s: FunctionExp/Print.cpp.s
-.PHONY : FunctionExp/Print.s
+FunctionExp/PrintExp.s: FunctionExp/PrintExp.cpp.s
+.PHONY : FunctionExp/PrintExp.s
 
 # target to generate assembly for a file
-FunctionExp/Print.cpp.s:
-	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.s
-.PHONY : FunctionExp/Print.cpp.s
+FunctionExp/PrintExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s
+.PHONY : FunctionExp/PrintExp.cpp.s
 
 Lit/NumLit.o: Lit/NumLit.cpp.o
 .PHONY : Lit/NumLit.o
@@ -466,9 +466,9 @@ help:
 	@echo "... DataType.o"
 	@echo "... DataType.i"
 	@echo "... DataType.s"
-	@echo "... FunctionExp/Print.o"
-	@echo "... FunctionExp/Print.i"
-	@echo "... FunctionExp/Print.s"
+	@echo "... FunctionExp/PrintExp.o"
+	@echo "... FunctionExp/PrintExp.i"
+	@echo "... FunctionExp/PrintExp.s"
 	@echo "... Lit/NumLit.o"
 	@echo "... Lit/NumLit.i"
 	@echo "... Lit/NumLit.s"

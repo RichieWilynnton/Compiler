@@ -12,7 +12,6 @@
 #include <vector>
 #include <memory>
 
-#define debug cout << "I am here" << endl
 
 int main() {
     std::string codeString;

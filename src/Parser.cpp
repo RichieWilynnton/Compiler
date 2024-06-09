@@ -16,6 +16,7 @@
 #include "./AstNodes/BinaryExp/MultExp.h"
 #include "./AstNodes/BinaryExp/DivExp.h"
 #include "./AstNodes/UnaryExp/NegExp.h"
+#include "./AstNodes/FunctionExp/PrintExp.h"
 #include "DataType.h"
 
 #include <vector>
@@ -53,6 +54,14 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             validateToken(TokenType::EQ);
             std::unique_ptr<Exp> exp = parseExpression();
             ret = std::make_unique<Assignment> (variable, exp);
+            break;
+        }
+        // Print is the only exception when it comes to functions, rest gets evaluated in parseExpression
+        case TokenType::PRINT:
+        {
+            nextToken();
+            std::unique_ptr<Exp> exp = parseExpression();
+            ret = std::make_unique<PrintExp> (exp);
             break;
         }
         default:

@@ -10,7 +10,7 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
     if (keywords.empty()){
         keywords["label"] = TokenType::LABEL;
         keywords["goto"] = TokenType::GOTO;
-        keywords["print"] = TokenType::PRINT;
+        keywords["output"] = TokenType::PRINT;
         keywords["input"] = TokenType::INPUT;
         keywords["let"] = TokenType::LET;
         keywords["if"] = TokenType::IF;

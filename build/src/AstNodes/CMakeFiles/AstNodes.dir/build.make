@@ -181,19 +181,19 @@ src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s
 
-src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
-src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o: ../src/AstNodes/FunctionExp/Print.cpp
-src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o"
-	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o -MF CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o.d -o CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/Print.cpp
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o: ../src/AstNodes/FunctionExp/PrintExp.cpp
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o -MF CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o.d -o CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp
 
-src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.i"
-	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/FunctionExp/Print.cpp > CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.i
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.i"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp > CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.i
 
-src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.s"
-	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/FunctionExp/Print.cpp -o CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.s
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp -o CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o: ../src/AstNodes/Lit/NumLit.cpp
@@ -261,7 +261,7 @@ AstNodes_OBJECTS = \
 "CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o" \
-"CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o" \
+"CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o" \
@@ -278,7 +278,7 @@ src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/Minus
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o
-src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o
+src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o
