@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o"
-  "CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o"
   "CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.o"
@@ -11,8 +9,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/DataType.cpp.o"
   "CMakeFiles/AstNodes.dir/DataType.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o"
+  "CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o"
   "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o"
+  "CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o"
   "CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Program.cpp.o"
@@ -23,8 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/TypeError.cpp.o.d"
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o"
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o.d"
-  "CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o"
-  "CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o.d"
   "libAstNodes.a"
   "libAstNodes.pdb"
 )

@@ -1,11 +1,11 @@
 #ifndef VARLIT_H
 #define VARLIT_H
 
-#include "Lit.h"
+#include "../Exp.h"
 
 #include <string>
 
-class VarLit : public Lit {
+class VarLit : public Exp {
     public:
         std::string name;
         

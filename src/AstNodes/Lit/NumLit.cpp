@@ -11,9 +11,9 @@ std::string NumLit::genCode() {
 }
 
 std::string NumLit::printNode() {
-    return "NumLit " + content;
+    return "(NumLit " + content + ')';
 }
 
 void NumLit::inferType() { 
-    type = NUMBER;    
+    type = DataType::NUMBER;    
 }

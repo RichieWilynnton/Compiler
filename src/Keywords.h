@@ -5,6 +5,6 @@
 #include <unordered_map>
 #include "Tokentype.h"
 
-TokenType checkIfKeyword(const std::string& identifier);
+TokenType::TokenType checkIfKeyword(const std::string& identifier);
 
 #endif

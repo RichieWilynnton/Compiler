@@ -1,14 +1,14 @@
 #pragma once
 
-#include "Lit.h"
+#include "../Exp.h"
 
 #include <string>
 
-class StringLit : public Lit {
+class StringLit : public Exp {
     public:
         std::string content;
 
-        StringLit(std::string content = "");
+        StringLit(std::string content);
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;

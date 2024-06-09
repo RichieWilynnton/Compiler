@@ -3,7 +3,6 @@
 #include "Lexer.h"
 #include "./AstNodes/ASTNode.h"
 #include "./AstNodes/Program.h"
-#include "Tokentype.h"
 #include "Token.h"
 #include "./AstNodes/DataType.h"
 #include "./Utils/TokenUtils.h"
@@ -17,17 +16,14 @@
 #include "./AstNodes/BinaryExp/MultExp.h"
 #include "./AstNodes/BinaryExp/DivExp.h"
 #include "./AstNodes/UnaryExp/NegExp.h"
-#include "./AstNodes/UnaryExp/UnaryExp.h"
+#include "DataType.h"
 
 #include <vector>
 #include <iostream>
 #include <memory>
-#include <iostream>
-
 
 Parser::Parser(std::vector<Token>& tokenList) {
     tokens = tokenList;
-    // curToken has default value
     curPos = -1;
 
     nextToken();
@@ -36,7 +32,7 @@ Parser::Parser(std::vector<Token>& tokenList) {
 std::unique_ptr<Program> Parser::getParseTree() {
     std::unique_ptr<Program> program = std::make_unique<Program>();
     
-    while (curToken.tokenType != EOF) {
+    while (curToken.tokenType != TokenType::_EOF) {
         std::unique_ptr<ASTNode> statement = getStatement();
         if (statement) program->addStatement(statement);
         // newline
@@ -49,12 +45,12 @@ std::unique_ptr<Program> Parser::getParseTree() {
 std::unique_ptr<ASTNode> Parser::getStatement() {
     std::unique_ptr<ASTNode> ret = nullptr;
     switch (curToken.tokenType) {
-        case LET:
+        case TokenType::LET:
         {
             std::string variable;
             nextToken();
-            variable = validateToken(IDENTIFIER).content;
-            validateToken(EQ);
+            variable = validateToken(TokenType::IDENTIFIER).content;
+            validateToken(TokenType::EQ);
             std::unique_ptr<Exp> exp = parseExpression();
             ret = std::make_unique<Assignment> (variable, exp);
             break;
@@ -73,67 +69,63 @@ std::unique_ptr<Exp> Parser::parseExpression(){
     std::unique_ptr<Exp> a = parseTerm();
 
     while (true) {
-
-        if (curToken.tokenType == PLUS) { 
+        if (curToken.tokenType == TokenType::PLUS) { 
             nextToken();
             std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<PlusExp> (a,b);
+            a = std::make_unique<PlusExp> (a, b);
         }
-        else if (curToken.tokenType == MINUS) {
+        else if (curToken.tokenType == TokenType::MINUS) {
             nextToken();
             std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<MinusExp> (a,b);
+            a = std::make_unique<MinusExp> (a, b);
         }
-    
         else return a;
     }
-    
 }
+
 // Term := Factor | Factor "*" Factor "*" ... | Factor "/" Factor "/" ...
-std::unique_ptr<Exp> Parser::parseTerm(){
+std::unique_ptr<Exp> Parser::parseTerm() {
     std::unique_ptr<Exp> a = parseFactor();
     while (true) {
-        if (curToken.tokenType == MULT) { 
+        if (curToken.tokenType == TokenType::MULT) { 
             nextToken();
             std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<MultExp> (a,b);
+            a = std::make_unique<MultExp> (a, b);
         }
-        else if (curToken.tokenType == DIV) {
+        else if (curToken.tokenType == TokenType::DIV) {
             nextToken();
             std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<DivExp> (a,b);
+            a = std::make_unique<DivExp> (a, b);
         }
         else return a;
     }
-    
 }
-    
+
 // Factor := Number | Identifier | "(" Expression ")" | NegExp Factor
 std::unique_ptr<Exp> Parser::parseFactor() {
     std::unique_ptr<Exp> ret;
     switch (curToken.tokenType) {
-        case NUMBER:
+        case TokenType::NUMBER:
             ret = std::make_unique<NumLit> (curToken.content);
             nextToken();
             break;
-        case IDENTIFIER:
+        case TokenType::IDENTIFIER:
             ret = std::make_unique<VarLit> (curToken.content);
             nextToken();
             break;
-        case STRING:
+        case TokenType::STRING:
             ret = std::make_unique<StringLit> (curToken.content);
             nextToken();
             break;
-        case OPEN_ROUND_BRACKET:
+        case TokenType::OPEN_ROUND_BRACKET:
             nextToken();
             ret = parseExpression();
-
-            if (curToken.tokenType != CLOSED_ROUND_BRACKET) {
+            if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
                 terminate("Unclosed bracket detected");
             }
             nextToken();
             break;
-        case MINUS:
+        case TokenType::MINUS:
         {
             nextToken();
             std::unique_ptr<Exp> a = parseFactor();
@@ -142,13 +134,12 @@ std::unique_ptr<Exp> Parser::parseFactor() {
         }
         default:
             terminate("Syntax Error!");
-            
     }
 
     return ret;
 }
 
-Token Parser::validateToken(TokenType type) {
+Token Parser::validateToken(TokenType::TokenType type) {
     if (curToken.tokenType != type) {
         terminate("Expected " + TokenUtils::stringifyTokenType(type) + ", got " + TokenUtils::stringifyTokenType(curToken.tokenType) + " instead.");
     }
@@ -161,7 +152,6 @@ void Parser::nextToken() {
     curPos += 1;
     curToken = tokens[curPos];
 }
-
 
 void Parser::terminate(std::string msg) {
     std::cerr << "Error during parsing: " + msg << std::endl;

@@ -6,15 +6,15 @@ add_library(AstNodes
     Program.cpp
     DataType.cpp
     TypeError.cpp
-    BinaryExp/BinaryExp.cpp
     BinaryExp/PlusExp.cpp
     BinaryExp/MinusExp.cpp
     BinaryExp/MultExp.cpp
     BinaryExp/DivExp.cpp
-    UnaryExp/UnaryExp.cpp
     UnaryExp/NegExp.cpp
+    FunctionExp/Print.cpp
     Lit/NumLit.cpp
     Lit/VarLit.cpp
+    Lit/StringLit.cpp
     Statement/Assignment.cpp
 )
 

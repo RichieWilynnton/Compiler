@@ -1,11 +1,11 @@
 #ifndef NUMLIT_H
 #define NUMLIT_H
 
-#include "Lit.h"
+#include "../Exp.h"
 
 #include <string>
 
-class NumLit : public Lit {
+class NumLit : public Exp {
     public:
         std::string content;
 

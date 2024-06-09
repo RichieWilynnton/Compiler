@@ -1,8 +1,8 @@
 #pragma once
-#include "Function.h"
+#include "../Exp.h"
 #include <string>
 
-class Print : Function {
+class Print : Exp {
     std::string content;
     std::string genCode() override;
     std::string printNode() override; 

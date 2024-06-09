@@ -136,12 +136,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/AstNodes/BinaryExp/BinaryExp.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/AstNodes/BinaryExp/PlusExp.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -166,13 +160,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/AstNodes/UnaryExp/UnaryExp.cpp",
+			"path" : "src/AstNodes/UnaryExp/NegExp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/AstNodes/UnaryExp/NegExp.cpp",
+			"path" : "src/AstNodes/FunctionExp/Print.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -185,6 +179,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/AstNodes/Lit/VarLit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/AstNodes/Lit/StringLit.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

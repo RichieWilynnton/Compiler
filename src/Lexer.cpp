@@ -4,18 +4,16 @@
 #include "Keywords.h"
 #include <string>
 #include <stdexcept>
-using namespace std;
 #include <iostream>
-#define db cout << "debug" << endl;
 
-Lexer:: Lexer(std::string code) {
+Lexer::Lexer(std::string code) {
     codeString = code + '\n'; // \n to deal with whitespaces & comments at end of program
     curChar = ' '; // Placeholder
     curPos = -1;
     nextChar();
-};
+}
 
-void Lexer:: nextChar() {
+void Lexer::nextChar() {
     curPos += 1;
     if (curPos >= codeString.size()) {
         curChar = '\0';
@@ -25,9 +23,9 @@ void Lexer:: nextChar() {
     }
 }
 
-char Lexer:: peek() {
+char Lexer::peek() {
     if (curPos + 1 >= codeString.size()) return '\0';
-    return codeString[curPos+1];
+    return codeString[curPos + 1];
 }
 
 Token Lexer::getToken() {
@@ -38,72 +36,72 @@ Token Lexer::getToken() {
 
     switch (curChar) {
         case '+':
-            token = Token("+", PLUS);
+            token = Token("+", TokenType::PLUS);
             break;
         case '-':
             if (peek() == '>') {
                 nextChar();
-                token = Token("->", ARROW);
+                token = Token("->", TokenType::ARROW);
             }
-            else token = Token("-", MINUS);
+            else token = Token("-", TokenType::MINUS);
             break;
         case '*':
-            token = Token("*", MULT);
+            token = Token("*", TokenType::MULT);
             break;
         case '/':
-            token = Token("/" ,DIV);
+            token = Token("/", TokenType::DIV);
             break;
         case '=':
             if (peek() == '=') {
                 nextChar();
-                token = Token("==" ,EQEQ);
+                token = Token("==", TokenType::EQEQ);
             }
-            else token = Token("=" ,EQ);
+            else token = Token("=", TokenType::EQ);
             break;
         case '!':
             if (peek() == '=') {
                 nextChar();
-                token = Token("!=" ,NOTEQ);
+                token = Token("!=", TokenType::NOTEQ);
             }
-            else token = Token("!", NOT);
+            else token = Token("!", TokenType::NOT);
             break;
         case '>':
             if (peek() == '=') {
                 nextChar();
-                token = Token(">=" ,GTEQ);
+                token = Token(">=", TokenType::GTEQ);
             }
-            else token = Token(">" ,GT);
+            else token = Token(">", TokenType::GT);
             break;
         case '<':
             if (peek() == '=') {
                 nextChar();
-                token = Token("<=" ,LTEQ);
+                token = Token("<=", TokenType::LTEQ);
             }
-            else token = Token("<" ,LT);
+            else token = Token("<", TokenType::LT);
             break;
         case '(':
-            token = Token("(", OPEN_ROUND_BRACKET);
+            token = Token("(", TokenType::OPEN_ROUND_BRACKET);
             break;
         case ')':
-            token = Token(")", CLOSED_ROUND_BRACKET);
+            token = Token(")", TokenType::CLOSED_ROUND_BRACKET);
             break;
         case '[':
-            token = Token("[", OPEN_SQUARE_BRACKET);
+            token = Token("[", TokenType::OPEN_SQUARE_BRACKET);
             break;
         case ']':
-            token = Token("]", CLOSED_SQUARE_BRACKET);
+            token = Token("]", TokenType::CLOSED_SQUARE_BRACKET);
             break;
         case ';':
-            token = Token(";", SEMICOLON);
+            token = Token(";", TokenType::SEMICOLON);
             break;
         case ',':
-            token = Token(",", COMMA);
+            token = Token(",", TokenType::COMMA);
             break;
         case '\n':
-            token = Token("\n" ,NEWLINE);
+            token = Token("\n", TokenType::NEWLINE);
             break;
         case '\0':
-            token = Token("\0" ,_EOF);
+            token = Token("\0", TokenType::_EOF);
             break;
         default:
             break;
@@ -125,7 +123,7 @@ Token Lexer::getToken() {
                 nextChar();
             }
 
-            token = Token(codeString.substr(startPos, charCount), STRING);
+            token = Token(codeString.substr(startPos, charCount), TokenType::STRING);
         }
 
         // numbers
@@ -134,7 +132,7 @@ Token Lexer::getToken() {
             while (isdigit(peek())) {
                 charCount++;
                 nextChar();
-            };
+            }
             if (peek() == '.') {
                 charCount++;
                 nextChar();
@@ -145,7 +143,7 @@ Token Lexer::getToken() {
                     nextChar();
                 }
             }
-            token = Token(codeString.substr(startPos, charCount+1), NUMBER);
+            token = Token(codeString.substr(startPos, charCount + 1), TokenType::NUMBER);
         }
 
         // Identifiers
@@ -156,11 +154,11 @@ Token Lexer::getToken() {
                 nextChar();
             }
 
-            string tokenText = codeString.substr(startPos, charCount+1);
+            std::string tokenText = codeString.substr(startPos, charCount + 1);
 
-            TokenType keyword = checkIfKeyword(tokenText);
-            if (keyword == INVALID) token = Token(tokenText, IDENTIFIER);
-            else token = Token(tokenText, keyword); 
+            TokenType::TokenType keyword = checkIfKeyword(tokenText);
+            if (keyword == TokenType::INVALID) token = Token(tokenText, TokenType::IDENTIFIER);
+            else token = Token(tokenText, keyword);
         }
 
         // error
@@ -174,15 +172,13 @@ Token Lexer::getToken() {
     return token;
 }
 
-
-
 void Lexer::skipWhitespace() {
     while (curChar == ' ' || curChar == '\t' || curChar == '\r') nextChar();
 }
 
 void Lexer::skipComment() {
     if (curChar == '#') {
-        while (curChar != '\n') nextChar(); 
+        while (curChar != '\n') nextChar();
     }
 }
 
@@ -190,4 +186,3 @@ void Lexer::terminate(std::string msg) {
     std::cerr << "Error during lexical analysis: " + msg << std::endl;
     exit(EXIT_FAILURE);
 }
-

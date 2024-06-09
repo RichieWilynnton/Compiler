@@ -131,7 +131,8 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /home/richie/Compiler/src/AstNodes/Exp.h \
- /home/richie/Compiler/src/AstNodes/ASTNode.h /usr/include/c++/11/vector \
+ /home/richie/Compiler/src/AstNodes/ASTNode.h \
+ /home/richie/Compiler/src/AstNodes/DataType.h /usr/include/c++/11/vector \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

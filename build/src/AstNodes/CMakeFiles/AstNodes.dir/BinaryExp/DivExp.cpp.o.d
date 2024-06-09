@@ -2,7 +2,6 @@ src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o: \
  /home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.cpp \
  /usr/include/stdc-predef.h \
  /home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.h \
- /home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.h \
  /home/richie/Compiler/src/AstNodes/BinaryExp/../Exp.h \
  /home/richie/Compiler/src/AstNodes/BinaryExp/../ASTNode.h \
  /usr/include/c++/11/string \
@@ -132,8 +131,12 @@ src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
- /usr/include/c++/11/bits/basic_string.tcc /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/basic_string.tcc \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../DataType.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -155,4 +158,5 @@ src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o: \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../TypeError.h

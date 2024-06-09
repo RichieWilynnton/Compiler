@@ -13,7 +13,7 @@ std::string NegExp::printNode() {
 }
 
 void NegExp::inferType() {
-    DataType expt1= exp1->type;
-    if (expt1 != NUMBER) TypeError::terminate("Expected a number, got " + dataTypeStrings[expt1] + "instead!");
-    type = NUMBER;
+    DataType::DataType expt1= exp1->type;
+    if (expt1 != DataType::NUMBER) TypeError::terminate("Expected a number, got " + DataType::dataTypeStrings[expt1] + "instead!");
+    type = DataType::NUMBER;
 }

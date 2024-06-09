@@ -1,7 +1,8 @@
 #ifndef TOKENTYPE_H
 #define TOKENTYPE_H
 
-enum TokenType {
+namespace TokenType{
+    enum TokenType {
     INVALID = -2, 
     _EOF = -1,
     NEWLINE = 0,
@@ -43,6 +44,8 @@ enum TokenType {
     ARROW = 216,
     COMMA = 217,
     
-};
+    };
+}
+
 
 #endif

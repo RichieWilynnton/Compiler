@@ -51,11 +51,6 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
-  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.cpp",
-  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.cpp"
-},
-{
-  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/PlusExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/PlusExp.cpp"
 },
@@ -76,13 +71,13 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
-  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/UnaryExp.cpp",
-  "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/UnaryExp.cpp"
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp"
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
-  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp",
-  "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp"
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/FunctionExp/Print.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/Print.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/FunctionExp/Print.cpp"
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
@@ -93,6 +88,11 @@
   "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/StringLit.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Lit/StringLit.cpp"
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",

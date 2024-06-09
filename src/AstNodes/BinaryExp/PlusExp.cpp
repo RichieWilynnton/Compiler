@@ -12,13 +12,13 @@ std::string PlusExp::printNode() {
 }
 
 void PlusExp::inferType() {
-    DataType expt1 = exp1->type;
-    DataType expt2 = exp1->type;
+    DataType::DataType expt1 = exp1->type;
+    DataType::DataType expt2 = exp2->type;
 
-    if (expt1 == NUMBER && expt2 == NUMBER) {
-        type = NUMBER;
+    if (expt1 == DataType::NUMBER && expt2 == DataType::NUMBER) {
+        type = DataType::NUMBER;
         return;
     }
-    DataType wrong = expt1 != NUMBER ? expt1 : expt2;
-    TypeError::terminate("Expected a number, got " + dataTypeStrings[wrong] + " instead!");
+    DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
+    TypeError::terminate("Expected a number, got " + DataType::dataTypeStrings[wrong] + " instead!");
 }

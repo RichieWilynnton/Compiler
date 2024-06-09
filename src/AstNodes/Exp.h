@@ -8,7 +8,7 @@
 
 class Exp : public ASTNode {
     public:
-        DataType type = UNKNOWN;
+        DataType::DataType type = DataType::UNKNOWN;
         virtual std::string genCode() = 0;
         virtual std::string printNode() = 0; 
         virtual void inferType() = 0;

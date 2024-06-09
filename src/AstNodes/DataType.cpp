@@ -1,3 +1,3 @@
 #include "DataType.h"
 
-std::vector<std::string> DataTypeNames = {"UNKNOWN", "NUMBER", "BOOLEAN", "STRING"};
+const std::vector<std::string> DataType::dataTypeStrings = {"UNKNOWN", "VOID", "NUMBER", "BOOLEAN", "STRING"};

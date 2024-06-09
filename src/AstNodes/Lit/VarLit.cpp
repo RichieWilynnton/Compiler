@@ -12,9 +12,9 @@ std::string VarLit::genCode() {
 }
 
 std::string VarLit::printNode() {
-    return "VarLit " + name;
+    return "(VarLit " + name + ")";
 }
 
 void VarLit::inferType() {
-    type = UNKNOWN;
+    type = DataType::UNKNOWN;
 }

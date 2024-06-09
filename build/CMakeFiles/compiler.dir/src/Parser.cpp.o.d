@@ -159,6 +159,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/richie/Compiler/src/./AstNodes/ASTNode.h \
  /home/richie/Compiler/src/./AstNodes/Exp.h \
+ /home/richie/Compiler/src/./AstNodes/DataType.h \
  /home/richie/Compiler/src/Lexer.h \
  /home/richie/Compiler/src/./Utils/TokenUtils.h \
  /home/richie/Compiler/src/./Utils/../Tokentype.h \
@@ -166,17 +167,15 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/AstNodes/ASTNode.h \
  /home/richie/Compiler/src/AstNodes/Exp.h \
  /home/richie/Compiler/src/./AstNodes/Lit/NumLit.h \
- /home/richie/Compiler/src/./AstNodes/Lit/Lit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/Lit/VarLit.h \
+ /home/richie/Compiler/src/./AstNodes/Lit/StringLit.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/PlusExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/BinaryExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/MinusExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/MultExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/DivExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/UnaryExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \

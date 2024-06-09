@@ -7,6 +7,6 @@
 
 class TokenUtils {
     public:
-        static std::string stringifyTokenType(TokenType type);
+        static std::string stringifyTokenType(TokenType::TokenType type);
 };
 #endif

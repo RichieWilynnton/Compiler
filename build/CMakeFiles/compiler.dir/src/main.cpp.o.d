@@ -161,6 +161,7 @@ CMakeFiles/compiler.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/richie/Compiler/src/./AstNodes/ASTNode.h \
  /home/richie/Compiler/src/./AstNodes/Exp.h \
+ /home/richie/Compiler/src/./AstNodes/DataType.h \
  /home/richie/Compiler/src/Generator.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \

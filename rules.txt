@@ -1,14 +1,6 @@
 Program := Statement[]
-Statement := Assignment | IfStatement | WhileStatement | ForStatement
-Assignment := Let Identifier "=" Expression
-FunctionCall := Identifier "(" Expression1 Expression2 ... ")"
-IfStatement := "if" "(" Expression ")" Statement "else" Statement
-# ForStatement, WhileStatement
-op := "!" | "+" | "-" | "*" | "/" | "==" | "!=" | "<" | "<=" | ">" | ">=" | "&&" | "||"
-Literal := Number | Char | Bool
-Exp := BinaryOp Exp Exp | UnaryOp Exp | Identifier | Number | Call String "(" Exp1 Exp2 ... ")" 
-
-
+Statement := Assignment | ForAssignment | IfStatement | WhileStatement
+Assignment := LET Identifier "=" Expression
 
 ----------------------------------------------------
 // This is purely the grammar used during parsing
