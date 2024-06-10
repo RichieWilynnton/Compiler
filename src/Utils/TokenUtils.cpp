@@ -10,7 +10,8 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::NUMBER: return "NUMBER";
         case TokenType::IDENTIFIER: return "IDENTIFIER";
         case TokenType::STRING: return "STRING";
-        case TokenType::SEMICOLON: return "SEMICOLON";
+        case TokenType::TRUE: return "TRUE";
+        case TokenType::FALSE: return "FALSE";
         // Keywords
         case TokenType::LABEL: return "LABEL";
         case TokenType::GOTO: return "GOTO";

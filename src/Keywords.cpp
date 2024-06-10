@@ -19,6 +19,8 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
         keywords["while"] = TokenType::WHILE;
         keywords["repeat"] = TokenType::REPEAT;
         keywords["endwhile"] = TokenType::ENDWHILE;
+        keywords["True"] = TokenType::TRUE;
+        keywords["False"] = TokenType::FALSE;
     }
     return keywords.find(identifier) != keywords.end() ? keywords[identifier] : TokenType::INVALID;
 }

@@ -29,7 +29,7 @@ int main() {
         tokens.push_back(token);
     }
 
-    // for (Token t : tokens) printToken(t);
+    for (Token t : tokens) printToken(t);
     
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();

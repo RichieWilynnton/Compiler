@@ -91,9 +91,6 @@ Token Lexer::getToken() {
         case ']':
             token = Token("]", TokenType::CLOSED_SQUARE_BRACKET);
             break;
-        case ';':
-            token = Token(";", TokenType::SEMICOLON);
-            break;
         case ',':
             token = Token(",", TokenType::COMMA);
             break;

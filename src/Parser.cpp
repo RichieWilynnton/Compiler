@@ -11,6 +11,7 @@
 #include "./AstNodes/Lit/NumLit.h"
 #include "./AstNodes/Lit/VarLit.h"
 #include "./AstNodes/Lit/StringLit.h"
+#include "./AstNodes/Lit/BoolLit.h"
 #include "./AstNodes/BinaryExp/PlusExp.h"
 #include "./AstNodes/BinaryExp/MinusExp.h"
 #include "./AstNodes/BinaryExp/MultExp.h"
@@ -65,14 +66,12 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             break;
         }
         default:
-            break;
+            parseExpression();
+
     }
     return ret;
 }
 
-// When do we know when to stop parsing expression?
-// 1. Newline found
-// 2. Comma found (eg. exp1, exp2, ...)
 // Expression := Term | Term "+" Term "+" ... | Term "-" Term "-" ...
 std::unique_ptr<Exp> Parser::parseExpression(){
     std::unique_ptr<Exp> a = parseTerm();
@@ -141,6 +140,16 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             ret = std::make_unique<NegExp> (a);
             break;
         }
+        case TokenType::TRUE:
+            nextToken();
+            ret = std::make_unique<BoolLit> (true);
+            break;
+
+        case TokenType::FALSE:
+            nextToken();
+            ret = std::make_unique<BoolLit> (false);
+            break;
+
         default:
             terminate("Syntax Error!");
     }

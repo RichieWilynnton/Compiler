@@ -9,7 +9,8 @@ namespace TokenType{
     NUMBER = 1,
     IDENTIFIER = 2,
     STRING = 3,
-    SEMICOLON = 4,
+    TRUE = 4,
+    FALSE = 5,
     // Keywords.
     LABEL = 101,    
     GOTO = 102,

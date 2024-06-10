@@ -15,6 +15,7 @@ add_library(AstNodes
     Lit/NumLit.cpp
     Lit/VarLit.cpp
     Lit/StringLit.cpp
+    Lit/BoolLit.cpp
     Statement/Assignment.cpp
 )
 

@@ -1,1 +1,1 @@
-print("HELLO")
+let a = 2+2
