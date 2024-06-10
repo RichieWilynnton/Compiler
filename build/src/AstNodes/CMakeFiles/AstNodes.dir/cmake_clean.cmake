@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/DataType.cpp.o.d"
   "CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o"
   "CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o"
+  "CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o"
   "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o"

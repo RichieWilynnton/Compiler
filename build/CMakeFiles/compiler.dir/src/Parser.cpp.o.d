@@ -170,6 +170,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Lit/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/Lit/VarLit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/StringLit.h \
+ /home/richie/Compiler/src/./AstNodes/Lit/BoolLit.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/PlusExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/MinusExp.h \

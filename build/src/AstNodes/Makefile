@@ -274,6 +274,30 @@ FunctionExp/PrintExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s
 .PHONY : FunctionExp/PrintExp.cpp.s
 
+Lit/BoolLit.o: Lit/BoolLit.cpp.o
+.PHONY : Lit/BoolLit.o
+
+# target to build an object file
+Lit/BoolLit.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o
+.PHONY : Lit/BoolLit.cpp.o
+
+Lit/BoolLit.i: Lit/BoolLit.cpp.i
+.PHONY : Lit/BoolLit.i
+
+# target to preprocess a source file
+Lit/BoolLit.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.i
+.PHONY : Lit/BoolLit.cpp.i
+
+Lit/BoolLit.s: Lit/BoolLit.cpp.s
+.PHONY : Lit/BoolLit.s
+
+# target to generate assembly for a file
+Lit/BoolLit.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.s
+.PHONY : Lit/BoolLit.cpp.s
+
 Lit/NumLit.o: Lit/NumLit.cpp.o
 .PHONY : Lit/NumLit.o
 
@@ -469,6 +493,9 @@ help:
 	@echo "... FunctionExp/PrintExp.o"
 	@echo "... FunctionExp/PrintExp.i"
 	@echo "... FunctionExp/PrintExp.s"
+	@echo "... Lit/BoolLit.o"
+	@echo "... Lit/BoolLit.i"
+	@echo "... Lit/BoolLit.s"
 	@echo "... Lit/NumLit.o"
 	@echo "... Lit/NumLit.i"
 	@echo "... Lit/NumLit.s"
