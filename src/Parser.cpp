@@ -23,6 +23,7 @@
 #include <vector>
 #include <iostream>
 #include <memory>
+#include <stdexcept>
 
 Parser::Parser(std::vector<Token>& tokenList) {
     tokens = tokenList;
@@ -172,6 +173,6 @@ void Parser::nextToken() {
 }
 
 void Parser::terminate(std::string msg) {
-    std::cerr << "Error during parsing: " + msg << std::endl;
-    exit(EXIT_FAILURE);
+    throw std::runtime_error("Error during parsing: " + msg);
 }
+

@@ -180,6 +180,5 @@ void Lexer::skipComment() {
 }
 
 void Lexer::terminate(std::string msg) {
-    std::cerr << "Error during lexical analysis: " + msg << std::endl;
-    exit(EXIT_FAILURE);
+    throw std::runtime_error("Error during lexical analysis: " + msg);
 }

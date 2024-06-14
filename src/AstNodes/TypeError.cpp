@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <stdexcept> 
+
 
 void TypeError::terminate(std::string msg) {
-    std::cerr << "Type Error: " + msg << std::endl;
-    exit(EXIT_FAILURE);
+    throw std::runtime_error("Type Error: " + msg);
 }
+
