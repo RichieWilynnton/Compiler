@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/compiler.dir/src/Lexer.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Parser.cpp.o"
   "CMakeFiles/compiler.dir/src/Parser.cpp.o.d"
+  "CMakeFiles/compiler.dir/src/Scope.cpp.o"
+  "CMakeFiles/compiler.dir/src/Scope.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Testing.cpp.o"
   "CMakeFiles/compiler.dir/src/Testing.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o"

@@ -162,6 +162,14 @@ CMakeFiles/compiler.dir/src/main.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/ASTNode.h \
  /home/richie/Compiler/src/./AstNodes/Exp.h \
  /home/richie/Compiler/src/./AstNodes/DataType.h \
+ /home/richie/Compiler/src/Scope.h \
+ /home/richie/Compiler/src/AstNodes/Exp.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h \
  /home/richie/Compiler/src/Generator.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \

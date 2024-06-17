@@ -31,6 +31,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/Utils -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Scope.cpp.o -c /home/richie/Compiler/src/Scope.cpp",
+  "file": "/home/richie/Compiler/src/Scope.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src -I/home/richie/Compiler/src/Utils -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o -c /home/richie/Compiler/src/Utils/TokenUtils.cpp",
   "file": "/home/richie/Compiler/src/Utils/TokenUtils.cpp"
 },

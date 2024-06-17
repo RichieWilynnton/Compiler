@@ -251,6 +251,30 @@ src/Parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Parser.cpp.s
 .PHONY : src/Parser.cpp.s
 
+src/Scope.o: src/Scope.cpp.o
+.PHONY : src/Scope.o
+
+# target to build an object file
+src/Scope.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Scope.cpp.o
+.PHONY : src/Scope.cpp.o
+
+src/Scope.i: src/Scope.cpp.i
+.PHONY : src/Scope.i
+
+# target to preprocess a source file
+src/Scope.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Scope.cpp.i
+.PHONY : src/Scope.cpp.i
+
+src/Scope.s: src/Scope.cpp.s
+.PHONY : src/Scope.s
+
+# target to generate assembly for a file
+src/Scope.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/src/Scope.cpp.s
+.PHONY : src/Scope.cpp.s
+
 src/Testing.o: src/Testing.cpp.o
 .PHONY : src/Testing.o
 
@@ -346,6 +370,9 @@ help:
 	@echo "... src/Parser.o"
 	@echo "... src/Parser.i"
 	@echo "... src/Parser.s"
+	@echo "... src/Scope.o"
+	@echo "... src/Scope.i"
+	@echo "... src/Scope.s"
 	@echo "... src/Testing.o"
 	@echo "... src/Testing.i"
 	@echo "... src/Testing.s"
