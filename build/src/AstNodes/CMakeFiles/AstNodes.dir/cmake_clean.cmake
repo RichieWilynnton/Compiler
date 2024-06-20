@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o"
   "CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/Block.cpp.o"
+  "CMakeFiles/AstNodes.dir/Block.cpp.o.d"
   "CMakeFiles/AstNodes.dir/DataType.cpp.o"
   "CMakeFiles/AstNodes.dir/DataType.cpp.o.d"
   "CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o"

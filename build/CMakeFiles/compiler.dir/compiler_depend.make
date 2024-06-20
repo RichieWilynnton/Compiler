@@ -808,6 +808,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/FunctionExp/PrintExp.h \
   ../src/AstNodes/Exp.h \
+  ../src/AstNodes/Block.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -1029,7 +1030,30 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o: ../src/Scope.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /usr/include/c++/11/stdexcept
+  /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc
 
 CMakeFiles/compiler.dir/src/Testing.cpp.o: ../src/Testing.cpp \
   /usr/include/stdc-predef.h \
@@ -1677,6 +1701,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/hashtable.h:
 
 ../src/Testing.h:
+
+../src/AstNodes/Block.h:
 
 ../src/Keywords.h:
 

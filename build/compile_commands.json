@@ -46,6 +46,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Block.cpp.o -c /home/richie/Compiler/src/AstNodes/Block.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Block.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/DataType.cpp.o -c /home/richie/Compiler/src/AstNodes/DataType.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/DataType.cpp"
 },

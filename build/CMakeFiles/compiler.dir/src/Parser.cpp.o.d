@@ -187,6 +187,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/Block.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

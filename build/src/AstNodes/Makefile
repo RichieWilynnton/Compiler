@@ -226,6 +226,30 @@ BinaryExp/PlusExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/PlusExp.cpp.s
 .PHONY : BinaryExp/PlusExp.cpp.s
 
+Block.o: Block.cpp.o
+.PHONY : Block.o
+
+# target to build an object file
+Block.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Block.cpp.o
+.PHONY : Block.cpp.o
+
+Block.i: Block.cpp.i
+.PHONY : Block.i
+
+# target to preprocess a source file
+Block.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Block.cpp.i
+.PHONY : Block.cpp.i
+
+Block.s: Block.cpp.s
+.PHONY : Block.s
+
+# target to generate assembly for a file
+Block.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Block.cpp.s
+.PHONY : Block.cpp.s
+
 DataType.o: DataType.cpp.o
 .PHONY : DataType.o
 
@@ -487,6 +511,9 @@ help:
 	@echo "... BinaryExp/PlusExp.o"
 	@echo "... BinaryExp/PlusExp.i"
 	@echo "... BinaryExp/PlusExp.s"
+	@echo "... Block.o"
+	@echo "... Block.i"
+	@echo "... Block.s"
 	@echo "... DataType.o"
 	@echo "... DataType.i"
 	@echo "... DataType.s"
