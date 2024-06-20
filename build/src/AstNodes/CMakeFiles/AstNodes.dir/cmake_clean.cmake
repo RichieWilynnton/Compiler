@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/Program.cpp.o.d"
   "CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o"
   "CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/Statement/While.cpp.o"
+  "CMakeFiles/AstNodes.dir/Statement/While.cpp.o.d"
   "CMakeFiles/AstNodes.dir/TypeError.cpp.o"
   "CMakeFiles/AstNodes.dir/TypeError.cpp.o.d"
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o"

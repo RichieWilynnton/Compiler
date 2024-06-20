@@ -779,6 +779,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/ASTNode.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/DataType.h \
+  ../src/AstNodes/Block.h \
   ../src/Scope.h \
   ../src/AstNodes/Exp.h \
   /usr/include/c++/11/unordered_map \
@@ -792,6 +793,9 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/Utils/TokenUtils.h \
   ../src/Tokentype.h \
   ../src/AstNodes/Statement/Assignment.h \
+  ../src/AstNodes/ASTNode.h \
+  ../src/AstNodes/Exp.h \
+  ../src/AstNodes/Statement/While.h \
   ../src/AstNodes/ASTNode.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/Lit/NumLit.h \
@@ -808,7 +812,6 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/FunctionExp/PrintExp.h \
   ../src/AstNodes/Exp.h \
-  ../src/AstNodes/Block.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -1595,6 +1598,7 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
   ../src/AstNodes/ASTNode.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/DataType.h \
+  ../src/AstNodes/Block.h \
   ../src/Scope.h \
   ../src/AstNodes/Exp.h \
   /usr/include/c++/11/unordered_map \
@@ -1855,6 +1859,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/exception_ptr.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
+
+../src/AstNodes/Statement/While.h:
 
 /usr/include/features-time64.h:
 

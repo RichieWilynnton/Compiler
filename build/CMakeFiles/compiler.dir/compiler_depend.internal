@@ -783,6 +783,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/AstNodes/ASTNode.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /home/richie/Compiler/src/AstNodes/DataType.h
+ /home/richie/Compiler/src/AstNodes/Block.h
  /home/richie/Compiler/src/Scope.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /usr/include/c++/11/unordered_map
@@ -796,6 +797,9 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/Utils/TokenUtils.h
  /home/richie/Compiler/src/Tokentype.h
  /home/richie/Compiler/src/AstNodes/Statement/Assignment.h
+ /home/richie/Compiler/src/AstNodes/ASTNode.h
+ /home/richie/Compiler/src/AstNodes/Exp.h
+ /home/richie/Compiler/src/AstNodes/Statement/While.h
  /home/richie/Compiler/src/AstNodes/ASTNode.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /home/richie/Compiler/src/AstNodes/Lit/NumLit.h
@@ -812,7 +816,6 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/AstNodes/Exp.h
  /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.h
  /home/richie/Compiler/src/AstNodes/Exp.h
- /home/richie/Compiler/src/AstNodes/Block.h
  /usr/include/c++/11/iostream
  /usr/include/c++/11/ostream
  /usr/include/c++/11/ios
@@ -1603,6 +1606,7 @@ CMakeFiles/compiler.dir/src/main.cpp.o
  /home/richie/Compiler/src/AstNodes/ASTNode.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /home/richie/Compiler/src/AstNodes/DataType.h
+ /home/richie/Compiler/src/AstNodes/Block.h
  /home/richie/Compiler/src/Scope.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /usr/include/c++/11/unordered_map

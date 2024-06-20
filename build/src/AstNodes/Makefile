@@ -442,6 +442,30 @@ Statement/Assignment.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s
 .PHONY : Statement/Assignment.cpp.s
 
+Statement/While.o: Statement/While.cpp.o
+.PHONY : Statement/While.o
+
+# target to build an object file
+Statement/While.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o
+.PHONY : Statement/While.cpp.o
+
+Statement/While.i: Statement/While.cpp.i
+.PHONY : Statement/While.i
+
+# target to preprocess a source file
+Statement/While.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.i
+.PHONY : Statement/While.cpp.i
+
+Statement/While.s: Statement/While.cpp.s
+.PHONY : Statement/While.s
+
+# target to generate assembly for a file
+Statement/While.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.s
+.PHONY : Statement/While.cpp.s
+
 TypeError.o: TypeError.cpp.o
 .PHONY : TypeError.o
 
@@ -538,6 +562,9 @@ help:
 	@echo "... Statement/Assignment.o"
 	@echo "... Statement/Assignment.i"
 	@echo "... Statement/Assignment.s"
+	@echo "... Statement/While.o"
+	@echo "... Statement/While.i"
+	@echo "... Statement/While.s"
 	@echo "... TypeError.o"
 	@echo "... TypeError.i"
 	@echo "... TypeError.s"
