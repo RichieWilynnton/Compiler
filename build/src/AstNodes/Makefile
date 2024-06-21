@@ -658,6 +658,30 @@ UnaryExp/NegExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.s
 .PHONY : UnaryExp/NegExp.cpp.s
 
+UnaryExp/NotExp.o: UnaryExp/NotExp.cpp.o
+.PHONY : UnaryExp/NotExp.o
+
+# target to build an object file
+UnaryExp/NotExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o
+.PHONY : UnaryExp/NotExp.cpp.o
+
+UnaryExp/NotExp.i: UnaryExp/NotExp.cpp.i
+.PHONY : UnaryExp/NotExp.i
+
+# target to preprocess a source file
+UnaryExp/NotExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.i
+.PHONY : UnaryExp/NotExp.cpp.i
+
+UnaryExp/NotExp.s: UnaryExp/NotExp.cpp.s
+.PHONY : UnaryExp/NotExp.s
+
+# target to generate assembly for a file
+UnaryExp/NotExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.s
+.PHONY : UnaryExp/NotExp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -733,6 +757,9 @@ help:
 	@echo "... UnaryExp/NegExp.o"
 	@echo "... UnaryExp/NegExp.i"
 	@echo "... UnaryExp/NegExp.s"
+	@echo "... UnaryExp/NotExp.o"
+	@echo "... UnaryExp/NotExp.i"
+	@echo "... UnaryExp/NotExp.s"
 .PHONY : help
 
 

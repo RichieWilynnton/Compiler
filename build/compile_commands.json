@@ -116,6 +116,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NotExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NotExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp"
 },

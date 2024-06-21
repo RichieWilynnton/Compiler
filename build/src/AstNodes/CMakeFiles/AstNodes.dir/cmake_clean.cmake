@@ -43,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/TypeError.cpp.o.d"
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o"
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o"
+  "CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o.d"
   "libAstNodes.a"
   "libAstNodes.pdb"
 )

@@ -195,6 +195,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/GTEQExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/NotExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
