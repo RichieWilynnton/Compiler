@@ -178,6 +178,102 @@ BinaryExp/DivExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.s
 .PHONY : BinaryExp/DivExp.cpp.s
 
+BinaryExp/GTEQExp.o: BinaryExp/GTEQExp.cpp.o
+.PHONY : BinaryExp/GTEQExp.o
+
+# target to build an object file
+BinaryExp/GTEQExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.o
+.PHONY : BinaryExp/GTEQExp.cpp.o
+
+BinaryExp/GTEQExp.i: BinaryExp/GTEQExp.cpp.i
+.PHONY : BinaryExp/GTEQExp.i
+
+# target to preprocess a source file
+BinaryExp/GTEQExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.i
+.PHONY : BinaryExp/GTEQExp.cpp.i
+
+BinaryExp/GTEQExp.s: BinaryExp/GTEQExp.cpp.s
+.PHONY : BinaryExp/GTEQExp.s
+
+# target to generate assembly for a file
+BinaryExp/GTEQExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.s
+.PHONY : BinaryExp/GTEQExp.cpp.s
+
+BinaryExp/GTExp.o: BinaryExp/GTExp.cpp.o
+.PHONY : BinaryExp/GTExp.o
+
+# target to build an object file
+BinaryExp/GTExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.o
+.PHONY : BinaryExp/GTExp.cpp.o
+
+BinaryExp/GTExp.i: BinaryExp/GTExp.cpp.i
+.PHONY : BinaryExp/GTExp.i
+
+# target to preprocess a source file
+BinaryExp/GTExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.i
+.PHONY : BinaryExp/GTExp.cpp.i
+
+BinaryExp/GTExp.s: BinaryExp/GTExp.cpp.s
+.PHONY : BinaryExp/GTExp.s
+
+# target to generate assembly for a file
+BinaryExp/GTExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.s
+.PHONY : BinaryExp/GTExp.cpp.s
+
+BinaryExp/LTEQExp.o: BinaryExp/LTEQExp.cpp.o
+.PHONY : BinaryExp/LTEQExp.o
+
+# target to build an object file
+BinaryExp/LTEQExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.o
+.PHONY : BinaryExp/LTEQExp.cpp.o
+
+BinaryExp/LTEQExp.i: BinaryExp/LTEQExp.cpp.i
+.PHONY : BinaryExp/LTEQExp.i
+
+# target to preprocess a source file
+BinaryExp/LTEQExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.i
+.PHONY : BinaryExp/LTEQExp.cpp.i
+
+BinaryExp/LTEQExp.s: BinaryExp/LTEQExp.cpp.s
+.PHONY : BinaryExp/LTEQExp.s
+
+# target to generate assembly for a file
+BinaryExp/LTEQExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.s
+.PHONY : BinaryExp/LTEQExp.cpp.s
+
+BinaryExp/LTExp.o: BinaryExp/LTExp.cpp.o
+.PHONY : BinaryExp/LTExp.o
+
+# target to build an object file
+BinaryExp/LTExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.o
+.PHONY : BinaryExp/LTExp.cpp.o
+
+BinaryExp/LTExp.i: BinaryExp/LTExp.cpp.i
+.PHONY : BinaryExp/LTExp.i
+
+# target to preprocess a source file
+BinaryExp/LTExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.i
+.PHONY : BinaryExp/LTExp.cpp.i
+
+BinaryExp/LTExp.s: BinaryExp/LTExp.cpp.s
+.PHONY : BinaryExp/LTExp.s
+
+# target to generate assembly for a file
+BinaryExp/LTExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.s
+.PHONY : BinaryExp/LTExp.cpp.s
+
 BinaryExp/MinusExp.o: BinaryExp/MinusExp.cpp.o
 .PHONY : BinaryExp/MinusExp.o
 
@@ -577,6 +673,18 @@ help:
 	@echo "... BinaryExp/DivExp.o"
 	@echo "... BinaryExp/DivExp.i"
 	@echo "... BinaryExp/DivExp.s"
+	@echo "... BinaryExp/GTEQExp.o"
+	@echo "... BinaryExp/GTEQExp.i"
+	@echo "... BinaryExp/GTEQExp.s"
+	@echo "... BinaryExp/GTExp.o"
+	@echo "... BinaryExp/GTExp.i"
+	@echo "... BinaryExp/GTExp.s"
+	@echo "... BinaryExp/LTEQExp.o"
+	@echo "... BinaryExp/LTEQExp.i"
+	@echo "... BinaryExp/LTEQExp.s"
+	@echo "... BinaryExp/LTExp.o"
+	@echo "... BinaryExp/LTExp.i"
+	@echo "... BinaryExp/LTExp.s"
 	@echo "... BinaryExp/MinusExp.o"
 	@echo "... BinaryExp/MinusExp.i"
 	@echo "... BinaryExp/MinusExp.s"

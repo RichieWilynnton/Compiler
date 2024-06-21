@@ -189,6 +189,10 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/DivExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/AndExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/OrExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/LTExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/LTEQExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/GTExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/GTEQExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \

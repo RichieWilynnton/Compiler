@@ -91,6 +91,26 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/GTExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/GTExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/GTEQExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/GTEQExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/LTExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/LTExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/LTEQExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/LTEQExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp"
 },

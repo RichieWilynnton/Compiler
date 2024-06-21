@@ -10,6 +10,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/richie/Compiler/src/AstNodes/BinaryExp/AndExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/BinaryExp/DivExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o.d"
+  "/home/richie/Compiler/src/AstNodes/BinaryExp/GTEQExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTEQExp.cpp.o.d"
+  "/home/richie/Compiler/src/AstNodes/BinaryExp/GTExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.o.d"
+  "/home/richie/Compiler/src/AstNodes/BinaryExp/LTEQExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTEQExp.cpp.o.d"
+  "/home/richie/Compiler/src/AstNodes/BinaryExp/LTExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/LTExp.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/BinaryExp/MinusExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MinusExp.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/BinaryExp/MultExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/BinaryExp/OrExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.o.d"
