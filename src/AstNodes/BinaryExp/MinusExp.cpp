@@ -5,7 +5,7 @@
 #include <string>
 
 std::string MinusExp::genCode() {
-    return exp1->genCode() + "-" + exp2->genCode();
+    return "(" + exp1->genCode() + "-" + exp2->genCode() + ")";
 }
 std::string MinusExp::printNode() {
     return "MINUS (" + exp1->printNode() + ", " + exp2->printNode() + ')';
@@ -19,5 +19,6 @@ void MinusExp::inferType() {
         return;
     }
     DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Expected a number, got " + DataType::dataTypeStrings[wrong] + " instead!");
+    TypeError::terminate("Cannot MINUS number and " + DataType::dataTypeStrings[wrong] + " together!");
+
 }

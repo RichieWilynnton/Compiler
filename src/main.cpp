@@ -29,11 +29,11 @@ int main() {
         tokens.push_back(token);
     }
 
-    for (Token t : tokens) printToken(t);
+    // for (Token t : tokens) printToken(t);
     
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
-    std::cout << ast->printNode() << '\n'; 
+    // std::cout << ast->printNode() << '\n'; 
     
     Generator generator = Generator(ast);
     std::string file = generator.generateFile();

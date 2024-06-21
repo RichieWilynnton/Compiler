@@ -18,6 +18,7 @@ add_executable(compiler
     src/Parser.cpp
     src/Testing.cpp
     src/Generator.cpp
+    src/Scope.cpp
     src/Utils/TokenUtils.cpp
 )
 

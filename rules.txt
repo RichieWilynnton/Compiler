@@ -1,6 +1,7 @@
 Program := Statement[]
 Statement := Assignment | ForAssignment | IfStatement | WhileStatement
 Assignment := LET Identifier "=" Expression
+for (let x -> 1 to 10 by 1)
 
 ----------------------------------------------------
 // This is purely the grammar used during parsing
@@ -22,3 +23,6 @@ Factor := Number | Identifier | "(" Expression ")" | NegExp Factor
 Why can't I just do (Expression := Expression "+" Expression | Expression "-" Expression, ... | Literal) ?
 - Ambiguity, precedence will not be clear
 - When we're parsing, we abstract everything related to '*' and '/' (or Factor)
+
+
+----------------------------------------------------

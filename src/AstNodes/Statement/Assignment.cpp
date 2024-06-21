@@ -7,6 +7,8 @@ std::string Assignment::genCode()
 {
     DataType::DataType type = exp->type;
     std::string prefix;
+    // Skip prefix 
+    if (alrDeclared) return variable + " = " + exp->genCode();
 
     switch (type)
     {
@@ -21,7 +23,6 @@ std::string Assignment::genCode()
         break;
     default:
         TypeError::terminate(DataType::dataTypeStrings[type] + " type is not assignable");
-        
     }
 
     return prefix + ' ' + variable + " = " + exp->genCode();

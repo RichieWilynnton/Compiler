@@ -21,8 +21,9 @@ namespace TokenType{
     THEN = 107,
     ENDIF = 108,
     WHILE = 109,
-    REPEAT = 110,
-    ENDWHILE = 111,
+    IN = 110,
+    RANGE = 111,
+    FOR = 112,
     // Operators.
     EQ = 201,
     PLUS = 202,
@@ -36,14 +37,21 @@ namespace TokenType{
     GT = 210,
     GTEQ = 211,
     NOT = 212,
+    AND = 213,
+    OR = 214,
     // Brackets
     OPEN_ROUND_BRACKET = 250,
     CLOSED_ROUND_BRACKET = 251,
     OPEN_SQUARE_BRACKET = 252,
     CLOSED_SQUARE_BRACKET = 253,
+    OPEN_CURLY_BRACKET = 254,
+    CLOSED_CURLY_BRACKET = 255,
+
     // Other Symbols
     ARROW = 216,
     COMMA = 217,
+    DOUBLE_DASH = 218,
+
     
     };
 }

@@ -12,7 +12,6 @@ class Exp : public ASTNode {
         virtual std::string genCode() = 0;
         virtual std::string printNode() = 0; 
         virtual void inferType() = 0;
-
 };
 
 #endif

@@ -4,7 +4,7 @@
 #include <string>
 
 std::string MultExp::genCode() {
-    return exp1->genCode() + "*" + exp2->genCode();
+    return "(" + exp1->genCode() + "*" + exp2->genCode() + ")";
 }
 std::string MultExp::printNode() {
     return "MULT (" + exp1->printNode() + ", " + exp2->printNode() + ')';
@@ -18,5 +18,6 @@ void MultExp::inferType() {
         return;
     }
     DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Expected a number, got " + DataType::dataTypeStrings[wrong] + " instead!");
+    TypeError::terminate("Cannot MULT number and " + DataType::dataTypeStrings[wrong] + " together!");
+
 }

@@ -17,8 +17,12 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
         keywords["then"] = TokenType::THEN;
         keywords["endif"] = TokenType::ENDIF;
         keywords["while"] = TokenType::WHILE;
-        keywords["repeat"] = TokenType::REPEAT;
-        keywords["endwhile"] = TokenType::ENDWHILE;
+        keywords["in"] = TokenType::IN;
+        keywords["range"] = TokenType::RANGE;
+        keywords["for"] = TokenType::FOR;
+        keywords["and"] = TokenType::AND;
+        keywords["or"] = TokenType::OR;
+        keywords["not"] = TokenType::NOT;
         keywords["True"] = TokenType::TRUE;
         keywords["False"] = TokenType::FALSE;
     }

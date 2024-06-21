@@ -12,9 +12,10 @@ class Assignment : public ASTNode {
 public:
     std::string variable;
     std::unique_ptr<Exp> exp;
+    bool alrDeclared;
 
-    Assignment(std::string variable, std::unique_ptr<Exp>& exp) 
-        : variable(variable), exp(std::move(exp)) {};
+    Assignment(std::string variable, std::unique_ptr<Exp>& exp, bool alrDeclared = false) 
+        : variable(variable), exp(std::move(exp)), alrDeclared(alrDeclared) {};
 
     std::string genCode() override; 
     std::string printNode() override;

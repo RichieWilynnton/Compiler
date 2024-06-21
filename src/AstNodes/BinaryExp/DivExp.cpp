@@ -4,7 +4,7 @@
 #include <string>
 
 std::string DivExp::genCode() {
-    return exp1->genCode() + "/" + exp2->genCode();
+    return "(" + exp1->genCode() + "/" + exp2->genCode() + ")";
 }
 
 std::string DivExp::printNode() {
@@ -20,5 +20,6 @@ void DivExp::inferType() {
         return;
     }
     DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Expected a number, got " + DataType::dataTypeStrings[wrong] + " instead!");
+    TypeError::terminate("Cannot DIV number and " + DataType::dataTypeStrings[wrong] + " together!");
+
 }

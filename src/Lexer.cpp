@@ -43,6 +43,10 @@ Token Lexer::getToken() {
                 nextChar();
                 token = Token("->", TokenType::ARROW);
             }
+            else if (peek() == '-') {
+                nextChar();
+                token = Token("--", TokenType::DOUBLE_DASH);
+            }
             else token = Token("-", TokenType::MINUS);
             break;
         case '*':
@@ -91,14 +95,20 @@ Token Lexer::getToken() {
         case ']':
             token = Token("]", TokenType::CLOSED_SQUARE_BRACKET);
             break;
+        case '{':
+            token = Token("{", TokenType::OPEN_CURLY_BRACKET);
+            break;
+        case '}':
+            token = Token("}", TokenType::CLOSED_CURLY_BRACKET);
+            break;
         case ',':
             token = Token(",", TokenType::COMMA);
             break;
         case '\n':
-            token = Token("\n", TokenType::NEWLINE);
+            token = Token("newline", TokenType::NEWLINE);
             break;
         case '\0':
-            token = Token("\0", TokenType::_EOF);
+            token = Token("EOF", TokenType::_EOF);
             break;
         default:
             break;
@@ -153,6 +163,7 @@ Token Lexer::getToken() {
 
             std::string tokenText = codeString.substr(startPos, charCount + 1);
 
+            // Keywords
             TokenType::TokenType keyword = checkIfKeyword(tokenText);
             if (keyword == TokenType::INVALID) token = Token(tokenText, TokenType::IDENTIFIER);
             else token = Token(tokenText, keyword);

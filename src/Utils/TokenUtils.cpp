@@ -22,8 +22,10 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::THEN: return "THEN";
         case TokenType::ENDIF: return "ENDIF";
         case TokenType::WHILE: return "WHILE";
-        case TokenType::REPEAT: return "REPEAT";
-        case TokenType::ENDWHILE: return "ENDWHILE";
+        case TokenType::IN: return "IN";
+        case TokenType::RANGE: return "RANGE";
+        case TokenType::FOR: return "FOR";
+        
         // Operators
         case TokenType::EQ: return "EQ";
         case TokenType::PLUS: return "PLUS";
@@ -37,12 +39,18 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::GT: return "GT";
         case TokenType::GTEQ: return "GTEQ";
         case TokenType::NOT: return "NOT";
+        case TokenType::AND: return "AND";
+        case TokenType::OR: return "OR";
         case TokenType::OPEN_ROUND_BRACKET: return "OPEN ROUND BRACKET";
         case TokenType::CLOSED_ROUND_BRACKET: return "CLOSED ROUND BRACKET";
         case TokenType::OPEN_SQUARE_BRACKET: return "OPEN SQUARE BRACKET";
         case TokenType::CLOSED_SQUARE_BRACKET: return "CLOSED SQUARE BRACKET";
+        case TokenType::OPEN_CURLY_BRACKET: return "OPEN CURLY BRACKET";
+        case TokenType::CLOSED_CURLY_BRACKET: return "CLOSED CURLY BRACKET";
+        
         case TokenType::ARROW: return "ARROW";
         case TokenType::COMMA: return "COMMA";
+        case TokenType::DOUBLE_DASH: return "DOUBLE DASH";
         default: return "UNKNOWN";
     }
 }
