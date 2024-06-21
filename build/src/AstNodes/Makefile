@@ -130,6 +130,30 @@ AstNodes/fast:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/build
 .PHONY : AstNodes/fast
 
+BinaryExp/AndExp.o: BinaryExp/AndExp.cpp.o
+.PHONY : BinaryExp/AndExp.o
+
+# target to build an object file
+BinaryExp/AndExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o
+.PHONY : BinaryExp/AndExp.cpp.o
+
+BinaryExp/AndExp.i: BinaryExp/AndExp.cpp.i
+.PHONY : BinaryExp/AndExp.i
+
+# target to preprocess a source file
+BinaryExp/AndExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.i
+.PHONY : BinaryExp/AndExp.cpp.i
+
+BinaryExp/AndExp.s: BinaryExp/AndExp.cpp.s
+.PHONY : BinaryExp/AndExp.s
+
+# target to generate assembly for a file
+BinaryExp/AndExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.s
+.PHONY : BinaryExp/AndExp.cpp.s
+
 BinaryExp/DivExp.o: BinaryExp/DivExp.cpp.o
 .PHONY : BinaryExp/DivExp.o
 
@@ -201,6 +225,30 @@ BinaryExp/MultExp.s: BinaryExp/MultExp.cpp.s
 BinaryExp/MultExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/MultExp.cpp.s
 .PHONY : BinaryExp/MultExp.cpp.s
+
+BinaryExp/OrExp.o: BinaryExp/OrExp.cpp.o
+.PHONY : BinaryExp/OrExp.o
+
+# target to build an object file
+BinaryExp/OrExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.o
+.PHONY : BinaryExp/OrExp.cpp.o
+
+BinaryExp/OrExp.i: BinaryExp/OrExp.cpp.i
+.PHONY : BinaryExp/OrExp.i
+
+# target to preprocess a source file
+BinaryExp/OrExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.i
+.PHONY : BinaryExp/OrExp.cpp.i
+
+BinaryExp/OrExp.s: BinaryExp/OrExp.cpp.s
+.PHONY : BinaryExp/OrExp.s
+
+# target to generate assembly for a file
+BinaryExp/OrExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.s
+.PHONY : BinaryExp/OrExp.cpp.s
 
 BinaryExp/PlusExp.o: BinaryExp/PlusExp.cpp.o
 .PHONY : BinaryExp/PlusExp.o
@@ -523,6 +571,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AstNodes"
+	@echo "... BinaryExp/AndExp.o"
+	@echo "... BinaryExp/AndExp.i"
+	@echo "... BinaryExp/AndExp.s"
 	@echo "... BinaryExp/DivExp.o"
 	@echo "... BinaryExp/DivExp.i"
 	@echo "... BinaryExp/DivExp.s"
@@ -532,6 +583,9 @@ help:
 	@echo "... BinaryExp/MultExp.o"
 	@echo "... BinaryExp/MultExp.i"
 	@echo "... BinaryExp/MultExp.s"
+	@echo "... BinaryExp/OrExp.o"
+	@echo "... BinaryExp/OrExp.i"
+	@echo "... BinaryExp/OrExp.s"
 	@echo "... BinaryExp/PlusExp.o"
 	@echo "... BinaryExp/PlusExp.i"
 	@echo "... BinaryExp/PlusExp.s"

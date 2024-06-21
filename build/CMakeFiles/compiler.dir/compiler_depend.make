@@ -808,6 +808,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/BinaryExp/MinusExp.h \
   ../src/AstNodes/BinaryExp/MultExp.h \
   ../src/AstNodes/BinaryExp/DivExp.h \
+  ../src/AstNodes/BinaryExp/AndExp.h \
+  ../src/AstNodes/BinaryExp/OrExp.h \
   ../src/AstNodes/UnaryExp/NegExp.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/FunctionExp/PrintExp.h \
@@ -1649,6 +1651,10 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 ../src/main.cpp:
 
 ../src/AstNodes/FunctionExp/PrintExp.h:
+
+../src/AstNodes/BinaryExp/OrExp.h:
+
+../src/AstNodes/BinaryExp/AndExp.h:
 
 ../src/AstNodes/BinaryExp/PlusExp.h:
 

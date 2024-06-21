@@ -1,7 +1,10 @@
-CMakeFiles/compiler.dir/src/Parser.cpp.o: \
- /home/richie/Compiler/src/Parser.cpp /usr/include/stdc-predef.h \
- /home/richie/Compiler/src/Parser.h /home/richie/Compiler/src/Token.h \
- /home/richie/Compiler/src/Tokentype.h /usr/include/c++/11/string \
+src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.o: \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/OrExp.cpp \
+ /usr/include/stdc-predef.h \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/OrExp.h \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../Exp.h \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../ASTNode.h \
+ /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -129,8 +132,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/richie/Compiler/src/./AstNodes/Program.h \
- /home/richie/Compiler/src/./AstNodes/ASTNode.h \
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../DataType.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
@@ -157,57 +159,4 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/richie/Compiler/src/./AstNodes/ASTNode.h \
- /home/richie/Compiler/src/./AstNodes/Exp.h \
- /home/richie/Compiler/src/./AstNodes/DataType.h \
- /home/richie/Compiler/src/./AstNodes/Block.h \
- /home/richie/Compiler/src/Scope.h \
- /home/richie/Compiler/src/AstNodes/Exp.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /home/richie/Compiler/src/Lexer.h \
- /home/richie/Compiler/src/./Utils/TokenUtils.h \
- /home/richie/Compiler/src/./Utils/../Tokentype.h \
- /home/richie/Compiler/src/./AstNodes/Statement/Assignment.h \
- /home/richie/Compiler/src/AstNodes/ASTNode.h \
- /home/richie/Compiler/src/AstNodes/Exp.h \
- /home/richie/Compiler/src/./AstNodes/Statement/While.h \
- /home/richie/Compiler/src/./AstNodes/Statement/../ASTNode.h \
- /home/richie/Compiler/src/./AstNodes/Statement/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/Lit/NumLit.h \
- /home/richie/Compiler/src/./AstNodes/Lit/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/Lit/VarLit.h \
- /home/richie/Compiler/src/./AstNodes/Lit/StringLit.h \
- /home/richie/Compiler/src/./AstNodes/Lit/BoolLit.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/PlusExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/MinusExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/MultExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/DivExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/AndExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/OrExp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
- /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
- /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
- /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
- /usr/include/c++/11/bits/locale_classes.h \
- /usr/include/c++/11/bits/locale_classes.tcc \
- /usr/include/c++/11/system_error \
- /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
- /usr/include/c++/11/stdexcept /usr/include/c++/11/streambuf \
- /usr/include/c++/11/bits/streambuf.tcc \
- /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
- /usr/include/c++/11/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
- /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc \
- /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc
+ /home/richie/Compiler/src/AstNodes/BinaryExp/../TypeError.h

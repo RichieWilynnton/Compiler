@@ -81,6 +81,16 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/AndExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/AndExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/OrExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/OrExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/OrExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o -c /home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp"
 },
