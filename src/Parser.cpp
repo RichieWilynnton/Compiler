@@ -8,6 +8,7 @@
 #include "./Utils/TokenUtils.h"
 #include "./AstNodes/Statement/Assignment.h"
 #include "./AstNodes/Statement/While.h"
+#include "./AstNodes/Statement/If.h"
 #include "./AstNodes/Exp.h"
 #include "./AstNodes/Lit/NumLit.h"
 #include "./AstNodes/Lit/VarLit.h"
@@ -84,8 +85,20 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         {
             nextToken();
             std::unique_ptr<Exp> cond = parseExpression();
+            validateToken(TokenType::COLON);
+            skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
             ret = std::make_unique<While> (cond, block);
+            break;
+        }
+        case TokenType::IF:
+        {
+            nextToken();
+            std::unique_ptr<Exp> cond = parseExpression();
+            validateToken(TokenType::COLON);
+            skipNewlines();
+            std::unique_ptr<Block> block = parseBlock();
+            ret = std::make_unique<If> (cond, block);
             break;
         }
         case TokenType::OPEN_CURLY_BRACKET:

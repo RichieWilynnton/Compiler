@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/Program.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/Program.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/Program.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o.d"
+  "/home/richie/Compiler/src/AstNodes/Statement/If.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/Statement/While.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/TypeError.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/TypeError.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/TypeError.cpp.o.d"
   "/home/richie/Compiler/src/AstNodes/UnaryExp/NegExp.cpp" "src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o" "gcc" "src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o.d"

@@ -798,6 +798,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Statement/While.h \
   ../src/AstNodes/ASTNode.h \
   ../src/AstNodes/Exp.h \
+  ../src/AstNodes/Statement/If.h \
   ../src/AstNodes/Lit/NumLit.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/Lit/VarLit.h \
@@ -1653,6 +1654,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
+/usr/include/c++/11/fstream:
+
 /usr/include/stdlib.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
@@ -1662,8 +1665,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/functional_hash.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
-
-/usr/include/c++/11/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
@@ -1746,8 +1747,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
-
-../src/AstNodes/BinaryExp/MinusExp.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
@@ -2142,6 +2141,10 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 ../src/Scope.h:
 
 ../src/Utils/TokenUtils.h:
+
+../src/AstNodes/BinaryExp/MinusExp.h:
+
+../src/AstNodes/Statement/If.h:
 
 ../src/AstNodes/Lit/NumLit.h:
 

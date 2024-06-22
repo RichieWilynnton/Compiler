@@ -51,6 +51,7 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::ARROW: return "ARROW";
         case TokenType::COMMA: return "COMMA";
         case TokenType::DOUBLE_DASH: return "DOUBLE DASH";
+        case TokenType::COLON: return "COLON";
         default: return "UNKNOWN";
     }
 }
