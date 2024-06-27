@@ -85,7 +85,9 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         {
             nextToken();
             std::unique_ptr<Exp> cond = parseExpression();
+
             validateToken(TokenType::COLON);
+            
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
             ret = std::make_unique<While> (cond, block);
@@ -95,10 +97,31 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         {
             nextToken();
             std::unique_ptr<Exp> cond = parseExpression();
+
             validateToken(TokenType::COLON);
+
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
-            ret = std::make_unique<If> (cond, block);
+            std::unique_ptr<Block> elseBlock = nullptr;
+            skipNewlines();
+
+            if (curToken.tokenType == TokenType::ELIF) {
+                // Same functionality as IF, and now we add it to this IF's else block
+                curToken.tokenType = TokenType::IF;
+                elseBlock = parseBlock();
+            }
+            else if (curToken.tokenType == TokenType::ELSE) {
+                nextToken();
+                
+                validateToken(TokenType::COLON);
+
+                skipNewlines();
+
+                elseBlock = parseBlock();
+            }
+
+            ret = std::make_unique<If> (cond, block, elseBlock);
+
             break;
         }
         case TokenType::OPEN_CURLY_BRACKET:
@@ -106,6 +129,8 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             ret = parseBlock();
             break;
         }
+        case TokenType::NEWLINE:
+            break;
         default:
             parseExpression();
 
@@ -292,4 +317,5 @@ void Parser::nextToken() {
 void Parser::terminate(std::string msg) {
     throw std::runtime_error("Error during parsing: " + msg);
 }
+
 

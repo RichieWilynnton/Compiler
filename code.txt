@@ -2,3 +2,7 @@ if 10 > 10:
 {
     output 19
 }
+else:
+{
+    output 10
+}

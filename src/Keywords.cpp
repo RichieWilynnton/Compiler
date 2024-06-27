@@ -15,6 +15,7 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
         keywords["let"] = TokenType::LET;
         keywords["if"] = TokenType::IF;
         keywords["then"] = TokenType::THEN;
+        keywords["else"] = TokenType::ELSE;
         keywords["endif"] = TokenType::ENDIF;
         keywords["while"] = TokenType::WHILE;
         keywords["in"] = TokenType::IN;

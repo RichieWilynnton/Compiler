@@ -7,11 +7,12 @@
 
 class If : public ASTNode {
     public:
-        If(std::unique_ptr<Exp>& condition, std::unique_ptr<Block>& block) : block(std::move(block)), condition(std::move(condition)) {} 
-        std::unique_ptr<Block> block;
+        If(std::unique_ptr<Exp>& condition, std::unique_ptr<Block>& thenBlock, std::unique_ptr<Block>& elseBlock) :  condition(std::move(condition)), thenBlock(std::move(thenBlock)), elseBlock(std::move(elseBlock)) {} 
+        std::unique_ptr<Block> thenBlock;
         std::unique_ptr<Exp> condition;
-        std::unique_ptr<If> elses;
+        std::unique_ptr<Block> elseBlock;
 
         std::string genCode() override; 
         std::string printNode() override;
+        void setElse(std::unique_ptr<Block>& elseBlock);
 };
