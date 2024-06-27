@@ -13,6 +13,7 @@ add_library(AstNodes
     BinaryExp/DivExp.cpp
     BinaryExp/AndExp.cpp
     BinaryExp/OrExp.cpp
+    BinaryExp/EQEQExp.cpp
     BinaryExp/GTExp.cpp
     BinaryExp/GTEQExp.cpp
     BinaryExp/LTExp.cpp

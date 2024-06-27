@@ -91,6 +91,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/EQEQExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/EQEQExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/EQEQExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/GTExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/GTExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/GTExp.cpp"
 },

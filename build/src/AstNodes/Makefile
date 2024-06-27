@@ -178,6 +178,30 @@ BinaryExp/DivExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.s
 .PHONY : BinaryExp/DivExp.cpp.s
 
+BinaryExp/EQEQExp.o: BinaryExp/EQEQExp.cpp.o
+.PHONY : BinaryExp/EQEQExp.o
+
+# target to build an object file
+BinaryExp/EQEQExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/EQEQExp.cpp.o
+.PHONY : BinaryExp/EQEQExp.cpp.o
+
+BinaryExp/EQEQExp.i: BinaryExp/EQEQExp.cpp.i
+.PHONY : BinaryExp/EQEQExp.i
+
+# target to preprocess a source file
+BinaryExp/EQEQExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/EQEQExp.cpp.i
+.PHONY : BinaryExp/EQEQExp.cpp.i
+
+BinaryExp/EQEQExp.s: BinaryExp/EQEQExp.cpp.s
+.PHONY : BinaryExp/EQEQExp.s
+
+# target to generate assembly for a file
+BinaryExp/EQEQExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/EQEQExp.cpp.s
+.PHONY : BinaryExp/EQEQExp.cpp.s
+
 BinaryExp/GTEQExp.o: BinaryExp/GTEQExp.cpp.o
 .PHONY : BinaryExp/GTEQExp.o
 
@@ -721,6 +745,9 @@ help:
 	@echo "... BinaryExp/DivExp.o"
 	@echo "... BinaryExp/DivExp.i"
 	@echo "... BinaryExp/DivExp.s"
+	@echo "... BinaryExp/EQEQExp.o"
+	@echo "... BinaryExp/EQEQExp.i"
+	@echo "... BinaryExp/EQEQExp.s"
 	@echo "... BinaryExp/GTEQExp.o"
 	@echo "... BinaryExp/GTEQExp.i"
 	@echo "... BinaryExp/GTEQExp.s"

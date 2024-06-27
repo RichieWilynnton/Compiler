@@ -811,6 +811,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/BinaryExp/DivExp.h \
   ../src/AstNodes/BinaryExp/AndExp.h \
   ../src/AstNodes/BinaryExp/OrExp.h \
+  ../src/AstNodes/BinaryExp/EQEQExp.h \
   ../src/AstNodes/BinaryExp/LTExp.h \
   ../src/AstNodes/BinaryExp/LTEQExp.h \
   ../src/AstNodes/BinaryExp/GTExp.h \
@@ -1656,6 +1657,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/fstream:
 
+../src/main.cpp:
+
 /usr/include/stdlib.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
@@ -2138,6 +2141,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 ../src/Lexer.cpp:
 
+../src/AstNodes/BinaryExp/EQEQExp.h:
+
 ../src/Scope.h:
 
 ../src/Utils/TokenUtils.h:
@@ -2169,5 +2174,3 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/hashtable_policy.h:
 
 ../src/AstNodes/FunctionExp/PrintExp.h:
-
-../src/main.cpp:

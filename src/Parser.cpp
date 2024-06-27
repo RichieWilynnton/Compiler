@@ -20,6 +20,7 @@
 #include "./AstNodes/BinaryExp/DivExp.h"
 #include "./AstNodes/BinaryExp/AndExp.h"
 #include "./AstNodes/BinaryExp/OrExp.h"
+#include "./AstNodes/BinaryExp/EQEQExp.h"
 #include "./AstNodes/BinaryExp/LTExp.h"
 #include "./AstNodes/BinaryExp/LTEQExp.h"
 #include "./AstNodes/BinaryExp/GTExp.h"
@@ -106,9 +107,13 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             skipNewlines();
 
             if (curToken.tokenType == TokenType::ELIF) {
-                // Same functionality as IF, and now we add it to this IF's else block
+                std::unique_ptr<Block> newBlock = std::make_unique<Block> ();
+                // Evaluate ELIF like an IF, but now we add it to the elseBlock of this current IF
                 curToken.tokenType = TokenType::IF;
-                elseBlock = parseBlock();
+                std::unique_ptr<ASTNode> statement = getStatement();
+                newBlock->addStatement(statement);
+
+                elseBlock = std::move(newBlock);
             }
             else if (curToken.tokenType == TokenType::ELSE) {
                 nextToken();
@@ -180,6 +185,11 @@ std::unique_ptr<Exp> Parser::parseTerm() {
             nextToken();
             std::unique_ptr<Exp> b = parseFactor();
             a = std::make_unique<DivExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::EQEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<EQEQExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::LT) {
             nextToken();
