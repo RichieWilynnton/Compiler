@@ -63,13 +63,28 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::LET:
         {
             std::string variable;
+            TokenType::TokenType operation;
             nextToken();
-            variable = validateToken(TokenType::IDENTIFIER).content;
-            validateToken(TokenType::EQ);
-            std::unique_ptr<Exp> exp = parseExpression();
 
-            bool alrDeclared = curScope->getVarInfo(variable) ? true : false;
-            curScope->declareVariable(variable, exp->type);
+            variable = validateToken(TokenType::IDENTIFIER).content;
+            operation = curToken.tokenType;
+            std::unique_ptr<Exp> exp;
+
+            nextToken();
+
+            bool alrDeclared;
+            if (operation == TokenType::EQ) {
+                exp = parseExpression();
+                curScope->declareVariable(variable, exp->type);
+                alrDeclared = false;
+            }
+            else if (operation == TokenType::ARROW) {
+                exp = parseExpression();
+                curScope->modifyVariable(variable, exp->type);
+                alrDeclared = true;
+            }
+            else terminate("Invalid syntax for LET statement!");
+
             ret = std::make_unique<Assignment> (variable, exp, alrDeclared);
 
             break;
@@ -136,6 +151,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         }
         case TokenType::NEWLINE:
             break;
+            
         default:
             parseExpression();
 
@@ -226,8 +242,8 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             break;
         case TokenType::IDENTIFIER:
         {
-            std::optional<DataType::DataType> varType = curScope->getVarInfo(curToken.content);
-            if (varType) ret = std::make_unique<VarLit> (curToken.content, varType.value());
+            std::optional<DataType::DataType> o_varType = curScope->getVarInfo(curToken.content);
+            if (o_varType) ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
             else terminate("Undeclared variable");
             nextToken();
             break;

@@ -39,6 +39,8 @@ int main() {
     Generator generator = Generator(ast);
     std::string file = generator.generateFile();
 
+    std::cerr << file << '\n';
+
     if (outFile.is_open()) {
 
         outFile << file;

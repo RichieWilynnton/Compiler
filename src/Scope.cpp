@@ -22,15 +22,23 @@ std::optional<DataType::DataType> Scope::getVarInfo(std::string& var) {
     return outerScope ? outerScope->getVarInfo(var) : std::nullopt;
 }
 
-void Scope::declareVariable(std::string& var, DataType::DataType varType){
-    // already been declared before
-    if (getVarInfo(var)){
-        DataType::DataType prevType = symbols[var];
-        if (prevType != varType)  throw std::runtime_error("Variable " + var + " changed types!");
-    }
+bool Scope::inCurrentScope(std::string& var) {
+    return symbols.find(var) != symbols.end();
+}
 
+void Scope::declareVariable(std::string& var, DataType::DataType varType){
+    if (inCurrentScope(var)) throw std::runtime_error("Variable \"" + var + "\" is re-declared!");
     
-    else symbols[var] = varType;
+    symbols[var] = varType;
+}
+
+void Scope::modifyVariable(std::string& var, DataType::DataType varType) {
+    std::optional<DataType::DataType> o_varInfo = getVarInfo(var);
+    if (!o_varInfo) throw std::runtime_error("Variable \"" + var + "\" has not been declared!");
+    else {
+        DataType::DataType varInfo = o_varInfo.value();
+        if (varType != varInfo) throw std::runtime_error("Variable \"" + var + "\" changed types since last declaration!");
+    }
 }
 
 

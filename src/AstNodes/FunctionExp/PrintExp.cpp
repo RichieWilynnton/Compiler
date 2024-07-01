@@ -14,8 +14,8 @@ std::string PrintExp::genCode() {
         format = "%d";
     }
     
-    // surround in parentheses
-    format = '"' + format + '"';
+    // surround in parentheses & add newline
+    format = '"' + format + "\\n\"";
     return "printf(" + format + ", " + exp->genCode() + ")";
 }
 

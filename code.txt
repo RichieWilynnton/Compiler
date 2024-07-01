@@ -1,5 +1,6 @@
 let a = 10
-while (a > 0): {
+{
+    let a -> 8
     write a
-    let a = a - 1
 }
+write a
