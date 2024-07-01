@@ -17,6 +17,6 @@ void OrExp::inferType() {
         type = DataType::BOOLEAN;
         return;
     }
-    DataType::DataType wrong = expt1 != DataType::BOOLEAN ? expt1 : expt2;
-    TypeError::terminate("Cannot OR boolean and " + DataType::dataTypeStrings[wrong] + " together!");
+    TypeError::terminate("Cannot OR " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
+
 }

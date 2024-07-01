@@ -1,6 +1,7 @@
-let a = 10
-{
-    let a -> 8
-    write a
+let b = 10 / 2 + 3-2/2
+while b > 0: {
+    write "hello"
+    let b -> b-1
 }
-write a
+   
+write "done"

@@ -17,7 +17,6 @@ void AndExp::inferType() {
         type = DataType::BOOLEAN;
         return;
     }
-    DataType::DataType wrong = expt1 != DataType::BOOLEAN ? expt1 : expt2;
-        TypeError::terminate("Cannot AND boolean and " + DataType::dataTypeStrings[wrong] + " together!");
+    TypeError::terminate("Cannot AND " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
 }

@@ -19,7 +19,9 @@ void PlusExp::inferType() {
         type = DataType::NUMBER;
         return;
     }
-    DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Cannot PLUS number and " + DataType::dataTypeStrings[wrong] + " together!");
-
+    if (expt1 == DataType::STRING && expt2 == DataType::STRING) {
+        type = DataType::STRING;
+        return;
+    }
+    TypeError::terminate("Cannot PLUS " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 }

@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main(){
-int a = 10;
-{
-a = 8;
-printf("%d\n", a);
+int b = (((10/2)+3)-(2/2));
+while ((b>0)) {
+printf("%s\n", "hello");
+b = (b-1);
 };
-printf("%d\n", a);
+printf("%s\n", "done");
 
 return 0;
 }

@@ -18,7 +18,7 @@ void MinusExp::inferType() {
         type = DataType::NUMBER;
         return;
     }
-    DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Cannot MINUS number and " + DataType::dataTypeStrings[wrong] + " together!");
+    TypeError::terminate("Cannot MINUS " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
+
 
 }

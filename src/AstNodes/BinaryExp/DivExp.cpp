@@ -19,7 +19,6 @@ void DivExp::inferType() {
         type = DataType::NUMBER;
         return;
     }
-    DataType::DataType wrong = expt1 != DataType::NUMBER ? expt1 : expt2;
-    TypeError::terminate("Cannot DIV number and " + DataType::dataTypeStrings[wrong] + " together!");
+    TypeError::terminate("Cannot DIV " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
 }
