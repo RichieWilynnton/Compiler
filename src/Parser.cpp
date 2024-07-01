@@ -68,7 +68,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             validateToken(TokenType::EQ);
             std::unique_ptr<Exp> exp = parseExpression();
 
-            bool alrDeclared = curScope->isDeclared(variable);
+            bool alrDeclared = curScope->getVarInfo(variable) ? true : false;
             curScope->declareVariable(variable, exp->type);
             ret = std::make_unique<Assignment> (variable, exp, alrDeclared);
 
@@ -226,8 +226,9 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             break;
         case TokenType::IDENTIFIER:
         {
-            DataType::DataType varType = curScope->getVarInfo(curToken.content);
-            ret = std::make_unique<VarLit> (curToken.content, varType);
+            std::optional<DataType::DataType> varType = curScope->getVarInfo(curToken.content);
+            if (varType) ret = std::make_unique<VarLit> (curToken.content, varType.value());
+            else terminate("Undeclared variable");
             nextToken();
             break;
         }

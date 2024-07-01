@@ -4,7 +4,19 @@
 #include <string>
 
 std::string PrintExp::genCode() {
-    return "printf(" + exp->genCode() + ")";
+    std::string format;
+    switch (exp->type)
+    {
+    case DataType::STRING:
+        format = "%s";
+        break;
+    case DataType::NUMBER:
+        format = "%d";
+    }
+    
+    // surround in parentheses
+    format = '"' + format + '"';
+    return "printf(" + format + ", " + exp->genCode() + ")";
 }
 
 std::string PrintExp::printNode() {

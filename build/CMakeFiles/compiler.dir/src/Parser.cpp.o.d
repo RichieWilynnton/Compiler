@@ -168,7 +168,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /home/richie/Compiler/src/Lexer.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/optional \
+ /home/richie/Compiler/src/Lexer.h \
  /home/richie/Compiler/src/./Utils/TokenUtils.h \
  /home/richie/Compiler/src/./Utils/../Tokentype.h \
  /home/richie/Compiler/src/./AstNodes/Statement/Assignment.h \

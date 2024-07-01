@@ -789,6 +789,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/optional \
   ../src/Lexer.h \
   ../src/Utils/TokenUtils.h \
   ../src/Tokentype.h \
@@ -1042,6 +1043,7 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o: ../src/Scope.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/optional \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -1617,6 +1619,7 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/optional \
   ../src/Generator.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -1658,6 +1661,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/fstream:
 
 ../src/main.cpp:
+
+../src/Utils/TokenUtils.cpp:
 
 /usr/include/stdlib.h:
 
@@ -1883,8 +1888,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
-../src/Utils/TokenUtils.cpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
@@ -2040,6 +2043,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_bvector.h:
 
 /usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/c++/11/optional:
 
 /usr/include/c++/11/memory:
 

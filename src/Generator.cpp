@@ -20,9 +20,9 @@ void Generator::addLine(std::string line) {
 std::string Generator::generateFile() {
     addHeaderLine("#include <stdio.h>");
     
-    addLine("int main{");
+    addLine("int main(){");
     addLine(program->genCode());
-    addLine("return 0");
+    addLine("return 0;");
     addLine("}");
     
     return header + code;

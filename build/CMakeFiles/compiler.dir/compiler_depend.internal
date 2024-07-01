@@ -793,6 +793,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /usr/include/c++/11/bits/node_handle.h
  /usr/include/c++/11/bits/unordered_map.h
  /usr/include/c++/11/bits/erase_if.h
+ /usr/include/c++/11/optional
  /home/richie/Compiler/src/Lexer.h
  /home/richie/Compiler/src/Utils/TokenUtils.h
  /home/richie/Compiler/src/Tokentype.h
@@ -1047,6 +1048,7 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o
  /usr/include/c++/11/bits/node_handle.h
  /usr/include/c++/11/bits/unordered_map.h
  /usr/include/c++/11/bits/erase_if.h
+ /usr/include/c++/11/optional
  /usr/include/c++/11/stdexcept
  /usr/include/c++/11/iostream
  /usr/include/c++/11/ostream
@@ -1625,6 +1627,7 @@ CMakeFiles/compiler.dir/src/main.cpp.o
  /usr/include/c++/11/bits/node_handle.h
  /usr/include/c++/11/bits/unordered_map.h
  /usr/include/c++/11/bits/erase_if.h
+ /usr/include/c++/11/optional
  /home/richie/Compiler/src/Generator.h
  /usr/include/c++/11/iostream
  /usr/include/c++/11/ostream

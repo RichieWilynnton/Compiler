@@ -16,6 +16,7 @@
 int main() {
     std::string codeString;
     std::ifstream infile { "../code.txt" };
+    std::ofstream outFile("../output/output.c");
     std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
 
     Lexer lexer = Lexer(file_contents); 
@@ -29,7 +30,7 @@ int main() {
         tokens.push_back(token);
     }
 
-    for (Token t : tokens) printToken(t);
+    // for (Token t : tokens) printToken(t);
     
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
@@ -37,7 +38,16 @@ int main() {
     
     Generator generator = Generator(ast);
     std::string file = generator.generateFile();
-    std::cout << file << '\n';  
+
+    if (outFile.is_open()) {
+
+        outFile << file;
+    
+        outFile.close();
+    } else {
+        std::cerr << "Unable to open file for writing.\n";
+    }
+
 
     return 0;
 }

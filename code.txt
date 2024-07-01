@@ -1,15 +1,5 @@
-write "hello world"
-let a = 2
-if a == 2: {
-    write "a is 2"
-}
-else: {
-    write "a is not 2"
-}
-let a = 3
-if a == 3: {
-    write "a is 3"
-}
-elif a == 2: {
-    write "a is not 3"
+let a = 10
+while (a > 0): {
+    write a
+    let a = a - 1
 }
