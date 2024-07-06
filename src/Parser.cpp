@@ -65,8 +65,9 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             std::string variable;
             TokenType::TokenType operation;
             nextToken();
-
-            variable = validateToken(TokenType::IDENTIFIER).content;
+            validateToken(TokenType::IDENTIFIER);
+            variable = curToken.content;
+            nextToken();
             operation = curToken.tokenType;
             std::unique_ptr<Exp> exp;
 
@@ -103,6 +104,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             std::unique_ptr<Exp> cond = parseExpression();
 
             validateToken(TokenType::COLON);
+            nextToken();
             
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
@@ -115,6 +117,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             std::unique_ptr<Exp> cond = parseExpression();
 
             validateToken(TokenType::COLON);
+            nextToken();
 
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
@@ -134,6 +137,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
                 nextToken();
                 
                 validateToken(TokenType::COLON);
+                nextToken();
 
                 skipNewlines();
 
@@ -143,6 +147,17 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             ret = std::make_unique<If> (cond, block, elseBlock);
 
             break;
+        }
+        // hardcoded the syntax coz i can't be bothered
+        case TokenType::FOR:
+        {
+            nextToken();
+            validateToken(TokenType::LET);
+            nextToken();
+            std::unique_ptr<Exp> iteratorVar = parseFactor();
+            validateToken(TokenType::ARROW);
+            nextToken();
+            
         }
         case TokenType::OPEN_CURLY_BRACKET:
         {
@@ -295,6 +310,7 @@ std::unique_ptr<Exp> Parser::parseFactor() {
 
 std::unique_ptr<Block> Parser::parseBlock() {
     validateToken(TokenType::OPEN_CURLY_BRACKET);
+    nextToken();
     newScope();
 
     std::unique_ptr<Block> newBlock = std::make_unique<Block> ();
@@ -313,13 +329,10 @@ std::unique_ptr<Block> Parser::parseBlock() {
     return newBlock;
 }
 
-Token Parser::validateToken(TokenType::TokenType type) {
+void Parser::validateToken(TokenType::TokenType type) {
     if (curToken.tokenType != type) {
         terminate("Expected " + TokenUtils::stringifyTokenType(type) + ", got " + TokenUtils::stringifyTokenType(curToken.tokenType) + " instead.");
     }
-    Token save = curToken;
-    nextToken();
-    return save;
 }
 
 void Parser::skipNewlines() {

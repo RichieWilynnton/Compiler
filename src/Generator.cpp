@@ -19,6 +19,7 @@ void Generator::addLine(std::string line) {
 
 std::string Generator::generateFile() {
     addHeaderLine("#include <stdio.h>");
+    addHeaderLine("#include \"UtilFunctions.h\"");
     
     addLine("int main(){");
     addLine(program->genCode());

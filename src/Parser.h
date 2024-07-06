@@ -30,7 +30,7 @@ public:
     std::unique_ptr<Exp> parseFactor();
     std::unique_ptr<Block> parseBlock();
 
-    Token validateToken(TokenType::TokenType type);
+    void validateToken(TokenType::TokenType type);
     void nextToken();
     void skipNewlines();
     void newScope();

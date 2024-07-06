@@ -4,7 +4,8 @@
 #include <string>
 
 std::string PlusExp::genCode() {
-    return "(" + exp1->genCode() + "+" + exp2->genCode() + ")";
+    if (type == DataType::STRING) return "( concatString( " + exp1->genCode() + ", " + exp2->genCode() + " ))";
+    return "(" + exp1->genCode() + " + " + exp2->genCode() + ")";
 }
 
 std::string PlusExp::printNode() {

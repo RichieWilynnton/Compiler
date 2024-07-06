@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include "UtilFunctions.h"
 int main(){
-int b = (((10/2)+3)-(2/2));
-while ((b>0)) {
-printf("%s\n", "hello");
-b = (b-1);
+int a[] = 2;
+int b[] = 4;
+while ((a>0)) {
+b = (b-a);
 };
-printf("%s\n", "done");
+printf("%d\n", a);
 
 return 0;
 }

@@ -7,6 +7,7 @@ std::string Assignment::genCode()
 {
     DataType::DataType type = exp->type;
     std::string prefix;
+    bool putSquareBrackets = false;
     // Skip prefix 
     if (alrDeclared) return variable + " = " + exp->genCode();
 
@@ -16,7 +17,7 @@ std::string Assignment::genCode()
         prefix = "int";
         break;
     case DataType::STRING:
-        prefix = "string";
+        prefix = "char";
         break;
     case DataType::BOOLEAN:
         prefix = "bool";
@@ -25,7 +26,9 @@ std::string Assignment::genCode()
         TypeError::terminate(DataType::dataTypeStrings[type] + " type is not assignable");
     }
 
-    return prefix + ' ' + variable + " = " + exp->genCode();
+    if (DataType::STRING) putSquareBrackets = true;
+
+    return prefix + ' ' + variable + (putSquareBrackets ? "[]" : "") + " = " + exp->genCode();
 }
 
 std::string Assignment::printNode() {
