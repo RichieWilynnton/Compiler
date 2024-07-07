@@ -154,9 +154,22 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             nextToken();
             validateToken(TokenType::LET);
             nextToken();
+
+            validateToken(TokenType::IDENTIFIER);
             std::unique_ptr<Exp> iteratorVar = parseFactor();
+
             validateToken(TokenType::ARROW);
             nextToken();
+
+            std::unique_ptr<Exp> iteratorStart = parseExpression();
+
+            validateToken(TokenType::TO);
+            nextToken();
+
+            std::unique_ptr<Exp> iteratorEnd = parseExpression();
+
+            ret = std::unique_ptr<For> (iteratorVar, iteratorStart, iteratorEnd);
+
             
         }
         case TokenType::OPEN_CURLY_BRACKET:

@@ -27,6 +27,7 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
         keywords["not"] = TokenType::NOT;
         keywords["True"] = TokenType::TRUE;
         keywords["False"] = TokenType::FALSE;
+        keywords["to"] = TokenType::TO;
     }
     return keywords.find(identifier) != keywords.end() ? keywords[identifier] : TokenType::INVALID;
 }

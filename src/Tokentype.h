@@ -26,6 +26,7 @@ namespace TokenType{
     FOR = 112,
     ELSE = 113,
     ELIF = 114,
+    TO = 115,
     // Operators.
     EQ = 201,
     PLUS = 202,

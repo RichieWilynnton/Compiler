@@ -26,6 +26,8 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::RANGE: return "RANGE";
         case TokenType::FOR: return "FOR";
         case TokenType::ELSE: return "ELSE";
+        case TokenType::TO: return "TO";
+
         
         // Operators
         case TokenType::EQ: return "EQ";
