@@ -26,7 +26,7 @@ std::string Assignment::genCode()
         TypeError::terminate(DataType::dataTypeStrings[type] + " type is not assignable");
     }
 
-    if (DataType::STRING) putSquareBrackets = true;
+    // if (DataType::STRING) putSquareBrackets = true;
 
     return prefix + ' ' + variable + (putSquareBrackets ? "[]" : "") + " = " + exp->genCode();
 }

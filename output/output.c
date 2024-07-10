@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include "UtilFunctions.h"
 int main(){
-int a[] = 2;
-int b[] = 4;
-while ((a>0)) {
-b = (b-a);
+for (int i=0;i<10;i++){
+printf("%d\n", 1);
 };
-printf("%d\n", a);
 
 return 0;
 }

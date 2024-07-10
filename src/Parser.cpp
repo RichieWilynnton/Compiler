@@ -8,6 +8,7 @@
 #include "./Utils/TokenUtils.h"
 #include "./AstNodes/Statement/Assignment.h"
 #include "./AstNodes/Statement/While.h"
+#include "./AstNodes/Statement/For.h"
 #include "./AstNodes/Statement/If.h"
 #include "./AstNodes/Exp.h"
 #include "./AstNodes/Lit/NumLit.h"
@@ -50,10 +51,9 @@ std::unique_ptr<Program> Parser::getParseTree() {
     while (curToken.tokenType != TokenType::_EOF) {
         std::unique_ptr<ASTNode> statement = getStatement();
         if (statement) program->addStatement(statement);
-
         skipNewlines();
-    }
 
+    }
     return program;
 }
 
@@ -145,17 +145,20 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             }
 
             ret = std::make_unique<If> (cond, block, elseBlock);
-
             break;
         }
         // hardcoded the syntax coz i can't be bothered
         case TokenType::FOR:
         {
+            newScope();
             nextToken();
+
             validateToken(TokenType::LET);
             nextToken();
 
             validateToken(TokenType::IDENTIFIER);
+            std::string varName = curToken.content;
+            curScope->declareVariable(varName, DataType::NUMBER);
             std::unique_ptr<Exp> iteratorVar = parseFactor();
 
             validateToken(TokenType::ARROW);
@@ -165,12 +168,19 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             validateToken(TokenType::TO);
             nextToken();
-
+    
             std::unique_ptr<Exp> iteratorEnd = parseExpression();
 
-            ret = std::unique_ptr<For> (iteratorVar, iteratorStart, iteratorEnd);
+            validateToken(TokenType::COLON);
+            nextToken();
+            skipNewlines();
 
-            
+            std::unique_ptr<Block> block = parseBlock();
+
+            leaveScope();
+
+            ret = std::make_unique<For> (iteratorVar, iteratorStart, iteratorEnd, block);
+            break;
         }
         case TokenType::OPEN_CURLY_BRACKET:
         {
@@ -368,6 +378,7 @@ void Parser::nextToken() {
 }
 
 void Parser::terminate(std::string msg) {
+    std::cerr << curPos << '\n';
     throw std::runtime_error("Error during parsing: " + msg);
 }
 

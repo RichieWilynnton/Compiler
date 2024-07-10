@@ -610,6 +610,30 @@ Statement/Assignment.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s
 .PHONY : Statement/Assignment.cpp.s
 
+Statement/For.o: Statement/For.cpp.o
+.PHONY : Statement/For.o
+
+# target to build an object file
+Statement/For.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o
+.PHONY : Statement/For.cpp.o
+
+Statement/For.i: Statement/For.cpp.i
+.PHONY : Statement/For.i
+
+# target to preprocess a source file
+Statement/For.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.i
+.PHONY : Statement/For.cpp.i
+
+Statement/For.s: Statement/For.cpp.s
+.PHONY : Statement/For.s
+
+# target to generate assembly for a file
+Statement/For.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.s
+.PHONY : Statement/For.cpp.s
+
 Statement/If.o: Statement/If.cpp.o
 .PHONY : Statement/If.o
 
@@ -799,6 +823,9 @@ help:
 	@echo "... Statement/Assignment.o"
 	@echo "... Statement/Assignment.i"
 	@echo "... Statement/Assignment.s"
+	@echo "... Statement/For.o"
+	@echo "... Statement/For.i"
+	@echo "... Statement/For.s"
 	@echo "... Statement/If.o"
 	@echo "... Statement/If.i"
 	@echo "... Statement/If.s"

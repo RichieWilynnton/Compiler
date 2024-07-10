@@ -178,6 +178,9 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Statement/While.h \
  /home/richie/Compiler/src/./AstNodes/Statement/../ASTNode.h \
  /home/richie/Compiler/src/./AstNodes/Statement/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/Statement/For.h \
+ /home/richie/Compiler/src/./AstNodes/Statement/../Lit/VarLit.h \
+ /home/richie/Compiler/src/./AstNodes/Statement/../Lit/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/Statement/If.h \
  /home/richie/Compiler/src/./AstNodes/Lit/NumLit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/../Exp.h \

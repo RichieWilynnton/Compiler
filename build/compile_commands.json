@@ -161,6 +161,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/For.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/For.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Statement/For.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/If.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/If.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Statement/If.cpp"
 }

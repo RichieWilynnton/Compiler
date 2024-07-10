@@ -27,6 +27,7 @@ add_library(AstNodes
     Lit/BoolLit.cpp
     Statement/Assignment.cpp
     Statement/While.cpp
+    Statement/For.cpp
     Statement/If.cpp
 )
 
