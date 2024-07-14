@@ -1,16 +1,15 @@
 #pragma once
+#include "./BinaryExp.h"
 #include "../Exp.h"
 #include <string>
 #include <memory>
 
-class AndExp : public Exp {
+class AndExp : public BinaryExp {
     public:
-        std::unique_ptr<Exp> exp1, exp2;
+        using BinaryExp::BinaryExp;
         std::string genCode() override; 
         std::string printNode() override;
+        std::unique_ptr<Exp> eval() override;
         void inferType() override;
-        AndExp(std::unique_ptr<Exp>& exp1, std::unique_ptr<Exp>& exp2)
-            : exp1(std::move(exp1)), exp2(std::move(exp2)) {
-            inferType();
-        }
+        
 };

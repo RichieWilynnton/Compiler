@@ -1,9 +1,12 @@
 #include "NumLit.h"
+#include "../Exp.h"
 
 #include <string>
+#include <memory>
 
 NumLit::NumLit(std::string content = "") : content(content) {
     inferType();
+    optimizable = true;
 }
 
 std::string NumLit::genCode() {

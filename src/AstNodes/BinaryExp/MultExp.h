@@ -1,20 +1,18 @@
 #ifndef MULT_H
 #define MULT_H
 
+#include "./BinaryExp.h"
 #include "../Exp.h"
 
 #include <memory>
 
-class MultExp : public Exp {
+class MultExp : public BinaryExp {
     public:
-        std::unique_ptr<Exp> exp1, exp2;
-        MultExp(std::unique_ptr<Exp>& exp1, std::unique_ptr<Exp>& exp2)
-            : exp1(std::move(exp1)), exp2(std::move(exp2)) {
-            inferType();
-        }
+        using BinaryExp::BinaryExp;
         std::string genCode() override; 
         std::string printNode() override;
         void inferType() override;
+        std::unique_ptr<Exp> eval() override;
 
 };
 

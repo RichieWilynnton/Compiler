@@ -7,6 +7,7 @@ add_library(AstNodes
     Block.cpp
     DataType.cpp
     TypeError.cpp
+    BinaryExp/BinaryExp.cpp
     BinaryExp/PlusExp.cpp
     BinaryExp/MinusExp.cpp
     BinaryExp/MultExp.cpp
@@ -18,6 +19,7 @@ add_library(AstNodes
     BinaryExp/GTEQExp.cpp
     BinaryExp/LTExp.cpp
     BinaryExp/LTEQExp.cpp
+    UnaryExp/UnaryExp.cpp
     UnaryExp/NegExp.cpp
     UnaryExp/NotExp.cpp
     FunctionExp/PrintExp.cpp

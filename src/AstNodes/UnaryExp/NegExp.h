@@ -1,19 +1,17 @@
 #pragma once
 
 #include "../Exp.h"
+#include "./UnaryExp.h"
 
 #include <string>
 #include <memory>
 
-class NegExp : public Exp {
+class NegExp : public UnaryExp {
     public:
-        std::unique_ptr<Exp> exp1;
-        NegExp(std::unique_ptr<Exp>& exp1)
-            : exp1(std::move(exp1)) {
-            inferType();
-        }
+        using UnaryExp::UnaryExp;
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;
+        std::unique_ptr<Exp> eval() override;
 
 };

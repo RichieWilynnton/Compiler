@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o"
   "CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o"
+  "CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o"
   "CMakeFiles/AstNodes.dir/BinaryExp/DivExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/BinaryExp/EQEQExp.cpp.o"
@@ -51,6 +53,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o.d"
   "CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o"
   "CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o.d"
+  "CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o"
+  "CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o.d"
   "libAstNodes.a"
   "libAstNodes.pdb"
 )

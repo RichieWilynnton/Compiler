@@ -1,5 +1,6 @@
 #include "GTExp.h"
 #include "../DataType.h"
+#include "../Lit/BoolLit.h"
 #include "../TypeError.h"
 #include <string>
 
@@ -19,4 +20,14 @@ void GTExp::inferType() {
     }
     TypeError::terminate("Cannot GT " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
+}
+std::unique_ptr<Exp> GTExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (exp1->type == DataType::NUMBER && exp2->type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        int b = std::stoi(exp2->genCode());
+        ret = std::make_unique<BoolLit> (a>b);
+    }
+    return ret;
 }

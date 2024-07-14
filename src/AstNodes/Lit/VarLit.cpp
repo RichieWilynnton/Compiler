@@ -5,6 +5,7 @@
 VarLit::VarLit(std::string name, DataType::DataType type) : name(name) {
     this->type = type;
     inferType();
+    optimizable = false;
 }
 
 

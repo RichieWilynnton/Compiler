@@ -5,6 +5,7 @@
 #include "../DataType.h"
 
 #include <string>
+#include <memory>
 
 class VarLit : public Exp {
     public:

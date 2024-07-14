@@ -1,6 +1,7 @@
 #include "NegExp.h"
 #include "../DataType.h"
 #include "../TypeError.h"
+#include "../Lit/NumLit.h"
 
 #include <string>
 
@@ -16,4 +17,14 @@ void NegExp::inferType() {
     DataType::DataType expt1= exp1->type;
     if (expt1 != DataType::NUMBER) TypeError::terminate("Cannot NEG " + DataType::dataTypeStrings[expt1] + "!");
     type = DataType::NUMBER;
+}
+
+std::unique_ptr<Exp> NegExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        ret = std::make_unique<NumLit> (std::to_string(-a));
+    }
+    return ret;
 }

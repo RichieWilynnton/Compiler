@@ -159,4 +159,9 @@ src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/richie/Compiler/src/AstNodes/UnaryExp/../TypeError.h
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./UnaryExp.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./../Exp.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/../Lit/NumLit.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/../Lit/../Exp.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/../TypeError.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/../Lit/BoolLit.h

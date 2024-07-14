@@ -1,5 +1,6 @@
 #include "MultExp.h"
 #include "../DataType.h"
+#include "../Lit/NumLit.h"
 #include "../TypeError.h"
 #include <string>
 
@@ -20,4 +21,14 @@ void MultExp::inferType() {
     TypeError::terminate("Cannot MULT " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
 
+}
+std::unique_ptr<Exp> MultExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (exp1->type == DataType::NUMBER && exp2->type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        int b = std::stoi(exp2->genCode());
+        ret = std::make_unique<NumLit> (std::to_string(a*b));
+    }
+    return ret;
 }

@@ -3,6 +3,7 @@
 #include "../Exp.h"
 
 #include <string>
+#include <memory>
 
 class BoolLit : public Exp {
     public:
@@ -12,6 +13,5 @@ class BoolLit : public Exp {
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;
-
 
 };

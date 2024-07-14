@@ -1,9 +1,9 @@
 src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o: \
  /home/richie/Compiler/src/AstNodes/UnaryExp/UnaryExp.cpp \
  /usr/include/stdc-predef.h \
- /home/richie/Compiler/src/AstNodes/UnaryExp/UnaryExp.h \
- /home/richie/Compiler/src/AstNodes/UnaryExp/../Exp.h \
- /home/richie/Compiler/src/AstNodes/UnaryExp/../ASTNode.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./UnaryExp.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./../Exp.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./../ASTNode.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -132,7 +132,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/richie/Compiler/src/AstNodes/UnaryExp/../DataType.h \
+ /home/richie/Compiler/src/AstNodes/UnaryExp/./../DataType.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

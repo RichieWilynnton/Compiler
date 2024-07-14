@@ -201,6 +201,8 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 std::unique_ptr<Exp> Parser::parseExpression(){
     std::unique_ptr<Exp> a = parseTerm();
 
+    
+    // Can't make code neater coz I can't call nextToken() if there are no more operations
     while (true) {
         if (curToken.tokenType == TokenType::PLUS) { 
             nextToken();
@@ -223,6 +225,9 @@ std::unique_ptr<Exp> Parser::parseExpression(){
             a = std::make_unique<OrExp> (a, b);
         }
         else return a;
+
+        a->init();
+        if (a->optimizable) a = a->eval();
     }
 }
 
@@ -240,33 +245,38 @@ std::unique_ptr<Exp> Parser::parseTerm() {
             std::unique_ptr<Exp> b = parseFactor();
             a = std::make_unique<DivExp> (a, b);
         }
-        else if (curToken.tokenType == TokenType::EQEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<EQEQExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::LT) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<LTExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::LTEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<LTEQExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::GT) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<GTExp> (a, b);
-        }else if (curToken.tokenType == TokenType::GTEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<GTEQExp> (a, b);
-        }
-        
 
+
+        // Wrong Precedence (will fix latr)
+        // else if (curToken.tokenType == TokenType::EQEQ) {
+        //     nextToken();
+        //     std::unique_ptr<Exp> b = parseFactor();
+        //     a = std::make_unique<EQEQExp> (a, b);
+        // }
+        // else if (curToken.tokenType == TokenType::LT) {
+        //     nextToken();
+        //     std::unique_ptr<Exp> b = parseFactor();
+        //     a = std::make_unique<LTExp> (a, b);
+        // }
+        // else if (curToken.tokenType == TokenType::LTEQ) {
+        //     nextToken();
+        //     std::unique_ptr<Exp> b = parseFactor();
+        //     a = std::make_unique<LTEQExp> (a, b);
+        // }
+        // else if (curToken.tokenType == TokenType::GT) {
+        //     nextToken();
+        //     std::unique_ptr<Exp> b = parseFactor();
+        //     a = std::make_unique<GTExp> (a, b);
+        // }
+        // else if (curToken.tokenType == TokenType::GTEQ) {
+        //     nextToken();
+        //     std::unique_ptr<Exp> b = parseFactor();
+        //     a = std::make_unique<GTEQExp> (a, b);
+        // }
         else return a;
+
+        a->init();
+        if (a->optimizable) a = a->eval();
     }
 }
 

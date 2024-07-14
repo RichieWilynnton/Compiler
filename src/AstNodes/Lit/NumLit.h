@@ -4,6 +4,7 @@
 #include "../Exp.h"
 
 #include <string>
+#include <memory>
 
 class NumLit : public Exp {
     public:
@@ -13,7 +14,6 @@ class NumLit : public Exp {
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;
-
 
 };
 

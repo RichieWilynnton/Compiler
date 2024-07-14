@@ -1,6 +1,7 @@
 #include "LTEQExp.h"
 #include "../DataType.h"
 #include "../TypeError.h"
+#include "../Lit/BoolLit.h"
 #include <string>
 
 std::string LTEQExp::genCode() {
@@ -19,4 +20,14 @@ void LTEQExp::inferType() {
     }
     TypeError::terminate("Cannot LTEQ " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
+}
+std::unique_ptr<Exp> LTEQExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (exp1->type == DataType::NUMBER && exp2->type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        int b = std::stoi(exp2->genCode());
+        ret = std::make_unique<BoolLit> (a<=b);
+    }
+    return ret;
 }

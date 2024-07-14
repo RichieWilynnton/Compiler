@@ -1,6 +1,9 @@
 #include "PlusExp.h"
+#include "../Lit/NumLit.h"
+#include "../Lit/BoolLit.h"
 #include "../DataType.h"
 #include "../TypeError.h"
+#include "../Exp.h"
 #include <string>
 
 std::string PlusExp::genCode() {
@@ -25,4 +28,15 @@ void PlusExp::inferType() {
         return;
     }
     TypeError::terminate("Cannot PLUS " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
+}
+
+std::unique_ptr<Exp> PlusExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        int b = std::stoi(exp2->genCode());
+        ret = std::make_unique<NumLit> (std::to_string(a+b));
+    }
+    return ret;
 }

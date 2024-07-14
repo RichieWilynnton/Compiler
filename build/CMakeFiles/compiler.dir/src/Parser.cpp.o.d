@@ -189,21 +189,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Lit/BoolLit.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/PlusExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/MinusExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/MultExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/DivExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/AndExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/OrExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/EQEQExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/LTExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/LTEQExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/GTExp.h \
- /home/richie/Compiler/src/./AstNodes/BinaryExp/GTEQExp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
- /home/richie/Compiler/src/./AstNodes/UnaryExp/NotExp.h \
- /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
- /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/./BinaryExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/./../Exp.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
@@ -221,4 +208,21 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc
+ /usr/include/c++/11/bits/istream.tcc \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/MinusExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/MultExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/DivExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/AndExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/OrExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/EQEQExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/LTExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/LTEQExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/GTExp.h \
+ /home/richie/Compiler/src/./AstNodes/BinaryExp/GTEQExp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/NegExp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/./UnaryExp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/./../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/UnaryExp/NotExp.h \
+ /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
+ /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h

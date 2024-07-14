@@ -1,5 +1,6 @@
 #include "EQEQExp.h"
 #include "../DataType.h"
+#include "../Lit/BoolLit.h"
 #include "../TypeError.h"
 #include <string>
 
@@ -19,4 +20,15 @@ void EQEQExp::inferType() {
     }
     TypeError::terminate("Cannot EQEQ " + DataType::dataTypeStrings[exp1->type] + " and " + DataType::dataTypeStrings[exp2->type] + " together!");
 
+}
+
+std::unique_ptr<Exp> EQEQExp::eval() {
+    if (!optimizable) return nullptr;
+    std::unique_ptr<Exp> ret;
+    if (exp1->type == DataType::NUMBER && exp2->type == DataType::NUMBER) {
+        int a = std::stoi(exp1->genCode());
+        int b = std::stoi(exp2->genCode());
+        ret = std::make_unique<BoolLit> (a==b);
+    }
+    return ret;
 }

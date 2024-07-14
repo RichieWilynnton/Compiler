@@ -154,6 +154,30 @@ BinaryExp/AndExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/AndExp.cpp.s
 .PHONY : BinaryExp/AndExp.cpp.s
 
+BinaryExp/BinaryExp.o: BinaryExp/BinaryExp.cpp.o
+.PHONY : BinaryExp/BinaryExp.o
+
+# target to build an object file
+BinaryExp/BinaryExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o
+.PHONY : BinaryExp/BinaryExp.cpp.o
+
+BinaryExp/BinaryExp.i: BinaryExp/BinaryExp.cpp.i
+.PHONY : BinaryExp/BinaryExp.i
+
+# target to preprocess a source file
+BinaryExp/BinaryExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.i
+.PHONY : BinaryExp/BinaryExp.cpp.i
+
+BinaryExp/BinaryExp.s: BinaryExp/BinaryExp.cpp.s
+.PHONY : BinaryExp/BinaryExp.s
+
+# target to generate assembly for a file
+BinaryExp/BinaryExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.s
+.PHONY : BinaryExp/BinaryExp.cpp.s
+
 BinaryExp/DivExp.o: BinaryExp/DivExp.cpp.o
 .PHONY : BinaryExp/DivExp.o
 
@@ -754,6 +778,30 @@ UnaryExp/NotExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.s
 .PHONY : UnaryExp/NotExp.cpp.s
 
+UnaryExp/UnaryExp.o: UnaryExp/UnaryExp.cpp.o
+.PHONY : UnaryExp/UnaryExp.o
+
+# target to build an object file
+UnaryExp/UnaryExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.o
+.PHONY : UnaryExp/UnaryExp.cpp.o
+
+UnaryExp/UnaryExp.i: UnaryExp/UnaryExp.cpp.i
+.PHONY : UnaryExp/UnaryExp.i
+
+# target to preprocess a source file
+UnaryExp/UnaryExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.i
+.PHONY : UnaryExp/UnaryExp.cpp.i
+
+UnaryExp/UnaryExp.s: UnaryExp/UnaryExp.cpp.s
+.PHONY : UnaryExp/UnaryExp.s
+
+# target to generate assembly for a file
+UnaryExp/UnaryExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryExp.cpp.s
+.PHONY : UnaryExp/UnaryExp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -766,6 +814,9 @@ help:
 	@echo "... BinaryExp/AndExp.o"
 	@echo "... BinaryExp/AndExp.i"
 	@echo "... BinaryExp/AndExp.s"
+	@echo "... BinaryExp/BinaryExp.o"
+	@echo "... BinaryExp/BinaryExp.i"
+	@echo "... BinaryExp/BinaryExp.s"
 	@echo "... BinaryExp/DivExp.o"
 	@echo "... BinaryExp/DivExp.i"
 	@echo "... BinaryExp/DivExp.s"
@@ -841,6 +892,9 @@ help:
 	@echo "... UnaryExp/NotExp.o"
 	@echo "... UnaryExp/NotExp.i"
 	@echo "... UnaryExp/NotExp.s"
+	@echo "... UnaryExp/UnaryExp.o"
+	@echo "... UnaryExp/UnaryExp.i"
+	@echo "... UnaryExp/UnaryExp.s"
 .PHONY : help
 
 

@@ -810,20 +810,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Lit/BoolLit.h \
   ../src/AstNodes/BinaryExp/PlusExp.h \
   ../src/AstNodes/Exp.h \
-  ../src/AstNodes/BinaryExp/MinusExp.h \
-  ../src/AstNodes/BinaryExp/MultExp.h \
-  ../src/AstNodes/BinaryExp/DivExp.h \
-  ../src/AstNodes/BinaryExp/AndExp.h \
-  ../src/AstNodes/BinaryExp/OrExp.h \
-  ../src/AstNodes/BinaryExp/EQEQExp.h \
-  ../src/AstNodes/BinaryExp/LTExp.h \
-  ../src/AstNodes/BinaryExp/LTEQExp.h \
-  ../src/AstNodes/BinaryExp/GTExp.h \
-  ../src/AstNodes/BinaryExp/GTEQExp.h \
-  ../src/AstNodes/UnaryExp/NegExp.h \
-  ../src/AstNodes/Exp.h \
-  ../src/AstNodes/UnaryExp/NotExp.h \
-  ../src/AstNodes/FunctionExp/PrintExp.h \
+  ../src/AstNodes/BinaryExp/BinaryExp.h \
   ../src/AstNodes/Exp.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -848,7 +835,24 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  ../src/AstNodes/BinaryExp/MinusExp.h \
+  ../src/AstNodes/BinaryExp/MultExp.h \
+  ../src/AstNodes/BinaryExp/DivExp.h \
+  ../src/AstNodes/BinaryExp/AndExp.h \
+  ../src/AstNodes/BinaryExp/OrExp.h \
+  ../src/AstNodes/BinaryExp/EQEQExp.h \
+  ../src/AstNodes/BinaryExp/LTExp.h \
+  ../src/AstNodes/BinaryExp/LTEQExp.h \
+  ../src/AstNodes/BinaryExp/GTExp.h \
+  ../src/AstNodes/BinaryExp/GTEQExp.h \
+  ../src/AstNodes/UnaryExp/NegExp.h \
+  ../src/AstNodes/Exp.h \
+  ../src/AstNodes/UnaryExp/UnaryExp.h \
+  ../src/AstNodes/Exp.h \
+  ../src/AstNodes/UnaryExp/NotExp.h \
+  ../src/AstNodes/FunctionExp/PrintExp.h \
+  ../src/AstNodes/Exp.h
 
 CMakeFiles/compiler.dir/src/Scope.cpp.o: ../src/Scope.cpp \
   /usr/include/stdc-predef.h \
@@ -1669,6 +1673,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 ../src/Testing.h:
 
+../src/Testing.cpp:
+
 /usr/include/stdlib.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
@@ -1688,6 +1694,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/bit:
+
+../src/AstNodes/BinaryExp/BinaryExp.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -1716,6 +1724,10 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/pthread.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
+
+../src/Scope.cpp:
+
+/usr/include/c++/11/ext/concurrence.h:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -1750,8 +1762,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
-
-../src/Testing.cpp:
 
 /usr/include/c++/11/cctype:
 
@@ -1863,10 +1873,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/11/ext/concurrence.h:
-
-../src/Scope.cpp:
-
 /usr/include/ctype.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
@@ -1942,10 +1948,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
@@ -2180,6 +2182,12 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 ../src/AstNodes/BinaryExp/GTExp.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/c++/11/bits/concept_check.h:
+
+../src/AstNodes/UnaryExp/UnaryExp.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
 
