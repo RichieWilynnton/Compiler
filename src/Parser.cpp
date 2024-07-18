@@ -75,12 +75,12 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             bool alrDeclared;
             if (operation == TokenType::EQ) {
-                exp = parseExpression();
+                exp = parseComparison();
                 curScope->declareVariable(variable, exp->type);
                 alrDeclared = false;
             }
             else if (operation == TokenType::ARROW) {
-                exp = parseExpression();
+                exp = parseComparison();
                 curScope->modifyVariable(variable, exp->type);
                 alrDeclared = true;
             }
@@ -94,14 +94,14 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::PRINT:
         {
             nextToken();
-            std::unique_ptr<Exp> exp = parseExpression();
+            std::unique_ptr<Exp> exp = parseComparison();
             ret = std::make_unique<PrintExp> (exp);
             break;
         }
         case TokenType::WHILE:
         {
             nextToken();
-            std::unique_ptr<Exp> cond = parseExpression();
+            std::unique_ptr<Exp> cond = parseComparison();
 
             validateToken(TokenType::COLON);
             nextToken();
@@ -114,7 +114,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::IF:
         {
             nextToken();
-            std::unique_ptr<Exp> cond = parseExpression();
+            std::unique_ptr<Exp> cond = parseComparison();
 
             validateToken(TokenType::COLON);
             nextToken();
@@ -191,14 +191,49 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             break;
             
         default:
-            parseExpression();
+            parseComparison();
 
     }
     return ret;
 }
 
+std::unique_ptr<Exp> Parser::parseComparison() {
+    std::unique_ptr<Exp> a = parseExpression();
+
+    while (true) {
+        if (curToken.tokenType == TokenType::EQEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseExpression();
+            a = std::make_unique<EQEQExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::LT) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseExpression();
+            a = std::make_unique<LTExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::LTEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseExpression();
+            a = std::make_unique<LTEQExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::GT) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseExpression();
+            a = std::make_unique<GTExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::GTEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseExpression();
+            a = std::make_unique<GTEQExp> (a, b);
+        }
+        else return a;
+    }
+    a->init();
+    if (a->optimizable) a = a->eval();
+}
+
 // Expression := Term | Term "+" Term "+" ... | Term "-" Term "-" ...
-std::unique_ptr<Exp> Parser::parseExpression(){
+std::unique_ptr<Exp> Parser::parseExpression() {
     std::unique_ptr<Exp> a = parseTerm();
 
     
@@ -248,31 +283,31 @@ std::unique_ptr<Exp> Parser::parseTerm() {
 
 
         // Wrong Precedence (will fix latr)
-        // else if (curToken.tokenType == TokenType::EQEQ) {
-        //     nextToken();
-        //     std::unique_ptr<Exp> b = parseFactor();
-        //     a = std::make_unique<EQEQExp> (a, b);
-        // }
-        // else if (curToken.tokenType == TokenType::LT) {
-        //     nextToken();
-        //     std::unique_ptr<Exp> b = parseFactor();
-        //     a = std::make_unique<LTExp> (a, b);
-        // }
-        // else if (curToken.tokenType == TokenType::LTEQ) {
-        //     nextToken();
-        //     std::unique_ptr<Exp> b = parseFactor();
-        //     a = std::make_unique<LTEQExp> (a, b);
-        // }
-        // else if (curToken.tokenType == TokenType::GT) {
-        //     nextToken();
-        //     std::unique_ptr<Exp> b = parseFactor();
-        //     a = std::make_unique<GTExp> (a, b);
-        // }
-        // else if (curToken.tokenType == TokenType::GTEQ) {
-        //     nextToken();
-        //     std::unique_ptr<Exp> b = parseFactor();
-        //     a = std::make_unique<GTEQExp> (a, b);
-        // }
+        else if (curToken.tokenType == TokenType::EQEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<EQEQExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::LT) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<LTExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::LTEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<LTEQExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::GT) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<GTExp> (a, b);
+        }
+        else if (curToken.tokenType == TokenType::GTEQ) {
+            nextToken();
+            std::unique_ptr<Exp> b = parseFactor();
+            a = std::make_unique<GTEQExp> (a, b);
+        }
         else return a;
 
         a->init();
@@ -303,7 +338,7 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             break;
         case TokenType::OPEN_ROUND_BRACKET:
             nextToken();
-            ret = parseExpression();
+            ret = parseComparison();
             if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
                 terminate("Unclosed bracket detected");
             }

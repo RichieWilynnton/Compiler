@@ -25,6 +25,7 @@ public:
     std::unique_ptr<Program> getParseTree();
 
     std::unique_ptr<ASTNode> getStatement();
+    std::unique_ptr<Exp> parseComparison();
     std::unique_ptr<Exp> parseExpression();
     std::unique_ptr<Exp> parseTerm();
     std::unique_ptr<Exp> parseFactor();
