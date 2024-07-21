@@ -12,11 +12,27 @@
 #include <vector>
 #include <memory>
 
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        std::cerr << "Usage: " << argv[0] << " <input_file>\n";
+        return 1;
+    }
 
-int main() {
-    std::string codeString;
-    std::ifstream infile { "../code.txt" };
-    std::ofstream outFile("../output/output.c");
+    // Get the input file path from the command-line argument
+    std::string inputFilePath = argv[1];
+    
+    std::ifstream infile { inputFilePath };
+    if (!infile) {
+        std::cerr << "Unable to open file: " << inputFilePath << '\n';
+        return 1;
+    }
+
+    std::ofstream outFile("../api/output/output.c");
+    if (!outFile) {
+        std::cerr << "Unable to open output file for writing.\n";
+        return 1;
+    }
+
     std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
 
     Lexer lexer = Lexer(file_contents); 
@@ -39,17 +55,10 @@ int main() {
     Generator generator = Generator(ast);
     std::string file = generator.generateFile();
 
-    std::cerr << file << '\n';
+    std::cout << file << '\n';
 
-    if (outFile.is_open()) {
-
-        outFile << file;
-    
-        outFile.close();
-    } else {
-        std::cerr << "Unable to open file for writing.\n";
-    }
-
+    outFile << file;
+    outFile.close();
 
     return 0;
 }

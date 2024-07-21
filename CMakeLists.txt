@@ -21,6 +21,10 @@ add_executable(compiler
     src/Scope.cpp
     src/Utils/TokenUtils.cpp
 )
+# Set the output directory for the executable
+set_target_properties(compiler PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/api
+)
 
 # Include directories
 target_include_directories(compiler PUBLIC
@@ -33,13 +37,13 @@ target_link_libraries(compiler PUBLIC AstNodes)
 
 add_custom_command(TARGET compiler
     POST_BUILD
-    COMMAND compiler
+    COMMAND compiler ../code.txt
     COMMENT "Running MyCompiler executable"
 )
 
 add_custom_target(run
     COMMAND compiler
-    DEPENDS compiler
+    DEPENDS compiler ../code.txt
     COMMENT "Build and run MyCompiler"
 )
     

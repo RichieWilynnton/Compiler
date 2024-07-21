@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../api/compiler"
+  "../api/compiler.pdb"
   "CMakeFiles/compiler.dir/src/Generator.cpp.o"
   "CMakeFiles/compiler.dir/src/Generator.cpp.o.d"
   "CMakeFiles/compiler.dir/src/Keywords.cpp.o"
@@ -15,8 +17,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/compiler.dir/src/Utils/TokenUtils.cpp.o.d"
   "CMakeFiles/compiler.dir/src/main.cpp.o"
   "CMakeFiles/compiler.dir/src/main.cpp.o.d"
-  "compiler"
-  "compiler.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

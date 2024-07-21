@@ -66,9 +66,10 @@ include CMakeFiles/run.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run.dir/progress.make
 
-CMakeFiles/run: compiler
+CMakeFiles/run: ../api/compiler
+CMakeFiles/run: ../code.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Build and run MyCompiler"
-	./compiler
+	../api/compiler
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make
