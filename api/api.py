@@ -1,31 +1,27 @@
 from flask import Flask, request, jsonify
 import subprocess
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def run_executable():
     try:
-        # Define the executable path
+        body = request.get_json()
+
+        input_code = body.get('code')
+
         executable_path = os.path.join(os.path.dirname(__file__), 'compiler')
-        
-        # Get the file from the request
-        # input_file = request.files.get('file')
-        # if input_file is None:
-        #     return jsonify({'status': 'error', 'message': 'No file provided'}), 400
-        
-        # # Save the file to a temporary location
-        # input_file_path = os.path.join(os.path.dirname(__file__), 'temp_input.txt')
-        # input_file.save(input_file_path)
 
         input_file_path = os.path.join(os.path.dirname(__file__), '..', 'code.txt')
+
+        with open(input_file_path, 'w') as input_file:
+            input_file.write(input_code)
         
         # Run the executable with the input file
         result = subprocess.run([executable_path, input_file_path], capture_output=True, text=True)
-        
-        # Remove the temporary file
-        # os.remove(input_file_path)
         
         # Check if the execution was successful
         if result.returncode == 0:
