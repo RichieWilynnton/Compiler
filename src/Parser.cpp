@@ -103,9 +103,6 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             nextToken();
             std::unique_ptr<Exp> cond = parseComparison();
 
-            validateToken(TokenType::COLON);
-            nextToken();
-            
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
             ret = std::make_unique<While> (cond, block);
@@ -115,9 +112,6 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         {
             nextToken();
             std::unique_ptr<Exp> cond = parseComparison();
-
-            validateToken(TokenType::COLON);
-            nextToken();
 
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
@@ -136,9 +130,6 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             else if (curToken.tokenType == TokenType::ELSE) {
                 nextToken();
                 
-                validateToken(TokenType::COLON);
-                nextToken();
-
                 skipNewlines();
 
                 elseBlock = parseBlock();
@@ -161,7 +152,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             curScope->declareVariable(varName, DataType::NUMBER);
             std::unique_ptr<Exp> iteratorVar = parseFactor();
 
-            validateToken(TokenType::ARROW);
+            validateToken(TokenType::EQ);
             nextToken();
 
             std::unique_ptr<Exp> iteratorStart = parseExpression();
@@ -171,8 +162,6 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
     
             std::unique_ptr<Exp> iteratorEnd = parseExpression();
 
-            validateToken(TokenType::COLON);
-            nextToken();
             skipNewlines();
 
             std::unique_ptr<Block> block = parseBlock();

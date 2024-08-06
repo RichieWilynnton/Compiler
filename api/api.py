@@ -22,20 +22,38 @@ def run_executable():
         
         # Run the executable with the input file
         result = subprocess.run([executable_path, input_file_path], capture_output=True, text=True)
-        
+
+
         # Check if the execution was successful
         if result.returncode == 0:
-            return jsonify({
-                'status': 'success',
-                'output': result.stdout
-            })
+            output_dir = os.path.join(os.path.dirname(__file__), 'output')
+            
+            # Run the Makefile in the output directory
+            make_result = subprocess.run(['make'], cwd=output_dir, capture_output=True, text=True)
+
+            if make_result.returncode == 0:
+                exec_result = subprocess.run(['./out'], cwd=output_dir, capture_output=True, text=True)
+
+                return jsonify({
+                    'status': 'success',
+                    'compile': result.stdout,
+                    'result' : exec_result.stdout
+                })
+            else:
+                return jsonify({
+                    'status': 'error',
+                    'compile': result.stdout,
+                    'result' : exec_result.stderr
+                }), 500
         else:
             return jsonify({
                 'status': 'error',
-                'output': result.stderr
+                'compile': result.stderr,
+                'result' : 'No code'
             }), 500
     
     except Exception as e:
+        print(e)
         return jsonify({
             'status': 'error',
             'message': str(e)

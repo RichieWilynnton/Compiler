@@ -39,11 +39,7 @@ Token Lexer::getToken() {
             token = Token("+", TokenType::PLUS);
             break;
         case '-':
-            if (peek() == '>') {
-                nextChar();
-                token = Token("->", TokenType::ARROW);
-            }
-            else if (peek() == '-') {
+            if (peek() == '-') {
                 nextChar();
                 token = Token("--", TokenType::DOUBLE_DASH);
             }
@@ -59,6 +55,10 @@ Token Lexer::getToken() {
             if (peek() == '=') {
                 nextChar();
                 token = Token("==", TokenType::EQEQ);
+            }
+            else if (peek() == '>') {
+                nextChar();
+                token = Token("=>", TokenType::ARROW);
             }
             else token = Token("=", TokenType::EQ);
             break;

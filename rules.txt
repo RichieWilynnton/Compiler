@@ -1,7 +1,7 @@
 Program := Statement[]
 Statement := Assignment | ForAssignment | IfStatement | WhileStatement
 Assignment := LET Identifier "=" Expression
-for (let x -> 1 to )
+for (let x -> 1 to 2)
 
 ----------------------------------------------------
 // This is purely the grammar used during parsing
