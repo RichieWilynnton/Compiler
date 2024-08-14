@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include "UtilFunctions.h"
+#include "vector.h"
+#include "print.h"
 int main(){
-printf("%s\n", "hello world");
-for (int i=0;i<10;i++){
-printf("%d\n", i);
-};
-printf("%d\n", 16);
+Vector* a = appendInt(3, appendInt(2, appendInt(1, initVector(3))));
+print_vector(a);
+print_newline();
+freeVector(a);
 
 return 0;
 }

@@ -61,6 +61,11 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/FreePtr.cpp.o -c /home/richie/Compiler/src/AstNodes/FreePtr.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/FreePtr.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/BinaryExp/BinaryExp.cpp.o -c /home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.cpp"
 },
@@ -158,6 +163,11 @@
   "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/BoolLit.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Lit/BoolLit.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/ArrayLit.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Lit/ArrayLit.cpp"
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",

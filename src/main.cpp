@@ -35,10 +35,12 @@ int main(int argc, char *argv[]) {
 
     std::string file_contents { std::istreambuf_iterator<char>(infile), std::istreambuf_iterator<char>() };
 
-    Lexer lexer = Lexer(file_contents); 
+    Lexer lexer = Lexer(file_contents);
+
 
     Token token = lexer.getToken();
     std::vector<Token> tokens;
+    
     tokens.push_back(token);
 
     while (token.tokenType != TokenType::_EOF) {
@@ -46,11 +48,13 @@ int main(int argc, char *argv[]) {
         tokens.push_back(token);
     }
 
+
     // for (Token t : tokens) printToken(t);
     
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
-    // std::cout << ast->printNode() << '\n'; 
+
+    std::cout << ast->printNode() << '\n'; 
     
     Generator generator = Generator(ast);
     std::string file = generator.generateFile();

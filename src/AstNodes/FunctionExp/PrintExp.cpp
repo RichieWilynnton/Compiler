@@ -1,22 +1,11 @@
 #include "PrintExp.h"
 #include "../DataType.h"
 
+#include <unordered_map>
 #include <string>
 
 std::string PrintExp::genCode() {
-    std::string format;
-    switch (exp->type)
-    {
-    case DataType::STRING:
-        format = "%s";
-        break;
-    case DataType::NUMBER:
-        format = "%d";
-    }
-    
-    // surround in parentheses & add newline
-    format = '"' + format + "\\n\"";
-    return "printf(" + format + ", " + exp->genCode() + ")";
+    return printFunctions[exp->type] + "(" + exp->genCode() + ");\nprint_newline()"; 
 }
 
 std::string PrintExp::printNode() {

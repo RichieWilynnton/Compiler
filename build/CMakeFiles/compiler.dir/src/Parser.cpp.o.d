@@ -163,6 +163,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Block.h \
  /home/richie/Compiler/src/Scope.h \
  /home/richie/Compiler/src/AstNodes/Exp.h \
+ /home/richie/Compiler/src/AstNodes/FreePtr.h \
+ /home/richie/Compiler/src/AstNodes/ASTNode.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
@@ -187,6 +189,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Lit/VarLit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/StringLit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/BoolLit.h \
+ /home/richie/Compiler/src/./AstNodes/Lit/ArrayLit.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/PlusExp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/BinaryExp/./BinaryExp.h \

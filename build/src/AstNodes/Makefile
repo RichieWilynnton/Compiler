@@ -466,6 +466,30 @@ DataType.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/DataType.cpp.s
 .PHONY : DataType.cpp.s
 
+FreePtr.o: FreePtr.cpp.o
+.PHONY : FreePtr.o
+
+# target to build an object file
+FreePtr.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FreePtr.cpp.o
+.PHONY : FreePtr.cpp.o
+
+FreePtr.i: FreePtr.cpp.i
+.PHONY : FreePtr.i
+
+# target to preprocess a source file
+FreePtr.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FreePtr.cpp.i
+.PHONY : FreePtr.cpp.i
+
+FreePtr.s: FreePtr.cpp.s
+.PHONY : FreePtr.s
+
+# target to generate assembly for a file
+FreePtr.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FreePtr.cpp.s
+.PHONY : FreePtr.cpp.s
+
 FunctionExp/PrintExp.o: FunctionExp/PrintExp.cpp.o
 .PHONY : FunctionExp/PrintExp.o
 
@@ -489,6 +513,30 @@ FunctionExp/PrintExp.s: FunctionExp/PrintExp.cpp.s
 FunctionExp/PrintExp.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s
 .PHONY : FunctionExp/PrintExp.cpp.s
+
+Lit/ArrayLit.o: Lit/ArrayLit.cpp.o
+.PHONY : Lit/ArrayLit.o
+
+# target to build an object file
+Lit/ArrayLit.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o
+.PHONY : Lit/ArrayLit.cpp.o
+
+Lit/ArrayLit.i: Lit/ArrayLit.cpp.i
+.PHONY : Lit/ArrayLit.i
+
+# target to preprocess a source file
+Lit/ArrayLit.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.i
+.PHONY : Lit/ArrayLit.cpp.i
+
+Lit/ArrayLit.s: Lit/ArrayLit.cpp.s
+.PHONY : Lit/ArrayLit.s
+
+# target to generate assembly for a file
+Lit/ArrayLit.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.s
+.PHONY : Lit/ArrayLit.cpp.s
 
 Lit/BoolLit.o: Lit/BoolLit.cpp.o
 .PHONY : Lit/BoolLit.o
@@ -853,9 +901,15 @@ help:
 	@echo "... DataType.o"
 	@echo "... DataType.i"
 	@echo "... DataType.s"
+	@echo "... FreePtr.o"
+	@echo "... FreePtr.i"
+	@echo "... FreePtr.s"
 	@echo "... FunctionExp/PrintExp.o"
 	@echo "... FunctionExp/PrintExp.i"
 	@echo "... FunctionExp/PrintExp.s"
+	@echo "... Lit/ArrayLit.o"
+	@echo "... Lit/ArrayLit.i"
+	@echo "... Lit/ArrayLit.s"
 	@echo "... Lit/BoolLit.o"
 	@echo "... Lit/BoolLit.i"
 	@echo "... Lit/BoolLit.s"

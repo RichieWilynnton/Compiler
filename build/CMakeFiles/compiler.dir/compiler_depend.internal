@@ -786,6 +786,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/AstNodes/Block.h
  /home/richie/Compiler/src/Scope.h
  /home/richie/Compiler/src/AstNodes/Exp.h
+ /home/richie/Compiler/src/AstNodes/FreePtr.h
+ /home/richie/Compiler/src/AstNodes/ASTNode.h
  /usr/include/c++/11/unordered_map
  /usr/include/c++/11/bits/hashtable.h
  /usr/include/c++/11/bits/hashtable_policy.h
@@ -812,6 +814,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o
  /home/richie/Compiler/src/AstNodes/Lit/VarLit.h
  /home/richie/Compiler/src/AstNodes/Lit/StringLit.h
  /home/richie/Compiler/src/AstNodes/Lit/BoolLit.h
+ /home/richie/Compiler/src/AstNodes/Lit/ArrayLit.h
  /home/richie/Compiler/src/AstNodes/BinaryExp/PlusExp.h
  /home/richie/Compiler/src/AstNodes/Exp.h
  /home/richie/Compiler/src/AstNodes/BinaryExp/BinaryExp.h
@@ -1048,6 +1051,7 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o
  /usr/include/c++/11/backward/auto_ptr.h
  /usr/include/c++/11/pstl/glue_memory_defs.h
  /usr/include/c++/11/pstl/execution_defs.h
+ /home/richie/Compiler/src/AstNodes/FreePtr.h
  /usr/include/c++/11/unordered_map
  /usr/include/c++/11/bits/hashtable.h
  /usr/include/c++/11/bits/hashtable_policy.h
@@ -1627,6 +1631,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o
  /home/richie/Compiler/src/AstNodes/Block.h
  /home/richie/Compiler/src/Scope.h
  /home/richie/Compiler/src/AstNodes/Exp.h
+ /home/richie/Compiler/src/AstNodes/FreePtr.h
+ /home/richie/Compiler/src/AstNodes/ASTNode.h
  /usr/include/c++/11/unordered_map
  /usr/include/c++/11/bits/hashtable.h
  /usr/include/c++/11/bits/hashtable_policy.h

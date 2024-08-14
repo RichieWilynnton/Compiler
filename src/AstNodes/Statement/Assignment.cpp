@@ -2,12 +2,15 @@
 #include "../TypeError.h"
 #include "../DataType.h"
 #include <string>
+#include <iostream>
 
 std::string Assignment::genCode()
 {
+
     DataType::DataType type = exp->type;
     std::string prefix;
     bool putSquareBrackets = false;
+
     // Skip prefix 
     if (alrDeclared) return variable + " = " + exp->genCode();
 
@@ -22,11 +25,13 @@ std::string Assignment::genCode()
     case DataType::BOOLEAN:
         prefix = "bool";
         break;
+    case DataType::ARRAY:
+        prefix = "Vector*";
+        break;
+
     default:
         TypeError::terminate(DataType::dataTypeStrings[type] + " type is not assignable");
     }
-
-    // if (DataType::STRING) putSquareBrackets = true;
 
     return prefix + ' ' + variable + (putSquareBrackets ? "[]" : "") + " = " + exp->genCode();
 }

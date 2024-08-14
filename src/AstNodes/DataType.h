@@ -9,6 +9,7 @@ namespace DataType {
         NUMBER,
         BOOLEAN,
         STRING,
+        ARRAY,
     };
     extern const std::vector<std::string> dataTypeStrings;
 }

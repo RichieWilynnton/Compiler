@@ -7,6 +7,7 @@ add_library(AstNodes
     Block.cpp
     DataType.cpp
     TypeError.cpp
+    FreePtr.cpp
     BinaryExp/BinaryExp.cpp
     BinaryExp/PlusExp.cpp
     BinaryExp/MinusExp.cpp
@@ -27,6 +28,7 @@ add_library(AstNodes
     Lit/VarLit.cpp
     Lit/StringLit.cpp
     Lit/BoolLit.cpp
+    Lit/ArrayLit.cpp
     Statement/Assignment.cpp
     Statement/While.cpp
     Statement/For.cpp

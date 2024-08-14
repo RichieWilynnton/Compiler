@@ -9,13 +9,13 @@ SRC_DIR = .
 OBJ_DIR = .
 
 # Source files
-SRCS = $(SRC_DIR)/output.c $(SRC_DIR)/UtilFunctions.c
+SRCS = $(SRC_DIR)/output.c $(SRC_DIR)/UtilFunctions.c $(SRC_DIR)/vector.c $(SRC_DIR)/print.c
 
 # Object files
-OBJS = $(OBJ_DIR)/output.o $(OBJ_DIR)/UtilFunctions.o
+OBJS = $(OBJ_DIR)/output.o $(OBJ_DIR)/UtilFunctions.o $(OBJ_DIR)/vector.o $(OBJ_DIR)/print.o 
 
 # Header files
-HEADERS = $(SRC_DIR)/UtilFunctions.h
+HEADERS = $(SRC_DIR)/UtilFunctions.h $(SRC_DIR)/vector.h $(SRC_DIR)/print.h
 
 # Output executable
 TARGET = out

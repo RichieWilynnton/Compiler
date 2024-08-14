@@ -782,6 +782,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Block.h \
   ../src/Scope.h \
   ../src/AstNodes/Exp.h \
+  ../src/AstNodes/FreePtr.h \
+  ../src/AstNodes/ASTNode.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -808,6 +810,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Lit/VarLit.h \
   ../src/AstNodes/Lit/StringLit.h \
   ../src/AstNodes/Lit/BoolLit.h \
+  ../src/AstNodes/Lit/ArrayLit.h \
   ../src/AstNodes/BinaryExp/PlusExp.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/BinaryExp/BinaryExp.h \
@@ -1043,6 +1046,7 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o: ../src/Scope.cpp \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
+  ../src/AstNodes/FreePtr.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -1619,6 +1623,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
   ../src/AstNodes/Block.h \
   ../src/Scope.h \
   ../src/AstNodes/Exp.h \
+  ../src/AstNodes/FreePtr.h \
+  ../src/AstNodes/ASTNode.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -1674,6 +1680,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 ../src/Testing.h:
 
 ../src/Testing.cpp:
+
+../src/AstNodes/UnaryExp/NotExp.h:
 
 /usr/include/stdlib.h:
 
@@ -1763,6 +1771,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
+../src/AstNodes/Lit/ArrayLit.h:
+
 /usr/include/c++/11/cctype:
 
 /usr/include/c++/11/unordered_map:
@@ -1802,6 +1812,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/iostream:
 
 /usr/include/c++/11/bits/node_handle.h:
+
+../src/AstNodes/FreePtr.h:
 
 ../src/AstNodes/UnaryExp/NegExp.h:
 
@@ -1961,8 +1973,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-../src/AstNodes/UnaryExp/NotExp.h:
-
 /usr/include/c++/11/clocale:
 
 /usr/include/c++/11/bits/ostream.tcc:
@@ -2089,6 +2099,10 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/bits/hashtable.h:
 
+../src/AstNodes/FunctionExp/PrintExp.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
 /usr/include/stdint.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
@@ -2188,7 +2202,3 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/concept_check.h:
 
 ../src/AstNodes/UnaryExp/UnaryExp.h:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-../src/AstNodes/FunctionExp/PrintExp.h:

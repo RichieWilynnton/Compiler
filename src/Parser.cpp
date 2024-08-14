@@ -15,6 +15,7 @@
 #include "./AstNodes/Lit/VarLit.h"
 #include "./AstNodes/Lit/StringLit.h"
 #include "./AstNodes/Lit/BoolLit.h"
+#include "./AstNodes/Lit/ArrayLit.h"
 #include "./AstNodes/BinaryExp/PlusExp.h"
 #include "./AstNodes/BinaryExp/MinusExp.h"
 #include "./AstNodes/BinaryExp/MultExp.h"
@@ -30,6 +31,7 @@
 #include "./AstNodes/UnaryExp/NotExp.h"
 #include "./AstNodes/FunctionExp/PrintExp.h"
 #include "./AstNodes/Block.h"
+#include "./AstNodes/FreePtr.h"
 #include "DataType.h"
 
 #include <vector>
@@ -54,6 +56,13 @@ std::unique_ptr<Program> Parser::getParseTree() {
         skipNewlines();
 
     }
+    // clean up remaining pointers
+    std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
+    for (int i=0; i<freePtrs.size(); i++) {
+        std::unique_ptr<ASTNode> a = std::move(freePtrs[i]);
+        program->addStatement(a);
+    }
+
     return program;
 }
 
@@ -166,6 +175,11 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             std::unique_ptr<Block> block = parseBlock();
 
+            std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
+            for (int i=0; i<freePtrs.size(); i++) {
+                std::unique_ptr<ASTNode> a = std::move(freePtrs[i]);
+                block->addStatement(a);
+            }
             leaveScope();
 
             ret = std::make_unique<For> (iteratorVar, iteratorStart, iteratorEnd, block);
@@ -179,8 +193,8 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::NEWLINE:
             break;
             
-        default:
-            parseComparison();
+        // default:
+            // parseComparison();
 
     }
     return ret;
@@ -270,33 +284,6 @@ std::unique_ptr<Exp> Parser::parseTerm() {
             a = std::make_unique<DivExp> (a, b);
         }
 
-
-        // Wrong Precedence (will fix latr)
-        else if (curToken.tokenType == TokenType::EQEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<EQEQExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::LT) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<LTExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::LTEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<LTEQExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::GT) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<GTExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::GTEQ) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
-            a = std::make_unique<GTEQExp> (a, b);
-        }
         else return a;
 
         a->init();
@@ -333,6 +320,28 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             }
             nextToken();
             break;
+
+        case TokenType::OPEN_SQUARE_BRACKET:
+        {
+            nextToken();
+
+            std::unique_ptr<ArrayLit> array = std::make_unique<ArrayLit> ();
+            if (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
+                std::unique_ptr<Exp> exp = parseComparison();
+                array->addItem(exp);
+                while (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
+                    validateToken(TokenType::COMMA);
+                    nextToken();
+                    exp = parseComparison();
+                    array->addItem(exp);          
+                }
+                nextToken();
+            }
+
+            ret = std::move(array);
+            break;
+        }
+
         case TokenType::MINUS:
         {
             nextToken();
@@ -370,20 +379,26 @@ std::unique_ptr<Block> Parser::parseBlock() {
     nextToken();
     newScope();
 
-    std::unique_ptr<Block> newBlock = std::make_unique<Block> ();
+    std::unique_ptr<Block> block = std::make_unique<Block> ();
     skipNewlines();
     while (curToken.tokenType != TokenType::CLOSED_CURLY_BRACKET) {
         if (curToken.tokenType == TokenType::_EOF) {
             terminate("Unclosed bracket!");
         }
         std::unique_ptr<ASTNode> statement = getStatement();
-        newBlock->addStatement(statement);
+        block->addStatement(statement);
         skipNewlines();
     }
 
     nextToken();
+    std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
+    for (int i=0; i<freePtrs.size(); i++) {
+        std::unique_ptr<ASTNode> a = std::move(freePtrs[i]);
+        block->addStatement(a);
+    }
+ 
     leaveScope();
-    return newBlock;
+    return block;
 }
 
 void Parser::validateToken(TokenType::TokenType type) {
@@ -403,6 +418,7 @@ void Parser::newScope() {
 }
 
 void Parser::leaveScope() {
+
     curScope = curScope->exitScope();
 }
 

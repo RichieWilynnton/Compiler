@@ -1,6 +1,7 @@
 #include "Scope.h"
 #include "AstNodes/Exp.h"
 #include "AstNodes/DataType.h"
+#include "AstNodes/FreePtr.h"
 #include <memory>
 #include <string>
 #include <stdexcept>
@@ -39,6 +40,14 @@ void Scope::modifyVariable(std::string& var, DataType::DataType varType) {
         DataType::DataType varInfo = o_varInfo.value();
         if (varType != varInfo) throw std::runtime_error("Variable \"" + var + "\" changed types since last declaration!");
     }
+}
+
+std::vector<std::unique_ptr<FreePtr>> Scope::getFreePtrs() {
+    std::vector<std::unique_ptr<FreePtr>> ret;
+    for (auto [variable, type] : symbols) {
+        ret.push_back(std::make_unique<FreePtr> (variable, type));
+    }
+    return ret;
 }
 
 

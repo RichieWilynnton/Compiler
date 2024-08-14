@@ -1,6 +1,7 @@
 #pragma once
 #include "AstNodes/DataType.h"
 #include "AstNodes/Exp.h" 
+#include "AstNodes/FreePtr.h" 
 
 #include <memory>
 #include <unordered_map>
@@ -9,6 +10,7 @@
 
 class Scope {
     std::unordered_map<std::string, DataType::DataType> symbols;
+    
     public:
     std::unique_ptr<Scope> outerScope;
 
@@ -20,5 +22,6 @@ class Scope {
         std::optional<DataType::DataType> getVarInfo(std::string& var);
         void declareVariable(std::string& var, DataType::DataType varType);
         void modifyVariable(std::string& var, DataType::DataType varType);
+        std::vector<std::unique_ptr<FreePtr>> getFreePtrs();
 
 };
