@@ -2,7 +2,7 @@
 
 **MiniP** is a custom-built compiler written in C++ that translates code written in a custom programming language into C code. The compiler processes the source code in three primary steps: Tokenizing (Lexing), Parsing, and Code Generation. (Might need to implement another separate pass for further optimization)
 
-This project is for learning purposes and aims to explore and understand the concepts of compiler & programming language design and optimization. I have previously implemented an interpreter in Haskell, a functional programming language and this is my first attempt in building a compiler written in an object-oriented fashion.
+This project is for learning purposes and aims to explore and understand the concepts of compiler & programming language design and optimization. I have previously implemented an **interpreter** in **Haskell**, a functional programming language and this is my first attempt in building a compiler written in an object-oriented fashion.
 
 ## Local Run
 To run this project on Linux, navigate to the `{project_path}/api` directory and execute the following command:
@@ -76,7 +76,6 @@ The output c file will reside in `{project_path}/api`. To execute the c file, si
              | "-" PrimaryExp
              | "!" PrimaryExp
              | PrimaryExp[Expression]
-
 - **Literals**
   ```plaintext
   <Literals> ::= NumLit
@@ -90,4 +89,3 @@ The output c file will reside in `{project_path}/api`. To execute the c file, si
   <BoolLit> ::= true | false
   <StringLit> ::= "`group of characters`"
   <ArrayLit> ::= [Expression, Expression, ...]
-  
