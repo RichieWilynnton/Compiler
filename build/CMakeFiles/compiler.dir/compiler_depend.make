@@ -1078,7 +1078,9 @@ CMakeFiles/compiler.dir/src/Scope.cpp.o: ../src/Scope.cpp \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h
 
 CMakeFiles/compiler.dir/src/Testing.cpp.o: ../src/Testing.cpp \
   /usr/include/stdc-predef.h \
@@ -1681,6 +1683,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 ../src/Testing.cpp:
 
+/usr/include/c++/11/bits/unordered_set.h:
+
 ../src/AstNodes/UnaryExp/NotExp.h:
 
 /usr/include/stdlib.h:
@@ -1838,6 +1842,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
+
+/usr/include/c++/11/unordered_set:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
