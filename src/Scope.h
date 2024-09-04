@@ -21,8 +21,9 @@ class Scope {
 
         std::optional<DataType::DataType> lookupType(std::string& var);
         std::unique_ptr<Exp> lookupVal(std::string& var);
+        void modifyVal(std::string &var, std::unique_ptr<Exp>& val); 
         void declareVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val);
-        void modifyVariable(std::string& var, DataType::DataType varType);
+        void modifyVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val);
         //
         // std::vector<std::pair<DataType::DataType, std::string>> Scope::getEnv();
         // void envHelper(std::vector<std::pair<DataType::DataType, std::string>>& env, std::unordered_set<std::string>& seen);

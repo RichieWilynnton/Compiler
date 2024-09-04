@@ -30,6 +30,13 @@ std::unique_ptr<Exp> Scope::lookupVal(std::string& var) {
     return outerScope ? outerScope->lookupVal(var) : nullptr;
 }
 
+// Find the nearest scope of when this variable was last declared and modify the value. Variable is guaranteed to have been declared on call of this function
+void Scope::modifyVal(std::string &var, std::unique_ptr<Exp>& val) {
+    if (symbols.find(var) != symbols.end()) {
+        symbols[var].second = val->clone();
+    }
+    else if (outerScope) outerScope->modifyVal(var, val);
+}
 
 bool Scope::inCurrentScope(std::string& var) {
     return symbols.find(var) != symbols.end();
@@ -42,12 +49,14 @@ void Scope::declareVariable(std::string& var, DataType::DataType varType, std::u
     if (val) symbols[var].second = val->clone();
 }
 
-void Scope::modifyVariable(std::string& var, DataType::DataType varType) {
+void Scope::modifyVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val) {
     std::optional<DataType::DataType> o_varInfo = lookupType(var);
     if (!o_varInfo) throw std::runtime_error("Variable \"" + var + "\" has not been declared!");
     else {
         DataType::DataType varInfo = o_varInfo.value();
         if (varType != varInfo) throw std::runtime_error("Variable \"" + var + "\" changed types since last declaration!");
+
+        modifyVal(var, val);
     }
 }
 

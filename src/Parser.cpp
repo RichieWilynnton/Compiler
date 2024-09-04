@@ -93,7 +93,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             }
             else if (operation == TokenType::ARROW) {
                 exp = parseTop();
-                curScope->modifyVariable(variable, exp->type);
+                curScope->modifyVariable(variable, exp->type, exp);
                 alrDeclared = true;
             }
             else terminate("Invalid syntax for LET statement!");
