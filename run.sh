@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd ./build
+cd ./api/output
 make
-
-cd ../api
-./compiler ../code.txt
+./out
