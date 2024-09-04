@@ -5,17 +5,16 @@
 This project is for learning purposes and aims to explore and understand the concepts of compiler & programming language design and optimization. I have previously implemented an **interpreter** in **Haskell**, a functional programming language and this is my first attempt in building a compiler written in an object-oriented fashion.
 
 ## Local Run
-To run this project on Linux, navigate to the `{project_path}/api` directory and execute the following command:
+To run this project on Linux,
 
-    ./compiler code.txt
-
-The output c file will reside in `{project_path}/api`. To execute the c file, simply run:
-
-    make
-    
+Run:
+    ./compile.sh
+    ./run.sh
+    (Make sure permission is given to run these files, eg. run chmod +x compile.sh & chmod +x run.sh
 ## Features
 
 - **Constant Folding Optimization**: Optimizes constant expressions at compile time.
+- **Loop Unrolling Optimization** : Removing extra condition check after every iteration of a loop.
 - **Static Scoping**: Ensures that variable scope is determined during compilation.
 - **Efficient Code Generation**: Translates high-level constructs into optimized C code.
 - **Modular Architecture**: Separate passes for Lexing, Parsing, and Code Generation allow for easy modifications and extensions.
