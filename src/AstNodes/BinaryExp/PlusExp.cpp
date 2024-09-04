@@ -31,7 +31,7 @@ void PlusExp::inferType() {
 }
 
 std::unique_ptr<Exp> PlusExp::eval() {
-    if (!optimizable) return nullptr;
+    if (!valKnown) return nullptr;
     std::unique_ptr<Exp> ret;
     if (type == DataType::NUMBER) {
         int a = std::stoi(exp1->genCode());
@@ -39,4 +39,10 @@ std::unique_ptr<Exp> PlusExp::eval() {
         ret = std::make_unique<NumLit> (std::to_string(a+b));
     }
     return ret;
+}
+
+std::unique_ptr<Exp> PlusExp::clone() {
+    std::unique_ptr<Exp> clone1 = this->exp1->clone();
+    std::unique_ptr<Exp> clone2 = this->exp2->clone();
+    return std::make_unique<PlusExp>(clone1, clone2);
 }

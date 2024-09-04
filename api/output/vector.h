@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h> 
 
 typedef enum {
     INT,
@@ -15,7 +16,6 @@ typedef struct {
     DataType type;
 } Element;
 
-// Structure for the vector itself
 typedef struct {
     Element *elements;
     size_t capacity;
@@ -33,4 +33,4 @@ void freeVector(Vector *vector);
 
 DECLARE_APPEND_FUNC(int, appendInt)
 DECLARE_APPEND_FUNC(float, appendFloat)
-DECLARE_APPEND_FUNC(float, appendBool)
+DECLARE_APPEND_FUNC(bool, appendBool)

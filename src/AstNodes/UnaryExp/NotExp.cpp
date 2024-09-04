@@ -21,11 +21,16 @@ void NotExp::inferType() {
 }
 
 std::unique_ptr<Exp> NotExp::eval() {
-    if (!optimizable) return nullptr;
+    if (!valKnown) return nullptr;
     std::unique_ptr<Exp> ret;
     if (type == DataType::BOOLEAN) {
         bool a = exp1->genCode() == "true" ? true : false;
         ret = std::make_unique<BoolLit> (a);
     }
     return ret;
+}
+
+std::unique_ptr<Exp> NotExp::clone() {
+    std::unique_ptr<Exp> clone1 = this->exp1->clone();
+    return std::make_unique<NotExp>(clone1);
 }

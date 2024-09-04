@@ -50,7 +50,6 @@ int main(int argc, char *argv[]) {
 
 
     // for (Token t : tokens) printToken(t);
-    
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
 

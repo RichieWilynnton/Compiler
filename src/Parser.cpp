@@ -29,6 +29,7 @@
 #include "./AstNodes/BinaryExp/GTEQExp.h"
 #include "./AstNodes/UnaryExp/NegExp.h"
 #include "./AstNodes/UnaryExp/NotExp.h"
+// #include "./AstNodes/UnaryExp/IndexExp.h"
 #include "./AstNodes/FunctionExp/PrintExp.h"
 #include "./AstNodes/Block.h"
 #include "./AstNodes/FreePtr.h"
@@ -38,6 +39,8 @@
 #include <iostream>
 #include <memory>
 #include <stdexcept>
+#include <vector>
+#include <algorithm>
 
 Parser::Parser(std::vector<Token>& tokenList) {
     tokens = tokenList;
@@ -54,7 +57,7 @@ std::unique_ptr<Program> Parser::getParseTree() {
         std::unique_ptr<ASTNode> statement = getStatement();
         if (statement) program->addStatement(statement);
         skipNewlines();
-
+        
     }
     // clean up remaining pointers
     std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
@@ -84,12 +87,12 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             bool alrDeclared;
             if (operation == TokenType::EQ) {
-                exp = parseComparison();
-                curScope->declareVariable(variable, exp->type);
+                exp = parseTop();
+                curScope->declareVariable(variable, exp->type, exp);
                 alrDeclared = false;
             }
             else if (operation == TokenType::ARROW) {
-                exp = parseComparison();
+                exp = parseTop();
                 curScope->modifyVariable(variable, exp->type);
                 alrDeclared = true;
             }
@@ -99,18 +102,18 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             break;
         }
-        // Print is the only exception when it comes to functions, rest gets evaluated in parseExpression
+        // Print is the only exception when it comes to functions, rest gets evaluated in parseLevel2
         case TokenType::PRINT:
         {
             nextToken();
-            std::unique_ptr<Exp> exp = parseComparison();
+            std::unique_ptr<Exp> exp = parseTop();
             ret = std::make_unique<PrintExp> (exp);
             break;
         }
         case TokenType::WHILE:
         {
             nextToken();
-            std::unique_ptr<Exp> cond = parseComparison();
+            std::unique_ptr<Exp> cond = parseTop();
 
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
@@ -120,7 +123,7 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::IF:
         {
             nextToken();
-            std::unique_ptr<Exp> cond = parseComparison();
+            std::unique_ptr<Exp> cond = parseTop();
 
             skipNewlines();
             std::unique_ptr<Block> block = parseBlock();
@@ -158,31 +161,67 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
 
             validateToken(TokenType::IDENTIFIER);
             std::string varName = curToken.content;
-            curScope->declareVariable(varName, DataType::NUMBER);
-            std::unique_ptr<Exp> iteratorVar = parseFactor();
+            std::unique_ptr<Exp> nullval = nullptr;
+            curScope->declareVariable(varName, DataType::NUMBER, nullval);
+
+            std::unique_ptr<Exp> iteratorVar = parseLevel4();
 
             validateToken(TokenType::EQ);
             nextToken();
 
-            std::unique_ptr<Exp> iteratorStart = parseExpression();
+            std::unique_ptr<Exp> iteratorStart = parseLevel2();
 
             validateToken(TokenType::TO);
             nextToken();
     
-            std::unique_ptr<Exp> iteratorEnd = parseExpression();
-
+            std::unique_ptr<Exp> iteratorEnd = parseLevel2();
             skipNewlines();
 
-            std::unique_ptr<Block> block = parseBlock();
+            if (iteratorStart->type != DataType::NUMBER) terminate("Expected a number for For Loop starting iterator, got " + DataType::dataTypeStrings[iteratorStart->type]);
+            if (iteratorStart->type != DataType::NUMBER) terminate("Expected a number for For Loop ending iterator, got " + DataType::dataTypeStrings[iteratorEnd->type]);
+            
+            // If loop is predictable, unroll the loop
+            if (iteratorStart->valKnown && iteratorEnd->valKnown) {
+                std::unique_ptr<Block> blocks = std::make_unique<Block> ();
 
-            std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
-            for (int i=0; i<freePtrs.size(); i++) {
-                std::unique_ptr<ASTNode> a = std::move(freePtrs[i]);
-                block->addStatement(a);
+                int forPos = curPos;
+                int x1 = std::stoi(iteratorStart->genCode());
+                int x2 = std::stoi(iteratorEnd->genCode());
+
+                if (x1 < x2) {
+                    for (int i=x1; i<x2; i++) {
+                        newScope();
+                        
+                        std::unique_ptr<Exp> it = std::make_unique<NumLit> (std::to_string(i));
+                        curScope->declareVariable(varName, DataType::NUMBER, it);
+                        repositionToken(forPos);
+                        std::unique_ptr<Block> block = parseBlock();
+                        blocks->addBlock(block);
+
+                        leaveScope();
+                    }
+                }
+                else {
+                    for (int i=x2; i>x1; i--) {
+                        newScope();
+                        
+                        std::unique_ptr<Exp> it = std::make_unique<NumLit> (std::to_string(i));
+                        curScope->declareVariable(varName, DataType::NUMBER, it);
+                        repositionToken(forPos);
+                        std::unique_ptr<Block> block = parseBlock();
+                        blocks->addBlock(block);
+
+                        leaveScope();
+                    }
+                }
+                ret = std::move(blocks);
             }
-            leaveScope();
 
-            ret = std::make_unique<For> (iteratorVar, iteratorStart, iteratorEnd, block);
+            else {
+                std::unique_ptr<Block> block = parseBlock();
+                ret = std::make_unique<For> (iteratorVar, iteratorStart, iteratorEnd, block);
+            }
+           
             break;
         }
         case TokenType::OPEN_CURLY_BRACKET:
@@ -194,105 +233,171 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             break;
             
         // default:
-            // parseComparison();
+            // parseLevel1();
 
     }
     return ret;
 }
 
-std::unique_ptr<Exp> Parser::parseComparison() {
-    std::unique_ptr<Exp> a = parseExpression();
+std::unique_ptr<Exp> Parser::parseTop() {
+    std::vector<std::pair<TokenType::TokenType, std::unique_ptr<Exp>>> exps;
+
+    exps.push_back({TokenType::OR, parseLevel0()});
+
+    while (true) {
+        TokenType::TokenType op = curToken.tokenType;
+        if (op == TokenType::OR) {
+            nextToken();
+            exps.push_back({op, parseLevel0()});
+        }
+        else break;
+    }
+
+    std::sort(exps.begin(), exps.end(), [](const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& a, const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& b){
+        return a.second->valKnown > b.second->valKnown; 
+    });
+
+    std::unique_ptr<Exp> a = std::move(exps[0].second);
+
+    for (int i=1; i<exps.size(); i++) {
+        if (exps[i].first == TokenType::OR) {
+            a = std::make_unique<OrExp> (a, exps[i].second);
+        }
+        a->init();
+        if (a->valKnown) a = a->eval();
+    }
+    
+    return a;
+}
+
+std::unique_ptr<Exp> Parser::parseLevel0() {
+    std::vector<std::pair<TokenType::TokenType, std::unique_ptr<Exp>>> exps;
+
+    exps.push_back({TokenType::AND, parseLevel1()});
+
+    while (true) {
+        TokenType::TokenType op = curToken.tokenType;
+        if (op == TokenType::AND) {
+            nextToken();
+            exps.push_back({op, parseLevel1()});
+        }
+        else break;
+    }
+
+    std::sort(exps.begin(), exps.end(), [](const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& a, const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& b){
+        return a.second->valKnown > b.second->valKnown; 
+    });
+
+    std::unique_ptr<Exp> a = std::move(exps[0].second);
+
+    for (int i=1; i<exps.size(); i++) {
+        if (exps[i].first == TokenType::AND) {
+            a = std::make_unique<AndExp> (a, exps[i].second);
+        }
+        a->init();
+        if (a->valKnown) a = a->eval();
+    }
+    
+    return a;
+}
+
+
+std::unique_ptr<Exp> Parser::parseLevel1() {
+    std::unique_ptr<Exp> a = parseLevel2();
 
     while (true) {
         if (curToken.tokenType == TokenType::EQEQ) {
             nextToken();
-            std::unique_ptr<Exp> b = parseExpression();
+            std::unique_ptr<Exp> b = parseLevel2();
             a = std::make_unique<EQEQExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::LT) {
             nextToken();
-            std::unique_ptr<Exp> b = parseExpression();
+            std::unique_ptr<Exp> b = parseLevel2();
             a = std::make_unique<LTExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::LTEQ) {
             nextToken();
-            std::unique_ptr<Exp> b = parseExpression();
+            std::unique_ptr<Exp> b = parseLevel2();
             a = std::make_unique<LTEQExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::GT) {
             nextToken();
-            std::unique_ptr<Exp> b = parseExpression();
+            std::unique_ptr<Exp> b = parseLevel2();
             a = std::make_unique<GTExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::GTEQ) {
             nextToken();
-            std::unique_ptr<Exp> b = parseExpression();
+            std::unique_ptr<Exp> b = parseLevel2();
             a = std::make_unique<GTEQExp> (a, b);
         }
         else return a;
     }
     a->init();
-    if (a->optimizable) a = a->eval();
+    if (a->valKnown) a = a->eval();
 }
 
-// Expression := Term | Term "+" Term "+" ... | Term "-" Term "-" ...
-std::unique_ptr<Exp> Parser::parseExpression() {
-    std::unique_ptr<Exp> a = parseTerm();
+std::unique_ptr<Exp> Parser::parseLevel2() {
+    std::vector<std::pair<TokenType::TokenType, std::unique_ptr<Exp>>> exps;
 
-    
-    // Can't make code neater coz I can't call nextToken() if there are no more operations
+    exps.push_back({TokenType::PLUS, parseLevel3()});
+
     while (true) {
-        if (curToken.tokenType == TokenType::PLUS) { 
+        TokenType::TokenType op = curToken.tokenType;
+        if (op == TokenType::PLUS) {
             nextToken();
-            std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<PlusExp> (a, b);
+            exps.push_back({op, parseLevel3()});
         }
-        else if (curToken.tokenType == TokenType::MINUS) {
+        else if (op == TokenType::MINUS) {
             nextToken();
-            std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<MinusExp> (a, b);
+            exps.push_back({op, parseLevel3()});
         }
-        else if (curToken.tokenType == TokenType::AND) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<AndExp> (a, b);
-        }
-        else if (curToken.tokenType == TokenType::OR) {
-            nextToken();
-            std::unique_ptr<Exp> b = parseTerm();
-            a = std::make_unique<OrExp> (a, b);
-        }
-        else return a;
-
-        a->init();
-        if (a->optimizable) a = a->eval();
+        else break;
     }
+
+    std::sort(exps.begin(), exps.end(), [](const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& a, const std::pair<TokenType::TokenType, std::unique_ptr<Exp>>& b){
+        return a.second->valKnown > b.second->valKnown; 
+    });
+
+    std::unique_ptr<Exp> a = std::move(exps[0].second);
+    if (exps[0].first == TokenType::MINUS) a = std::make_unique<NegExp> (a);
+
+    for (int i=1; i<exps.size(); i++) {
+        if (exps[i].first == TokenType::PLUS) {
+            a = std::make_unique<PlusExp> (a, exps[i].second);
+        }
+        else if (exps[i].first == TokenType::MINUS) {
+            a = std::make_unique<MinusExp> (a, exps[i].second);
+        }
+        a->init();
+        if (a->valKnown) a = a->eval();
+    }
+    
+    return a;
 }
 
-// Term := Factor | Factor "*" Factor "*" ... | Factor "/" Factor "/" ... | Factor "<" Factor  
-std::unique_ptr<Exp> Parser::parseTerm() {
-    std::unique_ptr<Exp> a = parseFactor();
+std::unique_ptr<Exp> Parser::parseLevel3() {
+    std::unique_ptr<Exp> a = parseLevel4();
     while (true) {
         if (curToken.tokenType == TokenType::MULT) { 
             nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
+            std::unique_ptr<Exp> b = parseLevel4();
             a = std::make_unique<MultExp> (a, b);
         }
         else if (curToken.tokenType == TokenType::DIV) {
             nextToken();
-            std::unique_ptr<Exp> b = parseFactor();
+            std::unique_ptr<Exp> b = parseLevel4();
             a = std::make_unique<DivExp> (a, b);
         }
 
         else return a;
 
         a->init();
-        if (a->optimizable) a = a->eval();
+        if (a->valKnown) a = a->eval();
     }
 }
 
-// Factor := Number | Identifier | "(" Expression ")" | NegExp Factor | NotExp Factor | True | False
-std::unique_ptr<Exp> Parser::parseFactor() {
+std::unique_ptr<Exp> Parser::parseLevel4() {
     std::unique_ptr<Exp> ret;
     switch (curToken.tokenType) {
         case TokenType::NUMBER:
@@ -301,12 +406,52 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             break;
         case TokenType::IDENTIFIER:
         {
-            std::optional<DataType::DataType> o_varType = curScope->getVarInfo(curToken.content);
-            if (o_varType) ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
+            std::optional<DataType::DataType> o_varType = curScope->lookupType(curToken.content);
+            // Check whether previously declared
+            if (o_varType) {
+                std::unique_ptr<Exp> exp = curScope->lookupVal(curToken.content);
+                // if value for variable is known, replace it with the known value
+                if (exp) ret = std::move(exp);
+                else ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
+                // ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
+            }
             else terminate("Undeclared variable");
             nextToken();
+
+            // if (curToken.tokenType == TokenType::OPEN_SQUARE_BRACKET) {
+            //     std::unique_ptr<Exp> index = parseLevel1();
+            //     std::unique_ptr<IndexExp> indexedExp = std::make_unique<IndexExp> (ret);
+            //     indexedExp->index = std::move(index);
+            //     ret = std::move(indexedExp);
+
+            //     validateToken(TokenType::CLOSED_SQUARE_BRACKET);
+            //     nextToken();
+            // }
+
+            // Call function
+            if (curToken.tokenType == TokenType::OPEN_ROUND_BRACKET) {
+
+            }
+
             break;
         }
+
+        case TokenType::LAMBDA:
+            nextToken();
+            validateToken(TokenType::OPEN_ROUND_BRACKET);
+            nextToken();
+
+            // if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
+            //     std::unique_ptr<Exp> exp = parseLevel1();
+            //     array->addItem(exp);
+            //     while (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
+            //         validateToken(TokenType::COMMA);
+            //         nextToken();
+            //         exp = parseLevel1();
+            //         array->addItem(exp);          
+            //     }
+            //     nextToken();
+            // }
             
         case TokenType::STRING:
             ret = std::make_unique<StringLit> (curToken.content);
@@ -314,7 +459,7 @@ std::unique_ptr<Exp> Parser::parseFactor() {
             break;
         case TokenType::OPEN_ROUND_BRACKET:
             nextToken();
-            ret = parseComparison();
+            ret = parseTop();
             if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
                 terminate("Unclosed bracket detected");
             }
@@ -327,12 +472,12 @@ std::unique_ptr<Exp> Parser::parseFactor() {
 
             std::unique_ptr<ArrayLit> array = std::make_unique<ArrayLit> ();
             if (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
-                std::unique_ptr<Exp> exp = parseComparison();
+                std::unique_ptr<Exp> exp = parseTop();
                 array->addItem(exp);
                 while (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
                     validateToken(TokenType::COMMA);
                     nextToken();
-                    exp = parseComparison();
+                    exp = parseTop();
                     array->addItem(exp);          
                 }
                 nextToken();
@@ -345,14 +490,14 @@ std::unique_ptr<Exp> Parser::parseFactor() {
         case TokenType::MINUS:
         {
             nextToken();
-            std::unique_ptr<Exp> a = parseFactor();
+            std::unique_ptr<Exp> a = parseLevel4();
             ret = std::make_unique<NegExp> (a);
             break;
         }
         case TokenType::NOT:
         {
             nextToken();
-            std::unique_ptr<Exp> a = parseFactor();
+            std::unique_ptr<Exp> a = parseLevel4();
             ret = std::make_unique<NotExp> (a);
             break;
         }
@@ -375,6 +520,7 @@ std::unique_ptr<Exp> Parser::parseFactor() {
 }
 
 std::unique_ptr<Block> Parser::parseBlock() {
+    skipNewlines();
     validateToken(TokenType::OPEN_CURLY_BRACKET);
     nextToken();
     newScope();
@@ -427,8 +573,13 @@ void Parser::nextToken() {
     curToken = tokens[curPos];
 }
 
+void Parser::repositionToken(int index) {
+    curPos = index;
+    curToken = tokens[index];
+}
+
 void Parser::terminate(std::string msg) {
-    std::cerr << curPos << '\n';
+    std::cerr << "Error at Position: " << curPos  << " content: " << curToken.content << '\n';
     throw std::runtime_error("Error during parsing: " + msg);
 }
 

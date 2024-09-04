@@ -20,11 +20,16 @@ void NegExp::inferType() {
 }
 
 std::unique_ptr<Exp> NegExp::eval() {
-    if (!optimizable) return nullptr;
+    if (!valKnown) return nullptr;
     std::unique_ptr<Exp> ret;
     if (type == DataType::NUMBER) {
         int a = std::stoi(exp1->genCode());
         ret = std::make_unique<NumLit> (std::to_string(-a));
     }
     return ret;
+}
+
+std::unique_ptr<Exp> NegExp::clone() {
+    std::unique_ptr<Exp> clone1 = this->exp1->clone();
+    return std::make_unique<NegExp>(clone1);
 }

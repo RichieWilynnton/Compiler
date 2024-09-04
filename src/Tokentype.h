@@ -55,6 +55,7 @@ namespace TokenType{
     COMMA = 217,
     DOUBLE_DASH = 218,
     COLON = 219,
+    LAMBDA = 220,
 
     
     };

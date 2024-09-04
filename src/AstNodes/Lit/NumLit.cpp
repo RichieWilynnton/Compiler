@@ -6,7 +6,7 @@
 
 NumLit::NumLit(std::string content = "") : content(content) {
     inferType();
-    optimizable = true;
+    valKnown = true;
 }
 
 std::string NumLit::genCode() {
@@ -19,4 +19,8 @@ std::string NumLit::printNode() {
 
 void NumLit::inferType() { 
     type = DataType::NUMBER;    
+}
+
+std::unique_ptr<Exp> NumLit::clone() {
+    return std::make_unique<NumLit>(this->content);
 }

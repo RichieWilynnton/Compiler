@@ -15,3 +15,8 @@ std::string PrintExp::printNode() {
 void PrintExp::inferType() {
     type = DataType::VOID;
 }
+
+std::unique_ptr<Exp> PrintExp::clone() {
+    std::unique_ptr<Exp> clone1 = exp->clone();
+    return std::make_unique<PrintExp>(clone1);
+}

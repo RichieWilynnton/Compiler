@@ -18,3 +18,7 @@ std::string StringLit::printNode() {
 void StringLit::inferType() {
     type = DataType::STRING;
 }
+
+std::unique_ptr<Exp> StringLit::clone() {
+    return std::make_unique<StringLit>(this->content);
+}

@@ -23,7 +23,7 @@ void EQEQExp::inferType() {
 }
 
 std::unique_ptr<Exp> EQEQExp::eval() {
-    if (!optimizable) return nullptr;
+    if (!valKnown) return nullptr;
     std::unique_ptr<Exp> ret;
     if (exp1->type == DataType::NUMBER && exp2->type == DataType::NUMBER) {
         int a = std::stoi(exp1->genCode());
@@ -31,4 +31,10 @@ std::unique_ptr<Exp> EQEQExp::eval() {
         ret = std::make_unique<BoolLit> (a==b);
     }
     return ret;
+}
+
+std::unique_ptr<Exp> EQEQExp::clone() {
+    std::unique_ptr<Exp> clone1 = this->exp1->clone();
+    std::unique_ptr<Exp> clone2 = this->exp2->clone();
+    return std::make_unique<EQEQExp>(clone1, clone2);
 }

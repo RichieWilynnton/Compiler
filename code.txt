@@ -1,2 +1,5 @@
-let a = [1, 2, 3]
-print(a)
+let x = 5
+for let i = 1 to 10 {
+    print(i)
+}
+print(x)

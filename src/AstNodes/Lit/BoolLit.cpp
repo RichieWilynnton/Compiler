@@ -17,3 +17,7 @@ std::string BoolLit::printNode() {
 void BoolLit::inferType() { 
     type = DataType::BOOLEAN;
 }
+
+std::unique_ptr<Exp> BoolLit::clone() {
+    return std::make_unique<BoolLit>(this->state);
+}

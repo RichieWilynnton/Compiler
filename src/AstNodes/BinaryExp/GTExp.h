@@ -11,4 +11,6 @@ class GTExp : public BinaryExp {
         std::string printNode() override;
         std::unique_ptr<Exp> eval() override;
         void inferType() override;
+        std::unique_ptr<Exp> clone() override;
+
 };

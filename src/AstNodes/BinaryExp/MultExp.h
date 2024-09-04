@@ -13,6 +13,7 @@ class MultExp : public BinaryExp {
         std::string printNode() override;
         void inferType() override;
         std::unique_ptr<Exp> eval() override;
+        std::unique_ptr<Exp> clone() override;
 
 };
 

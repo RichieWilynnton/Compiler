@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h> 
+
+
 #include "vector.h"
 
 
@@ -42,6 +45,6 @@ void freeVector(Vector *vector) {
 
 DEFINE_APPEND_FUNC(int, appendInt, INT)
 DEFINE_APPEND_FUNC(float, appendFloat, FLOAT)
-DEFINE_APPEND_FUNC(float, appendBool, BOOLEAN)
+DEFINE_APPEND_FUNC(bool, appendBool, BOOLEAN)
 
 

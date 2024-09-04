@@ -11,10 +11,12 @@ class VarLit : public Exp {
     public:
         std::string name;
         
-        VarLit(std::string name, DataType::DataType type);
+        VarLit(std::string name, DataType::DataType type); // defined in cpp
+
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;
+        std::unique_ptr<Exp> clone() override;
 
 };
 

@@ -9,7 +9,7 @@
 #include <optional>
 
 class Scope {
-    std::unordered_map<std::string, DataType::DataType> symbols;
+    std::unordered_map<std::string, std::pair<DataType::DataType, std::unique_ptr<Exp>>> symbols;
     
     public:
     std::unique_ptr<Scope> outerScope;
@@ -19,9 +19,13 @@ class Scope {
         std::unique_ptr<Scope> exitScope();
         bool inCurrentScope(std::string& var);
 
-        std::optional<DataType::DataType> getVarInfo(std::string& var);
-        void declareVariable(std::string& var, DataType::DataType varType);
+        std::optional<DataType::DataType> lookupType(std::string& var);
+        std::unique_ptr<Exp> lookupVal(std::string& var);
+        void declareVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val);
         void modifyVariable(std::string& var, DataType::DataType varType);
+        //
+        // std::vector<std::pair<DataType::DataType, std::string>> Scope::getEnv();
+        // void envHelper(std::vector<std::pair<DataType::DataType, std::string>>& env, std::unordered_set<std::string>& seen);
         std::vector<std::unique_ptr<FreePtr>> getFreePtrs();
 
 };

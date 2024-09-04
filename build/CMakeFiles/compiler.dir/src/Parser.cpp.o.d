@@ -228,4 +228,10 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/./../Exp.h \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/NotExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
- /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h
+ /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
+ /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h

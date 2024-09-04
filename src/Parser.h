@@ -25,14 +25,17 @@ public:
     std::unique_ptr<Program> getParseTree();
 
     std::unique_ptr<ASTNode> getStatement();
-    std::unique_ptr<Exp> parseComparison();
-    std::unique_ptr<Exp> parseExpression();
-    std::unique_ptr<Exp> parseTerm();
-    std::unique_ptr<Exp> parseFactor();
+    std::unique_ptr<Exp> parseTop();
+    std::unique_ptr<Exp> parseLevel0();
+    std::unique_ptr<Exp> parseLevel1();
+    std::unique_ptr<Exp> parseLevel2();
+    std::unique_ptr<Exp> parseLevel3();
+    std::unique_ptr<Exp> parseLevel4();
     std::unique_ptr<Block> parseBlock();
 
     void validateToken(TokenType::TokenType type);
     void nextToken();
+    void repositionToken(int index);
     void skipNewlines();
     void newScope();
     void leaveScope();

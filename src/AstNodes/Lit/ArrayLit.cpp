@@ -39,3 +39,12 @@ void ArrayLit::addItem(std::unique_ptr<Exp>& exp) {
     size++;
     items.push_back(std::move(exp));
 }
+
+std::unique_ptr<Exp> ArrayLit::clone() {
+    std::unique_ptr<ArrayLit> array = std::make_unique<ArrayLit> ();
+    for (int i=0; i<size; i++) {
+        array->items[i] = this->items[i]->clone();
+    }
+    array->size = this->size;
+    return array;
+}

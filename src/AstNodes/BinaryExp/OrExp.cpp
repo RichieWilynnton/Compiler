@@ -22,7 +22,7 @@ void OrExp::inferType() {
 
 }
 std::unique_ptr<Exp> OrExp::eval() {
-    if (!optimizable) return nullptr;
+    if (!valKnown) return nullptr;
     std::unique_ptr<Exp> ret;
     if (type == DataType::BOOLEAN) {
         bool a = exp1->genCode() == "true" ? true : false;
@@ -30,4 +30,10 @@ std::unique_ptr<Exp> OrExp::eval() {
         ret = std::make_unique<BoolLit> (a&&b);
     }
     return ret;
+}
+
+std::unique_ptr<Exp> OrExp::clone() {
+    std::unique_ptr<Exp> clone1 = this->exp1->clone();
+    std::unique_ptr<Exp> clone2 = this->exp2->clone();
+    return std::make_unique<OrExp>(clone1, clone2);
 }

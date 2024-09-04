@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <optional>
-
+#include <unordered_set>
 
 std::unique_ptr<Scope> Scope::enterNewScope (std::unique_ptr<Scope>& oldScope) {
     return std::make_unique<Scope>(std::move(oldScope));
@@ -18,23 +18,32 @@ std::unique_ptr<Scope> Scope::exitScope () {
 }
 
 
-std::optional<DataType::DataType> Scope::getVarInfo(std::string& var) {
-    if (symbols.find(var) != symbols.end()) return symbols[var];
-    return outerScope ? outerScope->getVarInfo(var) : std::nullopt;
+std::optional<DataType::DataType> Scope::lookupType(std::string& var) {
+    if (symbols.find(var) != symbols.end()) return symbols[var].first;
+    return outerScope ? outerScope->lookupType(var) : std::nullopt;
 }
+
+std::unique_ptr<Exp> Scope::lookupVal(std::string& var) {
+    if (symbols.find(var) != symbols.end()) {
+        return symbols[var].second ? symbols[var].second->clone() : nullptr;
+    }
+    return outerScope ? outerScope->lookupVal(var) : nullptr;
+}
+
 
 bool Scope::inCurrentScope(std::string& var) {
     return symbols.find(var) != symbols.end();
 }
 
-void Scope::declareVariable(std::string& var, DataType::DataType varType){
+void Scope::declareVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val){
     if (inCurrentScope(var)) throw std::runtime_error("Variable \"" + var + "\" is re-declared!");
-    
-    symbols[var] = varType;
+        
+    symbols[var].first = varType;
+    if (val) symbols[var].second = val->clone();
 }
 
 void Scope::modifyVariable(std::string& var, DataType::DataType varType) {
-    std::optional<DataType::DataType> o_varInfo = getVarInfo(var);
+    std::optional<DataType::DataType> o_varInfo = lookupType(var);
     if (!o_varInfo) throw std::runtime_error("Variable \"" + var + "\" has not been declared!");
     else {
         DataType::DataType varInfo = o_varInfo.value();
@@ -42,10 +51,27 @@ void Scope::modifyVariable(std::string& var, DataType::DataType varType) {
     }
 }
 
+// std::vector<std::pair<DataType::DataType, std::string>> Scope::getEnv() {
+//     std::vector<std::pair<DataType::DataType, std::string>> env;
+//     std::unordered_set<std::string> s;
+//     envHelper(env, s);
+//     return env;
+// }
+
+// void Scope::envHelper(std::vector<std::pair<DataType::DataType, std::string>>& env, std::unordered_set<std::string>& seen) {
+//     for (auto [name, t] : symbols) {
+//         if (seen.find(name) == seen.end()) {
+//             env.push_back({t, name});
+//             seen.insert(name);
+//         }
+//     }
+//     if (outerScope) outerScope->envHelper(env, seen);
+// }
+
 std::vector<std::unique_ptr<FreePtr>> Scope::getFreePtrs() {
     std::vector<std::unique_ptr<FreePtr>> ret;
-    for (auto [variable, type] : symbols) {
-        ret.push_back(std::make_unique<FreePtr> (variable, type));
+    for (const auto& [variable, d] : symbols) {
+        ret.push_back(std::make_unique<FreePtr> (variable, d.first));
     }
     return ret;
 }

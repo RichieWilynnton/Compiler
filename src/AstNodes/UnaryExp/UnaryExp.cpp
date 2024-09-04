@@ -2,5 +2,5 @@
 
 void UnaryExp::init() {
     inferType();
-    optimizable = this->exp1->optimizable;
+    valKnown = this->exp1->valKnown;
 }

@@ -13,5 +13,6 @@ class BoolLit : public Exp {
         std::string genCode() override;
         std::string printNode() override;
         void inferType() override;
+        std::unique_ptr<Exp> clone() override;
 
 };

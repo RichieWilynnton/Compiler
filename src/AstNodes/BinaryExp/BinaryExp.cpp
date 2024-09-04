@@ -3,6 +3,6 @@
 
 void BinaryExp::init() {
     inferType();
-    optimizable = this->exp1->optimizable && this->exp2->optimizable;
+    valKnown = this->exp1->valKnown && this->exp2->valKnown;
 }
 
