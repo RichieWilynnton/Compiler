@@ -3,7 +3,15 @@
 #include <string>
 
 std::string FreePtr::genCode() {
-    return freeFunctions.find(type) == freeFunctions.end() ? "" : (freeFunctions[type] + "(" + variable + ")");
+    switch(type) {
+        case DataType::ARRAY:
+            return "freeVector(" + variable + ")";
+        case DataType::LAMBDA:
+             return "freeEnv(" + variable + ", " 
+                + "(sizeof(" + variable + ") ? sizeof(" + variable + ") / sizeof(" + variable + "[0]) : 0))";
+        default:
+            return "";
+    }
 }
 
 std::string FreePtr::printNode() {

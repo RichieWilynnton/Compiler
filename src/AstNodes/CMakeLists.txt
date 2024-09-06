@@ -24,6 +24,8 @@ add_library(AstNodes
     UnaryExp/NegExp.cpp
     UnaryExp/NotExp.cpp
     FunctionExp/PrintExp.cpp
+    FunctionExp/LambdaExp.cpp
+    FunctionExp/FunctionCallExp.cpp
     Lit/NumLit.cpp
     Lit/VarLit.cpp
     Lit/StringLit.cpp
@@ -31,6 +33,7 @@ add_library(AstNodes
     Lit/ArrayLit.cpp
     Statement/Assignment.cpp
     Statement/While.cpp
+    Statement/Return.cpp
     Statement/For.cpp
     Statement/If.cpp
 )

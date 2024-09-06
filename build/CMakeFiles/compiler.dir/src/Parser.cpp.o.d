@@ -184,6 +184,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/Statement/../Lit/VarLit.h \
  /home/richie/Compiler/src/./AstNodes/Statement/../Lit/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/Statement/If.h \
+ /home/richie/Compiler/src/./AstNodes/Statement/Return.h \
  /home/richie/Compiler/src/./AstNodes/Lit/NumLit.h \
  /home/richie/Compiler/src/./AstNodes/Lit/../Exp.h \
  /home/richie/Compiler/src/./AstNodes/Lit/VarLit.h \
@@ -229,6 +230,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: \
  /home/richie/Compiler/src/./AstNodes/UnaryExp/NotExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/PrintExp.h \
  /home/richie/Compiler/src/./AstNodes/FunctionExp/../Exp.h \
+ /home/richie/Compiler/src/./AstNodes/FunctionExp/LambdaExp.h \
+ /home/richie/Compiler/src/./AstNodes/FunctionExp/FunctionCallExp.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \

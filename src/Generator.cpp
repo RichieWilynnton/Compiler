@@ -3,11 +3,13 @@
 
 #include <string>
 #include <memory>
+#include <vector>
 
-Generator::Generator(std::unique_ptr<Program> &prog) {
+Generator::Generator(std::unique_ptr<Program> &prog, std::vector<std::string>& funcs) {
     header = "";
     code = "";
     program = std::move(prog);
+    topLevelFunctions = funcs;
 }
 
 void Generator::addHeaderLine(std::string line) {
@@ -19,10 +21,13 @@ void Generator::addLine(std::string line) {
 
 std::string Generator::generateFile() {
     addHeaderLine("#include <stdio.h>");
-    addHeaderLine("#include \"UtilFunctions.h\"");
+    addHeaderLine("#include \"functions.h\"");
     addHeaderLine("#include \"vector.h\"");
     addHeaderLine("#include \"print.h\"");
     
+    for (std::string& s : topLevelFunctions) {
+        addLine(s);
+    }
     addLine("int main(){");
     addLine(program->genCode());
     addLine("return 0;");

@@ -27,6 +27,7 @@ namespace TokenType{
     ELSE = 113,
     ELIF = 114,
     TO = 115,
+    RETURN = 116,
     // Operators.
     EQ = 201,
     PLUS = 202,
@@ -57,7 +58,13 @@ namespace TokenType{
     COLON = 219,
     LAMBDA = 220,
 
-    
+    // Types
+    VOIDTYPE = 300,
+    NUMTYPE = 301,
+    BOOLTYPE = 302,
+    STRINGTYPE = 303,
+    ARRAYTYPE = 304,
+
     };
 }
 

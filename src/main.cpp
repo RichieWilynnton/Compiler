@@ -48,14 +48,15 @@ int main(int argc, char *argv[]) {
         tokens.push_back(token);
     }
 
-
-    // for (Token t : tokens) printToken(t);
+    int i = 0;
+    for (Token t : tokens) {printToken(t); std::cout << i++ <<std::endl;};
     Parser parser = Parser(tokens);
     std::unique_ptr<Program> ast = parser.getParseTree();
+    std::vector<std::string> topLevelFunctions = parser.getTopLevelFunctions();
 
     std::cout << ast->printNode() << '\n'; 
     
-    Generator generator = Generator(ast);
+    Generator generator = Generator(ast, topLevelFunctions);
     std::string file = generator.generateFile();
 
     std::cout << file << '\n';

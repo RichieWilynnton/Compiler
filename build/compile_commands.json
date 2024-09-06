@@ -146,6 +146,16 @@
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/LambdaExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/FunctionExp/LambdaExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/FunctionCallExp.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/FunctionExp/FunctionCallExp.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/NumLit.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Lit/NumLit.cpp"
 },
@@ -178,6 +188,11 @@
   "directory": "/home/richie/Compiler/build/src/AstNodes",
   "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/While.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/While.cpp",
   "file": "/home/richie/Compiler/src/AstNodes/Statement/While.cpp"
+},
+{
+  "directory": "/home/richie/Compiler/build/src/AstNodes",
+  "command": "/usr/bin/c++  -I/home/richie/Compiler/src/AstNodes -g -std=gnu++17 -o CMakeFiles/AstNodes.dir/Statement/Return.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/Return.cpp",
+  "file": "/home/richie/Compiler/src/AstNodes/Statement/Return.cpp"
 },
 {
   "directory": "/home/richie/Compiler/build/src/AstNodes",

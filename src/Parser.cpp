@@ -10,6 +10,7 @@
 #include "./AstNodes/Statement/While.h"
 #include "./AstNodes/Statement/For.h"
 #include "./AstNodes/Statement/If.h"
+#include "./AstNodes/Statement/Return.h"
 #include "./AstNodes/Exp.h"
 #include "./AstNodes/Lit/NumLit.h"
 #include "./AstNodes/Lit/VarLit.h"
@@ -31,6 +32,8 @@
 #include "./AstNodes/UnaryExp/NotExp.h"
 // #include "./AstNodes/UnaryExp/IndexExp.h"
 #include "./AstNodes/FunctionExp/PrintExp.h"
+#include "./AstNodes/FunctionExp/LambdaExp.h"
+#include "./AstNodes/FunctionExp/FunctionCallExp.h"
 #include "./AstNodes/Block.h"
 #include "./AstNodes/FreePtr.h"
 #include "DataType.h"
@@ -50,6 +53,10 @@ Parser::Parser(std::vector<Token>& tokenList) {
     nextToken();
 }
 
+std::vector<std::string> Parser::getTopLevelFunctions() {
+    return topLevelFunctions;
+}
+
 std::unique_ptr<Program> Parser::getParseTree() {
     std::unique_ptr<Program> program = std::make_unique<Program>();
     
@@ -58,7 +65,9 @@ std::unique_ptr<Program> Parser::getParseTree() {
         if (statement) program->addStatement(statement);
         skipNewlines();
         
+        
     }
+    
     // clean up remaining pointers
     std::vector<std::unique_ptr<FreePtr>> freePtrs = curScope->getFreePtrs();
     for (int i=0; i<freePtrs.size(); i++) {
@@ -88,8 +97,10 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             bool alrDeclared;
             if (operation == TokenType::EQ) {
                 exp = parseTop();
+                if (curScope) 
                 curScope->declareVariable(variable, exp->type, exp);
                 alrDeclared = false;
+                
             }
             else if (operation == TokenType::ARROW) {
                 exp = parseTop();
@@ -108,6 +119,13 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
             nextToken();
             std::unique_ptr<Exp> exp = parseTop();
             ret = std::make_unique<PrintExp> (exp);
+            break;
+        }
+        case TokenType::RETURN:
+        {
+            nextToken();
+            std::unique_ptr<Exp> exp = parseTop();
+            ret = std::make_unique<Return> (exp);
             break;
         }
         case TokenType::WHILE:
@@ -232,8 +250,8 @@ std::unique_ptr<ASTNode> Parser::getStatement() {
         case TokenType::NEWLINE:
             break;
             
-        // default:
-            // parseLevel1();
+        default:
+            ret = parseTop();
 
     }
     return ret;
@@ -406,14 +424,15 @@ std::unique_ptr<Exp> Parser::parseLevel4() {
             break;
         case TokenType::IDENTIFIER:
         {
-            std::optional<DataType::DataType> o_varType = curScope->lookupType(curToken.content);
+            std::string varName = curToken.content;
+            std::optional<DataType::DataType> o_varType = curScope->lookupType(varName);
             // Check whether previously declared
             if (o_varType) {
-                std::unique_ptr<Exp> exp = curScope->lookupVal(curToken.content);
+                std::unique_ptr<Exp> exp = curScope->lookupVal(varName);
                 // if value for variable is known, replace it with the known value
                 if (exp) ret = std::move(exp);
-                else ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
-                // ret = std::make_unique<VarLit> (curToken.content, o_varType.value());
+                else ret = std::make_unique<VarLit> (varName, o_varType.value());
+                // ret = std::make_unique<VarLit> (varName, o_varType.value());
             }
             else terminate("Undeclared variable");
             nextToken();
@@ -428,30 +447,85 @@ std::unique_ptr<Exp> Parser::parseLevel4() {
             //     nextToken();
             // }
 
-            // Call function
+            // Function call
             if (curToken.tokenType == TokenType::OPEN_ROUND_BRACKET) {
+                nextToken();
 
+                if (ret->type != DataType::LAMBDA) terminate(varName + " is not a function");
+
+                std::unique_ptr<LambdaExp> lambda = std::unique_ptr<LambdaExp>(dynamic_cast<LambdaExp*>(ret.release()));
+                std::unique_ptr<FunctionCallExp> funcCallExp = std::make_unique<FunctionCallExp>(lambda, varName);
+
+                if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
+                    std::unique_ptr<Exp> arg = parseTop();
+                    funcCallExp->addArg(arg);           
+                    while (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
+                        validateToken(TokenType::COMMA);
+                        nextToken();
+                        arg = parseTop();
+                        funcCallExp->addArg(arg);
+                    }
+                    nextToken();
+                }
+
+                ret = std::move(funcCallExp);
+                std::cout << ret->type << std::endl;
             }
 
             break;
         }
 
+        // Function declaration
         case TokenType::LAMBDA:
-            nextToken();
-            validateToken(TokenType::OPEN_ROUND_BRACKET);
-            nextToken();
+            {
+                nextToken();
+                validateToken(TokenType::OPEN_ROUND_BRACKET);
+                nextToken();
+                std::vector<std::pair<std::string, DataType::DataType>> params;
 
-            // if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
-            //     std::unique_ptr<Exp> exp = parseLevel1();
-            //     array->addItem(exp);
-            //     while (curToken.tokenType != TokenType::CLOSED_SQUARE_BRACKET) {
-            //         validateToken(TokenType::COMMA);
-            //         nextToken();
-            //         exp = parseLevel1();
-            //         array->addItem(exp);          
-            //     }
-            //     nextToken();
-            // }
+
+                if (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
+
+                    DataType::DataType paramtype = parseType();
+                    validateToken(TokenType::IDENTIFIER);
+                    std::string paramName = curToken.content;
+                    params.push_back({paramName, paramtype});
+                    nextToken();
+                    
+                    while (curToken.tokenType != TokenType::CLOSED_ROUND_BRACKET) {
+                        validateToken(TokenType::COMMA);
+                        nextToken();
+                        paramtype = parseType();
+                        validateToken(TokenType::IDENTIFIER);
+                        paramName = curToken.content;
+                        params.push_back({paramName, paramtype});
+
+                        nextToken();
+                    }
+                    nextToken();
+                }
+
+                validateToken(TokenType::ARROW);
+                nextToken();
+                DataType::DataType returnType = parseType();
+
+                newScope();
+                for (auto [paramName, paramType] : params) {
+                    std::unique_ptr<Exp> nul = nullptr; // param variables cannot be constant folded
+                    curScope->declareVariable(paramName, paramType, nul);
+                }
+                std::unique_ptr<Block> funcBody = parseBlock();
+
+                leaveScope();
+
+                std::unique_ptr<Scope> scopeClone = curScope->clone();
+                // for declaring the top level function in the compiled code
+                std::unique_ptr<LambdaExp> lambda = std::make_unique<LambdaExp> (funcBody, params, returnType, scopeClone);
+                topLevelFunctions.push_back(lambda->genFunctionCode());
+                ret = std::move(lambda);
+                break;
+            }
+            
             
         case TokenType::STRING:
             ret = std::make_unique<StringLit> (curToken.content);
@@ -544,7 +618,27 @@ std::unique_ptr<Block> Parser::parseBlock() {
     }
  
     leaveScope();
+    skipNewlines();
+
     return block;
+}
+
+DataType::DataType Parser::parseType() {
+    TokenType::TokenType t = curToken.tokenType;
+    nextToken();
+    switch (t) {
+        case TokenType::NUMTYPE:
+            return DataType::NUMBER;
+        case TokenType::BOOLTYPE:
+            return DataType::BOOLEAN;
+        case TokenType::STRINGTYPE:
+            return DataType::STRING;
+        case TokenType::VOIDTYPE:
+            return DataType::VOID;
+        default:
+            terminate("Type declaration expected, got " + curToken.content + " instead");
+    }
+    return DataType::UNKNOWN;
 }
 
 void Parser::validateToken(TokenType::TokenType type) {

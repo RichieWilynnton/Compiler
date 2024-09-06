@@ -1,5 +1,10 @@
-let x = 5
-for let i = 1 to 10 {
-    let x => x + i
+let a = 40
+let printMultA = lambda (num y) => void {
+    print(y + a)
 }
-print(x)
+let add = lambda (num x, num y) => num {
+    let a => 10
+    printMultA(x)
+    return (x+y+a)
+}
+print(add(4,5))

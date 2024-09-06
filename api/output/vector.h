@@ -1,20 +1,10 @@
 #pragma once
 
+#include "data.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h> 
-
-typedef enum {
-    INT,
-    FLOAT,
-    BOOLEAN,
-    STRING
-} DataType;
-
-typedef struct {
-    void *data;
-    DataType type;
-} Element;
 
 typedef struct {
     Element *elements;

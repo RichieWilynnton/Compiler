@@ -10,6 +10,7 @@ namespace DataType {
         BOOLEAN,
         STRING,
         ARRAY,
+        LAMBDA,
     };
     extern const std::vector<std::string> dataTypeStrings;
 }

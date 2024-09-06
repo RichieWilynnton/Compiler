@@ -43,10 +43,15 @@ bool Scope::inCurrentScope(std::string& var) {
 }
 
 void Scope::declareVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val){
+
     if (inCurrentScope(var)) throw std::runtime_error("Variable \"" + var + "\" is re-declared!");
-        
+
+
     symbols[var].first = varType;
+
     if (val) symbols[var].second = val->clone();
+    
+
 }
 
 void Scope::modifyVariable(std::string& var, DataType::DataType varType, std::unique_ptr<Exp>& val) {
@@ -60,23 +65,6 @@ void Scope::modifyVariable(std::string& var, DataType::DataType varType, std::un
     }
 }
 
-// std::vector<std::pair<DataType::DataType, std::string>> Scope::getEnv() {
-//     std::vector<std::pair<DataType::DataType, std::string>> env;
-//     std::unordered_set<std::string> s;
-//     envHelper(env, s);
-//     return env;
-// }
-
-// void Scope::envHelper(std::vector<std::pair<DataType::DataType, std::string>>& env, std::unordered_set<std::string>& seen) {
-//     for (auto [name, t] : symbols) {
-//         if (seen.find(name) == seen.end()) {
-//             env.push_back({t, name});
-//             seen.insert(name);
-//         }
-//     }
-//     if (outerScope) outerScope->envHelper(env, seen);
-// }
-
 std::vector<std::unique_ptr<FreePtr>> Scope::getFreePtrs() {
     std::vector<std::unique_ptr<FreePtr>> ret;
     for (const auto& [variable, d] : symbols) {
@@ -85,4 +73,14 @@ std::vector<std::unique_ptr<FreePtr>> Scope::getFreePtrs() {
     return ret;
 }
 
+std::unique_ptr<Scope> Scope::clone() {
+    std::unique_ptr<Scope> clone = std::make_unique<Scope> ();
+    for (const auto& [name, data] : symbols) {
+        clone->symbols[name].first = this->symbols[name].first;
+        if (this->symbols[name].second) clone->symbols[name].second = this->symbols[name].second->clone();
+    }
+    
+    if (outerScope) clone->outerScope = outerScope->clone();
+    return clone;
+}
 

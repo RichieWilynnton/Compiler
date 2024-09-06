@@ -28,6 +28,11 @@ std::string Assignment::genCode()
     case DataType::ARRAY:
         prefix = "Vector*";
         break;
+    case DataType::LAMBDA:
+        // The variable is actually storing an array that represents an env, compiler handles how the function is called
+        prefix = "Element";
+        putSquareBrackets = true;
+        break;
 
     default:
         TypeError::terminate(DataType::dataTypeStrings[type] + " type is not assignable");

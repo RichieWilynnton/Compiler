@@ -27,6 +27,7 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::FOR: return "FOR";
         case TokenType::ELSE: return "ELSE";
         case TokenType::TO: return "TO";
+        case TokenType::RETURN: return "RETURN";
 
         
         // Operators
@@ -55,6 +56,11 @@ std::string TokenUtils::stringifyTokenType(TokenType::TokenType type) {
         case TokenType::COMMA: return "COMMA";
         case TokenType::DOUBLE_DASH: return "DOUBLE DASH";
         case TokenType::COLON: return "COLON";
+
+        case TokenType::NUMTYPE: return "NUMTYPE";
+        case TokenType::BOOLTYPE: return "BOOLTYPE";
+        case TokenType::STRINGTYPE: return "STRINGTYPE";
+        case TokenType::VOIDTYPE: return "VOIDTYPE";
         default: return "UNKNOWN";
     }
 }

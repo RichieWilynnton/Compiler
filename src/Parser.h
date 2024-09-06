@@ -21,8 +21,11 @@ public:
 
     std::vector<Token> tokens;
 
+    std::vector<std::string> topLevelFunctions;
+
     Parser(std::vector<Token>& tokenList);
     std::unique_ptr<Program> getParseTree();
+    std::vector<std::string> getTopLevelFunctions();
 
     std::unique_ptr<ASTNode> getStatement();
     std::unique_ptr<Exp> parseTop();
@@ -32,6 +35,7 @@ public:
     std::unique_ptr<Exp> parseLevel3();
     std::unique_ptr<Exp> parseLevel4();
     std::unique_ptr<Block> parseBlock();
+    DataType::DataType parseType();
 
     void validateToken(TokenType::TokenType type);
     void nextToken();

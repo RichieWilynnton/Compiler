@@ -490,6 +490,54 @@ FreePtr.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FreePtr.cpp.s
 .PHONY : FreePtr.cpp.s
 
+FunctionExp/FunctionCallExp.o: FunctionExp/FunctionCallExp.cpp.o
+.PHONY : FunctionExp/FunctionCallExp.o
+
+# target to build an object file
+FunctionExp/FunctionCallExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o
+.PHONY : FunctionExp/FunctionCallExp.cpp.o
+
+FunctionExp/FunctionCallExp.i: FunctionExp/FunctionCallExp.cpp.i
+.PHONY : FunctionExp/FunctionCallExp.i
+
+# target to preprocess a source file
+FunctionExp/FunctionCallExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.i
+.PHONY : FunctionExp/FunctionCallExp.cpp.i
+
+FunctionExp/FunctionCallExp.s: FunctionExp/FunctionCallExp.cpp.s
+.PHONY : FunctionExp/FunctionCallExp.s
+
+# target to generate assembly for a file
+FunctionExp/FunctionCallExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.s
+.PHONY : FunctionExp/FunctionCallExp.cpp.s
+
+FunctionExp/LambdaExp.o: FunctionExp/LambdaExp.cpp.o
+.PHONY : FunctionExp/LambdaExp.o
+
+# target to build an object file
+FunctionExp/LambdaExp.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o
+.PHONY : FunctionExp/LambdaExp.cpp.o
+
+FunctionExp/LambdaExp.i: FunctionExp/LambdaExp.cpp.i
+.PHONY : FunctionExp/LambdaExp.i
+
+# target to preprocess a source file
+FunctionExp/LambdaExp.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.i
+.PHONY : FunctionExp/LambdaExp.cpp.i
+
+FunctionExp/LambdaExp.s: FunctionExp/LambdaExp.cpp.s
+.PHONY : FunctionExp/LambdaExp.s
+
+# target to generate assembly for a file
+FunctionExp/LambdaExp.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.s
+.PHONY : FunctionExp/LambdaExp.cpp.s
+
 FunctionExp/PrintExp.o: FunctionExp/PrintExp.cpp.o
 .PHONY : FunctionExp/PrintExp.o
 
@@ -730,6 +778,30 @@ Statement/If.cpp.s:
 	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.s
 .PHONY : Statement/If.cpp.s
 
+Statement/Return.o: Statement/Return.cpp.o
+.PHONY : Statement/Return.o
+
+# target to build an object file
+Statement/Return.cpp.o:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o
+.PHONY : Statement/Return.cpp.o
+
+Statement/Return.i: Statement/Return.cpp.i
+.PHONY : Statement/Return.i
+
+# target to preprocess a source file
+Statement/Return.cpp.i:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.i
+.PHONY : Statement/Return.cpp.i
+
+Statement/Return.s: Statement/Return.cpp.s
+.PHONY : Statement/Return.s
+
+# target to generate assembly for a file
+Statement/Return.cpp.s:
+	cd /home/richie/Compiler/build && $(MAKE) $(MAKESILENT) -f src/AstNodes/CMakeFiles/AstNodes.dir/build.make src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.s
+.PHONY : Statement/Return.cpp.s
+
 Statement/While.o: Statement/While.cpp.o
 .PHONY : Statement/While.o
 
@@ -904,6 +976,12 @@ help:
 	@echo "... FreePtr.o"
 	@echo "... FreePtr.i"
 	@echo "... FreePtr.s"
+	@echo "... FunctionExp/FunctionCallExp.o"
+	@echo "... FunctionExp/FunctionCallExp.i"
+	@echo "... FunctionExp/FunctionCallExp.s"
+	@echo "... FunctionExp/LambdaExp.o"
+	@echo "... FunctionExp/LambdaExp.i"
+	@echo "... FunctionExp/LambdaExp.s"
 	@echo "... FunctionExp/PrintExp.o"
 	@echo "... FunctionExp/PrintExp.i"
 	@echo "... FunctionExp/PrintExp.s"
@@ -934,6 +1012,9 @@ help:
 	@echo "... Statement/If.o"
 	@echo "... Statement/If.i"
 	@echo "... Statement/If.s"
+	@echo "... Statement/Return.o"
+	@echo "... Statement/Return.i"
+	@echo "... Statement/Return.s"
 	@echo "... Statement/While.o"
 	@echo "... Statement/While.i"
 	@echo "... Statement/While.s"

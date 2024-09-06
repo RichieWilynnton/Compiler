@@ -9,15 +9,12 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
     // to avoid initializing multiple times
     if (keywords.empty()){
         keywords["label"] = TokenType::LABEL;
-        keywords["goto"] = TokenType::GOTO;
         keywords["print"] = TokenType::PRINT;
         keywords["input"] = TokenType::INPUT;
         keywords["let"] = TokenType::LET;
         keywords["if"] = TokenType::IF;
         keywords["elif"] = TokenType::ELIF;
-        keywords["then"] = TokenType::THEN;
         keywords["else"] = TokenType::ELSE;
-        keywords["endif"] = TokenType::ENDIF;
         keywords["lambda"] = TokenType::LAMBDA;
         keywords["while"] = TokenType::WHILE;
         keywords["in"] = TokenType::IN;
@@ -29,6 +26,11 @@ TokenType::TokenType checkIfKeyword(const std::string& identifier) {
         keywords["True"] = TokenType::TRUE;
         keywords["False"] = TokenType::FALSE;
         keywords["to"] = TokenType::TO;
+        keywords["num"] = TokenType::NUMTYPE;
+        keywords["bool"] = TokenType::BOOLTYPE;
+        keywords["string"] = TokenType::STRING;
+        keywords["void"] = TokenType::VOIDTYPE;
+        keywords["return"] = TokenType::RETURN;
     }
     return keywords.find(identifier) != keywords.end() ? keywords[identifier] : TokenType::INVALID;
 }

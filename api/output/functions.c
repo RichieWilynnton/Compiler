@@ -1,50 +1,22 @@
-typedef struct {
-    void* (*lambda) (Element[]);
-    Element *env;
-    int env_size;
-} Closure;
+#include "functions.h"
+#include <stdlib.h>
 
-typedef struct {
-    void *data;
-    DataType type;
-} Element;
-
-typedef enum {
-    INT,
-    FLOAT,
-    BOOLEAN,
-    STRING
-} DataType;
-
-#define DEFINE_MAKE_ELEMENT(datatype, type_enum)       \
-    Element make_##datatype##_element(datatype value) {        \
-        datatype* ptr = (datatype*) malloc(sizeof(datatype));   \
-        *ptr = value; \
-        Element ret = { \
-            .data = ptr, \
-            .type = type_enum \
-        };              \
-        return ret;                                            \
+#define DEFINE_MAKE_ELEMENT_IMPL(datatype, type_enum)       \
+    Element make_##datatype##_element(datatype value) {     \
+        datatype* ptr = (datatype*) malloc(sizeof(datatype));\
+        *ptr = value;                                       \
+        Element ret = {                                     \
+            .data = ptr,                                    \
+            .type = type_enum                               \
+        };                                                  \
+        return ret;                                         \
     }\
 
+DEFINE_MAKE_ELEMENT_IMPL(int, INT)
+DEFINE_MAKE_ELEMENT_IMPL(bool, BOOLEAN)
 
-int addnum(Element env[]) {
-    // compiler lists out all values in env and re-declares using index of env
-    // return a + b
-    return 0;
-}
-
-void freeClosure(Closure c) {
-    for (int i=0; i<c.env_size; i++) {
-        free(c.env[i].data);
+void freeEnv(Element env[], int size) {
+    for (int i = 0; i < size; i++) {
+        free(env[i].data);
     }
-}
-
-DEFINE_MAKE_ELEMENT(int, INT);
-
-int main() {
-    // env will always be same scope as closure, so dont worry about passing stack-allocated env to closure
-    Element env[] = {make_int_element(1)};
-    addnum(env);
-    // runClosure(&addnum, )
 }

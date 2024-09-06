@@ -11,7 +11,8 @@ class FreePtr : public ASTNode {
         std::string variable;
         DataType::DataType type;
         std::unordered_map<DataType::DataType, std::string> freeFunctions = {
-            {DataType::ARRAY, "freeVector"}
+            {DataType::ARRAY, "freeVector"},
+            {DataType::LAMBDA, "freeEnv"},
         };
         
         FreePtr(std::string variable, DataType::DataType type) : variable(variable), type(type) {};

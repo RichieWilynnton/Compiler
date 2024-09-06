@@ -805,6 +805,7 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/Lit/VarLit.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/Statement/If.h \
+  ../src/AstNodes/Statement/Return.h \
   ../src/AstNodes/Lit/NumLit.h \
   ../src/AstNodes/Exp.h \
   ../src/AstNodes/Lit/VarLit.h \
@@ -856,6 +857,8 @@ CMakeFiles/compiler.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   ../src/AstNodes/UnaryExp/NotExp.h \
   ../src/AstNodes/FunctionExp/PrintExp.h \
   ../src/AstNodes/Exp.h \
+  ../src/AstNodes/FunctionExp/LambdaExp.h \
+  ../src/AstNodes/FunctionExp/FunctionCallExp.h \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
@@ -1681,8 +1684,6 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/c++/11/fstream:
-
 ../src/main.cpp:
 
 ../src/Utils/TokenUtils.cpp:
@@ -1696,6 +1697,10 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_algo.h:
 
 /usr/include/c++/11/algorithm:
+
+/usr/include/c++/11/fstream:
+
+../src/AstNodes/FunctionExp/LambdaExp.h:
 
 ../src/AstNodes/UnaryExp/NotExp.h:
 
@@ -1983,6 +1988,12 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
+../src/AstNodes/UnaryExp/UnaryExp.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/c++/11/bits/concept_check.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/11/bits/stl_iterator.h:
@@ -2038,6 +2049,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_heap.h:
 
 /usr/include/c++/11/bits/std_abs.h:
+
+../src/AstNodes/FunctionExp/FunctionCallExp.h:
 
 /usr/include/c++/11/cstdio:
 
@@ -2098,6 +2111,8 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/uses_allocator.h:
 
 /usr/include/c++/11/bits/unique_ptr.h:
+
+../src/AstNodes/Statement/Return.h:
 
 /usr/include/c++/11/ostream:
 
@@ -2226,9 +2241,3 @@ CMakeFiles/compiler.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 ../src/AstNodes/BinaryExp/GTExp.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/c++/11/bits/concept_check.h:
-
-../src/AstNodes/UnaryExp/UnaryExp.h:

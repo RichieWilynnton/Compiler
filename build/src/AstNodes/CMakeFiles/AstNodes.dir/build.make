@@ -363,10 +363,38 @@ src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/FunctionExp/PrintExp.cpp -o CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.s
 
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o: ../src/AstNodes/FunctionExp/LambdaExp.cpp
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o -MF CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o.d -o CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/LambdaExp.cpp
+
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.i"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/FunctionExp/LambdaExp.cpp > CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.i
+
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.s"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/FunctionExp/LambdaExp.cpp -o CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.s
+
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o: ../src/AstNodes/FunctionExp/FunctionCallExp.cpp
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o -MF CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o.d -o CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o -c /home/richie/Compiler/src/AstNodes/FunctionExp/FunctionCallExp.cpp
+
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.i"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/FunctionExp/FunctionCallExp.cpp > CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.i
+
+src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.s"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/FunctionExp/FunctionCallExp.cpp -o CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.s
+
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o: ../src/AstNodes/Lit/NumLit.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o -MF CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o.d -o CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/NumLit.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.i: cmake_force
@@ -380,7 +408,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o: ../src/AstNodes/Lit/VarLit.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o -MF CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o.d -o CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/VarLit.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.i: cmake_force
@@ -394,7 +422,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o: ../src/AstNodes/Lit/StringLit.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o -MF CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o.d -o CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/StringLit.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.i: cmake_force
@@ -408,7 +436,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o: ../src/AstNodes/Lit/BoolLit.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o -MF CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o.d -o CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/BoolLit.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.i: cmake_force
@@ -422,7 +450,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o: ../src/AstNodes/Lit/ArrayLit.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o -MF CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o.d -o CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o -c /home/richie/Compiler/src/AstNodes/Lit/ArrayLit.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.i: cmake_force
@@ -436,7 +464,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o: ../src/AstNodes/Statement/Assignment.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o -MF CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o.d -o CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/Assignment.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.i: cmake_force
@@ -450,7 +478,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o: ../src/AstNodes/Statement/While.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o -MF CMakeFiles/AstNodes.dir/Statement/While.cpp.o.d -o CMakeFiles/AstNodes.dir/Statement/While.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/While.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.i: cmake_force
@@ -461,10 +489,24 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/Statement/While.cpp.s"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/Statement/While.cpp -o CMakeFiles/AstNodes.dir/Statement/While.cpp.s
 
+src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
+src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o: ../src/AstNodes/Statement/Return.cpp
+src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o -MF CMakeFiles/AstNodes.dir/Statement/Return.cpp.o.d -o CMakeFiles/AstNodes.dir/Statement/Return.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/Return.cpp
+
+src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AstNodes.dir/Statement/Return.cpp.i"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/richie/Compiler/src/AstNodes/Statement/Return.cpp > CMakeFiles/AstNodes.dir/Statement/Return.cpp.i
+
+src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AstNodes.dir/Statement/Return.cpp.s"
+	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/richie/Compiler/src/AstNodes/Statement/Return.cpp -o CMakeFiles/AstNodes.dir/Statement/Return.cpp.s
+
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o: ../src/AstNodes/Statement/For.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o -MF CMakeFiles/AstNodes.dir/Statement/For.cpp.o.d -o CMakeFiles/AstNodes.dir/Statement/For.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/For.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.i: cmake_force
@@ -478,7 +520,7 @@ src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.s: cmake_force
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/flags.make
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o: ../src/AstNodes/Statement/If.cpp
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o: src/AstNodes/CMakeFiles/AstNodes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o"
 	cd /home/richie/Compiler/build/src/AstNodes && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o -MF CMakeFiles/AstNodes.dir/Statement/If.cpp.o.d -o CMakeFiles/AstNodes.dir/Statement/If.cpp.o -c /home/richie/Compiler/src/AstNodes/Statement/If.cpp
 
 src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.i: cmake_force
@@ -512,6 +554,8 @@ AstNodes_OBJECTS = \
 "CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o" \
+"CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o" \
+"CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o" \
 "CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o" \
@@ -519,6 +563,7 @@ AstNodes_OBJECTS = \
 "CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o" \
 "CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o" \
 "CMakeFiles/AstNodes.dir/Statement/While.cpp.o" \
+"CMakeFiles/AstNodes.dir/Statement/Return.cpp.o" \
 "CMakeFiles/AstNodes.dir/Statement/For.cpp.o" \
 "CMakeFiles/AstNodes.dir/Statement/If.cpp.o"
 
@@ -546,6 +591,8 @@ src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/UnaryE
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NegExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/UnaryExp/NotExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/PrintExp.cpp.o
+src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/LambdaExp.cpp.o
+src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/FunctionExp/FunctionCallExp.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/NumLit.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/VarLit.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/StringLit.cpp.o
@@ -553,11 +600,12 @@ src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/BoolLit.cpp
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Lit/ArrayLit.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Assignment.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Statement/While.cpp.o
+src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Statement/Return.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Statement/For.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/Statement/If.cpp.o
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/build.make
 src/AstNodes/libAstNodes.a: src/AstNodes/CMakeFiles/AstNodes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX static library libAstNodes.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/richie/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX static library libAstNodes.a"
 	cd /home/richie/Compiler/build/src/AstNodes && $(CMAKE_COMMAND) -P CMakeFiles/AstNodes.dir/cmake_clean_target.cmake
 	cd /home/richie/Compiler/build/src/AstNodes && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AstNodes.dir/link.txt --verbose=$(VERBOSE)
 
