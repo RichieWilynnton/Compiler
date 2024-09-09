@@ -88,3 +88,109 @@ Run:
   <BoolLit> ::= true | false
   <StringLit> ::= "`group of characters`"
   <ArrayLit> ::= [Expression, Expression, ...]
+  <LambdaExp> := "lambda" (type exp1, type exp2) {...}
+  
+- **Type Declarations**
+
+    num, bool, string, array (Type declarations are only required when getting inputs & defining function params)
+
+
+### Example Code
+- Type Errors - type checking is done in compile-time, along with the providance of appropriate error message.
+```
+------------Code------------
+let a = a + 3
+------------Output------------
+Error at Position: 3 content: a
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Error during parsing: Undeclared variable
+```
+
+- Constant Folding - expressions are evaluated during compile-time whenever possible
+```
+------------Code------------
+let a = 5
+let b = 6
+print(((a * b / 3 + 2 - (100 - a)) == 5) and (b >= a))
+------------C Code------------
+#include <stdio.h>
+#include "functions.h"
+#include "vector.h"
+#include "print.h"
+int main(){
+int a = 5;
+int b = 6;
+print_bool(false); //constant folded
+print_newline();
+return 0;
+}
+------------Output------------
+false
+```
+- Loop Unrolling - Loops that have a predictable, fixed range are unfolded during compilation, this removes the extra condition check that exists in a normal for loop after every iteration
+```
+------------Code------------
+let a = 5
+let b = 6
+print(((a * b / 3 + 2 - (100 - a)) == 5) and (b >= a))
+------------C Code------------
+#include <stdio.h>
+#include "functions.h"
+#include "vector.h"
+#include "print.h"
+int main(){
+int n = 5;
+{
+{
+print_int(0);
+print_newline();
+};
+{
+print_int(1);
+print_newline();
+};
+{
+print_int(2);
+print_newline();
+};
+{
+print_int(3);
+print_newline();
+};
+{
+print_int(4);
+print_newline();
+};
+};
+;
+
+return 0;
+}
+
+------------Output------------
+0
+1
+2
+3
+4
+
+```
+- Lambda Expressions - Functions are treated as first class members, meaning it shares the same priveleges as other data types like numbers and strings. It can:
+    - Retain the environment in which it was declared
+    - Go in and out of scope
+```
+------------Code------------
+let a = 40
+let funcA = lambda (num y) => void {
+    print(y)
+}
+let add = lambda (num x) => num {
+    funcA(x)
+    return (x+a)
+}
+print(add(4))
+------------Output------------
+4 
+44
+```
+
