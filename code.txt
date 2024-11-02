@@ -1,10 +1,9 @@
 let a = 40
-let printMultA = lambda (num y) => void {
-    print(y + a)
+let funcA = lambda (num y) => void {
+    print(y)
 }
-let add = lambda (num x, num y) => num {
-    let a => 10
-    printMultA(x)
-    return (x+y+a)
+let add = lambda (num x) => num {
+    funcA(x)
+    return (x+a)
 }
-print(add(4,5))
+print(add(4))

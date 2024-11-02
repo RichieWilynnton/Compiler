@@ -3,6 +3,7 @@
 #include "../Lit/BoolLit.h"
 #include "../TypeError.h"
 #include <string>
+#include <iostream>
 
 std::string EQEQExp::genCode() {
     return "(" + exp1->genCode() + "==" + exp2->genCode() + ")";
@@ -13,7 +14,6 @@ std::string EQEQExp::printNode() {
 void EQEQExp::inferType() {
     DataType::DataType expt1 = exp1->type;
     DataType::DataType expt2 = exp2->type;
-
     if (expt1 == DataType::NUMBER && expt2 == DataType::NUMBER) {
         type = DataType::BOOLEAN;
         return;

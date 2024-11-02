@@ -13,8 +13,6 @@ ArrayLit::ArrayLit() {
 
 std::string ArrayLit::genCode() {
     std::string ret = "initVector(" + std::to_string(size) + ')';
-    std::cout << ret << '\n';
-
 
     for (std::unique_ptr<Exp>& exp : items) {
         ret = appendFunctions[exp->type] + "(" + exp->genCode() + ", " + ret + ")"; 

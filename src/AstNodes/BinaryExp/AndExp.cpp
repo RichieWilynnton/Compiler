@@ -2,6 +2,7 @@
 #include "../DataType.h"
 #include "../Lit/BoolLit.h"
 #include "../TypeError.h"
+#include <iostream>
 #include <string>
 
 std::string AndExp::genCode() {
@@ -13,7 +14,6 @@ std::string AndExp::printNode() {
 void AndExp::inferType() {
     DataType::DataType expt1 = exp1->type;
     DataType::DataType expt2 = exp2->type;
-
     if (expt1 == DataType::BOOLEAN && expt2 == DataType::BOOLEAN) {
         type = DataType::BOOLEAN;
         return;

@@ -105,7 +105,6 @@ std::unique_ptr<Exp> LambdaExp::clone() {
     lambdaclone->funcName = funcName;
     lambdaclone->type = type;
     lambdaclone->params = params;
-    std::cout << "HELLO" << std::endl;
     for (const auto& [varname, vartype, varval] : env) {
         std::unique_ptr<Exp> varvalclone;
         if (varval) {
@@ -115,7 +114,6 @@ std::unique_ptr<Exp> LambdaExp::clone() {
         else lambdaclone->env.push_back({varname, vartype, nullptr});
         
     }
-    std::cout << "HI" << std::endl;
 
     return lambdaclone;
 }

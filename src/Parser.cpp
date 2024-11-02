@@ -322,7 +322,6 @@ std::unique_ptr<Exp> Parser::parseLevel0() {
 
 std::unique_ptr<Exp> Parser::parseLevel1() {
     std::unique_ptr<Exp> a = parseLevel2();
-
     while (true) {
         if (curToken.tokenType == TokenType::EQEQ) {
             nextToken();
@@ -350,9 +349,10 @@ std::unique_ptr<Exp> Parser::parseLevel1() {
             a = std::make_unique<GTEQExp> (a, b);
         }
         else return a;
+        a->init();
+        if (a->valKnown) a = a->eval();
     }
-    a->init();
-    if (a->valKnown) a = a->eval();
+    
 }
 
 std::unique_ptr<Exp> Parser::parseLevel2() {
@@ -469,7 +469,6 @@ std::unique_ptr<Exp> Parser::parseLevel4() {
                 }
 
                 ret = std::move(funcCallExp);
-                std::cout << ret->type << std::endl;
             }
 
             break;
